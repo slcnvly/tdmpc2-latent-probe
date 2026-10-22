@@ -1,0 +1,577 @@
+{
+ "mt30_tasks": [
+  "walker-stand",
+  "walker-walk",
+  "walker-run",
+  "cheetah-run",
+  "reacher-easy",
+  "reacher-hard",
+  "acrobot-swingup",
+  "pendulum-swingup",
+  "cartpole-balance",
+  "cartpole-balance-sparse",
+  "cartpole-swingup",
+  "cartpole-swingup-sparse",
+  "cup-catch",
+  "finger-spin",
+  "finger-turn-easy",
+  "finger-turn-hard",
+  "fish-swim",
+  "hopper-stand",
+  "hopper-hop",
+  "walker-walk-backwards",
+  "walker-run-backwards",
+  "cheetah-run-backwards",
+  "cheetah-run-front",
+  "cheetah-run-back",
+  "cheetah-jump",
+  "hopper-hop-backwards",
+  "reacher-three-easy",
+  "reacher-three-hard",
+  "cup-spin",
+  "pendulum-spin"
+ ],
+ "obs_dims_per_task": {
+  "walker-stand": 24,
+  "walker-walk": 24,
+  "walker-run": 24,
+  "cheetah-run": 17,
+  "reacher-easy": 6,
+  "reacher-hard": 6,
+  "acrobot-swingup": 6,
+  "pendulum-swingup": 3,
+  "cartpole-balance": 5,
+  "cartpole-balance-sparse": 5,
+  "cartpole-swingup": 5,
+  "cartpole-swingup-sparse": 5,
+  "cup-catch": 8,
+  "finger-spin": 9,
+  "finger-turn-easy": 12,
+  "finger-turn-hard": 12,
+  "fish-swim": 24,
+  "hopper-stand": 15,
+  "hopper-hop": 15,
+  "walker-walk-backwards": 24,
+  "walker-run-backwards": 24,
+  "cheetah-run-backwards": 17,
+  "cheetah-run-front": 17,
+  "cheetah-run-back": 17,
+  "cheetah-jump": 17,
+  "hopper-hop-backwards": 15,
+  "reacher-three-easy": 8,
+  "reacher-three-hard": 8,
+  "cup-spin": 8,
+  "pendulum-spin": 3
+ },
+ "action_dims_per_task": {
+  "walker-stand": 6,
+  "walker-walk": 6,
+  "walker-run": 6,
+  "cheetah-run": 6,
+  "reacher-easy": 2,
+  "reacher-hard": 2,
+  "acrobot-swingup": 1,
+  "pendulum-swingup": 1,
+  "cartpole-balance": 1,
+  "cartpole-balance-sparse": 1,
+  "cartpole-swingup": 1,
+  "cartpole-swingup-sparse": 1,
+  "cup-catch": 2,
+  "finger-spin": 2,
+  "finger-turn-easy": 2,
+  "finger-turn-hard": 2,
+  "fish-swim": 5,
+  "hopper-stand": 4,
+  "hopper-hop": 4,
+  "walker-walk-backwards": 6,
+  "walker-run-backwards": 6,
+  "cheetah-run-backwards": 6,
+  "cheetah-run-front": 6,
+  "cheetah-run-back": 6,
+  "cheetah-jump": 6,
+  "hopper-hop-backwards": 4,
+  "reacher-three-easy": 3,
+  "reacher-three-hard": 3,
+  "cup-spin": 2,
+  "pendulum-spin": 1
+ },
+ "episode_lengths_per_task": {
+  "walker-stand": 500,
+  "walker-walk": 500,
+  "walker-run": 500,
+  "cheetah-run": 500,
+  "reacher-easy": 500,
+  "reacher-hard": 500,
+  "acrobot-swingup": 500,
+  "pendulum-swingup": 500,
+  "cartpole-balance": 500,
+  "cartpole-balance-sparse": 500,
+  "cartpole-swingup": 500,
+  "cartpole-swingup-sparse": 500,
+  "cup-catch": 500,
+  "finger-spin": 500,
+  "finger-turn-easy": 500,
+  "finger-turn-hard": 500,
+  "fish-swim": 500,
+  "hopper-stand": 500,
+  "hopper-hop": 500,
+  "walker-walk-backwards": 500,
+  "walker-run-backwards": 500,
+  "cheetah-run-backwards": 500,
+  "cheetah-run-front": 500,
+  "cheetah-run-back": 500,
+  "cheetah-jump": 500,
+  "hopper-hop-backwards": 500,
+  "reacher-three-easy": 500,
+  "reacher-three-hard": 500,
+  "cup-spin": 500,
+  "pendulum-spin": 500
+ },
+ "padded_obs_dim": 24,
+ "padded_action_dim": 6,
+ "walker_task_ids": {
+  "walker-stand": 0,
+  "walker-walk": 1,
+  "walker-run": 2,
+  "walker-walk-backwards": 19,
+  "walker-run-backwards": 20
+ },
+ "walker_state_restore_checks": {
+  "walker-stand": {
+   "wrapper_chain": [
+    "TensorWrapper",
+    "Timeout",
+    "DMControlWrapper",
+    "Wrapper"
+   ],
+   "obs_dim": 24,
+   "padding_len": 0,
+   "padding_all_zero": null,
+   "max_abs_obs_err_after_restore": 0.0,
+   "max_abs_reward_err_after_restore": 0.0,
+   "observation_keys": {
+    "orientations": [
+     14
+    ],
+    "height": [],
+    "velocity": [
+     9
+    ]
+   },
+   "task_class": "PlanarWalker",
+   "move_speed": 0
+  },
+  "walker-walk": {
+   "wrapper_chain": [
+    "TensorWrapper",
+    "Timeout",
+    "DMControlWrapper",
+    "Wrapper"
+   ],
+   "obs_dim": 24,
+   "padding_len": 0,
+   "padding_all_zero": null,
+   "max_abs_obs_err_after_restore": 0.0,
+   "max_abs_reward_err_after_restore": 0.0,
+   "observation_keys": {
+    "orientations": [
+     14
+    ],
+    "height": [],
+    "velocity": [
+     9
+    ]
+   },
+   "task_class": "PlanarWalker",
+   "move_speed": 1
+  },
+  "walker-run": {
+   "wrapper_chain": [
+    "TensorWrapper",
+    "Timeout",
+    "DMControlWrapper",
+    "Wrapper"
+   ],
+   "obs_dim": 24,
+   "padding_len": 0,
+   "padding_all_zero": null,
+   "max_abs_obs_err_after_restore": 0.0,
+   "max_abs_reward_err_after_restore": 0.0,
+   "observation_keys": {
+    "orientations": [
+     14
+    ],
+    "height": [],
+    "velocity": [
+     9
+    ]
+   },
+   "task_class": "PlanarWalker",
+   "move_speed": 8
+  },
+  "walker-walk-backwards": {
+   "wrapper_chain": [
+    "TensorWrapper",
+    "Timeout",
+    "DMControlWrapper",
+    "Wrapper"
+   ],
+   "obs_dim": 24,
+   "padding_len": 0,
+   "padding_all_zero": null,
+   "max_abs_obs_err_after_restore": 0.0,
+   "max_abs_reward_err_after_restore": 0.0,
+   "observation_keys": {
+    "orientations": [
+     14
+    ],
+    "height": [],
+    "velocity": [
+     9
+    ]
+   },
+   "task_class": "BackwardsPlanarWalker",
+   "move_speed": 1
+  },
+  "walker-run-backwards": {
+   "wrapper_chain": [
+    "TensorWrapper",
+    "Timeout",
+    "DMControlWrapper",
+    "Wrapper"
+   ],
+   "obs_dim": 24,
+   "padding_len": 0,
+   "padding_all_zero": null,
+   "max_abs_obs_err_after_restore": 0.0,
+   "max_abs_reward_err_after_restore": 0.0,
+   "observation_keys": {
+    "orientations": [
+     14
+    ],
+    "height": [],
+    "velocity": [
+     9
+    ]
+   },
+   "task_class": "BackwardsPlanarWalker",
+   "move_speed": 8
+  }
+ },
+ "walker_walk_reward_composition": {
+  "max_abs(r_wrapper - sum_substeps)": 1.3244500773890167e-08,
+  "all_replayed_states_equal": true,
+  "example": [
+   {
+    "r_wrapper": 0.31202152371406555,
+    "sum_substeps": 0.3120215320522772,
+    "r_last_substep": 0.15504435047883372,
+    "state_after_replay_equal": true
+   },
+   {
+    "r_wrapper": 0.30677860975265503,
+    "sum_substeps": 0.3067786229971558,
+    "r_last_substep": 0.15349742706332312,
+    "state_after_replay_equal": true
+   },
+   {
+    "r_wrapper": 0.3018273115158081,
+    "sum_substeps": 0.3018273202863181,
+    "r_last_substep": 0.14893021647136967,
+    "state_after_replay_equal": true
+   }
+  ],
+  "actuator_ctrlrange": [
+   [
+    -1.0,
+    1.0
+   ],
+   [
+    -1.0,
+    1.0
+   ],
+   [
+    -1.0,
+    1.0
+   ],
+   [
+    -1.0,
+    1.0
+   ],
+   [
+    -1.0,
+    1.0
+   ],
+   [
+    -1.0,
+    1.0
+   ]
+  ]
+ },
+ "architecture": {
+  "1M": {
+   "task_dim": 96,
+   "latent_dim": 128,
+   "enc_dim": 256,
+   "num_enc_layers": 2,
+   "mlp_dim": 384,
+   "num_q": 2,
+   "simnorm_dim": 8,
+   "encoder_repr": "Sequential(\n  (0): NormedLinear(in_features=120, out_features=256, bias=True, act=Mish)\n  (1): NormedLinear(in_features=256, out_features=128, bias=True, act=SimNorm)\n)",
+   "encoder_first_layer_in_features": 120,
+   "n_params_total": 1426427,
+   "n_params_encoder": 64640,
+   "task_emb_num": 30,
+   "task_emb_max_norm": 1,
+   "task_emb_norms_walker": {
+    "walker-stand": 0.9962881207466125,
+    "walker-walk": 0.9959806203842163,
+    "walker-run": 0.9970844984054565,
+    "walker-walk-backwards": 0.9949139952659607,
+    "walker-run-backwards": 0.999764621257782
+   },
+   "task_emb_norm_min_max_all": [
+    0.9646490216255188,
+    0.9999999403953552
+   ],
+   "simnorm_group_sums_close_to_1": true,
+   "encode_differs_across_walker_tasks": 0.3005558252334595,
+   "manual_reimplementation_max_abs_diff": 0.0,
+   "pairwise_cos_walker_embeddings": [
+    [
+     1.0,
+     0.8327,
+     0.6465,
+     0.8248,
+     0.6818
+    ],
+    [
+     0.8327,
+     1.0,
+     0.7003,
+     0.7973,
+     0.6362
+    ],
+    [
+     0.6465,
+     0.7003,
+     1.0,
+     0.6217,
+     0.6486
+    ],
+    [
+     0.8248,
+     0.7973,
+     0.6217,
+     1.0,
+     0.73
+    ],
+    [
+     0.6818,
+     0.6362,
+     0.6486,
+     0.73,
+     1.0
+    ]
+   ]
+  },
+  "5M": {
+   "task_dim": 64,
+   "latent_dim": 512,
+   "enc_dim": 256,
+   "num_enc_layers": 2,
+   "mlp_dim": 512,
+   "num_q": 5,
+   "simnorm_dim": 8,
+   "encoder_repr": "Sequential(\n  (0): NormedLinear(in_features=88, out_features=256, bias=True, act=Mish)\n  (1): NormedLinear(in_features=256, out_features=512, bias=True, act=SimNorm)\n)",
+   "encoder_first_layer_in_features": 88,
+   "n_params_total": 5241066,
+   "n_params_encoder": 155904,
+   "task_emb_num": 30,
+   "task_emb_max_norm": 1,
+   "task_emb_norms_walker": {
+    "walker-stand": 0.990512490272522,
+    "walker-walk": 0.993687629699707,
+    "walker-run": 0.995938241481781,
+    "walker-walk-backwards": 0.9961792230606079,
+    "walker-run-backwards": 0.9975133538246155
+   },
+   "task_emb_norm_min_max_all": [
+    0.9433755874633789,
+    0.9999998807907104
+   ],
+   "simnorm_group_sums_close_to_1": true,
+   "encode_differs_across_walker_tasks": 0.17062415182590485,
+   "manual_reimplementation_max_abs_diff": 0.0,
+   "pairwise_cos_walker_embeddings": [
+    [
+     1.0,
+     0.8298,
+     0.692,
+     0.7873,
+     0.6451
+    ],
+    [
+     0.8298,
+     1.0,
+     0.7368,
+     0.7398,
+     0.6295
+    ],
+    [
+     0.692,
+     0.7368,
+     1.0,
+     0.6316,
+     0.6558
+    ],
+    [
+     0.7873,
+     0.7398,
+     0.6316,
+     1.0,
+     0.7421
+    ],
+    [
+     0.6451,
+     0.6295,
+     0.6558,
+     0.7421,
+     1.0
+    ]
+   ]
+  },
+  "19M": {
+   "task_dim": 64,
+   "latent_dim": 512,
+   "enc_dim": 1024,
+   "num_enc_layers": 3,
+   "mlp_dim": 1024,
+   "num_q": 5,
+   "simnorm_dim": 8,
+   "encoder_repr": "Sequential(\n  (0): NormedLinear(in_features=88, out_features=1024, bias=True, act=Mish)\n  (1): NormedLinear(in_features=1024, out_features=1024, bias=True, act=Mish)\n  (2): NormedLinear(in_features=1024, out_features=512, bias=True, act=SimNorm)\n)",
+   "encoder_first_layer_in_features": 88,
+   "n_params_total": 16031210,
+   "n_params_encoder": 1670656,
+   "task_emb_num": 30,
+   "task_emb_max_norm": 1,
+   "task_emb_norms_walker": {
+    "walker-stand": 0.9964331388473511,
+    "walker-walk": 0.9945462346076965,
+    "walker-run": 0.9996246695518494,
+    "walker-walk-backwards": 0.9981605410575867,
+    "walker-run-backwards": 0.9958186745643616
+   },
+   "task_emb_norm_min_max_all": [
+    0.9514462351799011,
+    0.9999761581420898
+   ],
+   "simnorm_group_sums_close_to_1": true,
+   "encode_differs_across_walker_tasks": 0.21642953157424927,
+   "manual_reimplementation_max_abs_diff": 0.0,
+   "pairwise_cos_walker_embeddings": [
+    [
+     1.0,
+     0.738,
+     0.5336,
+     0.6893,
+     0.5187
+    ],
+    [
+     0.738,
+     1.0,
+     0.629,
+     0.6154,
+     0.4564
+    ],
+    [
+     0.5336,
+     0.629,
+     1.0,
+     0.4473,
+     0.6594
+    ],
+    [
+     0.6893,
+     0.6154,
+     0.4473,
+     1.0,
+     0.6222
+    ],
+    [
+     0.5187,
+     0.4564,
+     0.6594,
+     0.6222,
+     1.0
+    ]
+   ]
+  },
+  "48M": {
+   "task_dim": 64,
+   "latent_dim": 768,
+   "enc_dim": 1792,
+   "num_enc_layers": 4,
+   "mlp_dim": 1792,
+   "num_q": 5,
+   "simnorm_dim": 8,
+   "encoder_repr": "Sequential(\n  (0): NormedLinear(in_features=88, out_features=1792, bias=True, act=Mish)\n  (1): NormedLinear(in_features=1792, out_features=1792, bias=True, act=Mish)\n  (2): NormedLinear(in_features=1792, out_features=1792, bias=True, act=Mish)\n  (3): NormedLinear(in_features=1792, out_features=768, bias=True, act=SimNorm)\n)",
+   "encoder_first_layer_in_features": 88,
+   "n_params_total": 48242410,
+   "n_params_encoder": 7974912,
+   "task_emb_num": 30,
+   "task_emb_max_norm": 1,
+   "task_emb_norms_walker": {
+    "walker-stand": 0.9950810074806213,
+    "walker-walk": 0.9920461177825928,
+    "walker-run": 0.997636079788208,
+    "walker-walk-backwards": 0.9924765229225159,
+    "walker-run-backwards": 0.9961340427398682
+   },
+   "task_emb_norm_min_max_all": [
+    0.9547592997550964,
+    0.9997673034667969
+   ],
+   "simnorm_group_sums_close_to_1": true,
+   "encode_differs_across_walker_tasks": 0.20338042080402374,
+   "manual_reimplementation_max_abs_diff": 0.0,
+   "pairwise_cos_walker_embeddings": [
+    [
+     1.0,
+     0.7664,
+     0.4895,
+     0.6718,
+     0.4356
+    ],
+    [
+     0.7664,
+     1.0,
+     0.565,
+     0.6244,
+     0.3691
+    ],
+    [
+     0.4895,
+     0.565,
+     1.0,
+     0.3901,
+     0.5851
+    ],
+    [
+     0.6718,
+     0.6244,
+     0.3901,
+     1.0,
+     0.5468
+    ],
+    [
+     0.4356,
+     0.3691,
+     0.5851,
+     0.5468,
+     1.0
+    ]
+   ]
+  }
+ }
+}

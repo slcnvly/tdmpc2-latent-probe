@@ -1,0 +1,7 @@
+venv/
+tdmpc2/
+ckpts/
+__pycache__/
+outputs/
+kaggle/kernel_*/
+data/

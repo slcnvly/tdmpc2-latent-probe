@@ -1,0 +1,21 @@
+# Same pins as tdmpc2/docker/environment.yaml (TD-MPC2 commit 332f19e) where they apply; Python 3.11.
+# torch: CPU wheel locally (pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu),
+#        CUDA wheel on the GPU machine (--index-url https://download.pytorch.org/whl/cu128).
+torch==2.7.1
+dm-control==1.0.16
+mujoco==3.1.2
+gymnasium==0.29.1
+hydra-core==1.3.2
+hydra-submitit-launcher==1.2.0
+submitit==1.5.1
+omegaconf==2.3.0
+numpy==1.24.4
+tensordict==0.8.3
+termcolor==2.4.0
+imageio==2.34.1
+pandas==2.0.3
+tqdm
+huggingface_hub
+scikit-learn
+scipy
+matplotlib
