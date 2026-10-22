@@ -39,7 +39,8 @@ task별 reward가 의존하는 양:
   공식 설정(`compile=true`, warm-up 10 step 이후 평균)의 step당 시간 × 100,000 ≤ 5 GPU 시간(즉 0.18초/step 이하)이고
   최대 GPU 메모리 ≤ 12 GB인 크기 중 **가장 큰 것**.
 - 큰 것을 고르는 이유: 논문 보고값에서 mt30 normalized score가 크기에 따라 18.9(1M)에서 71.4(317M)까지 오르므로, 정책이 실제로 task를 수행하는 체크포인트에서 상태가 수집되게 하기 위해서다.
-- 결과: INITIAL_RESULTS.md, `results/size_choice.json`.
+- 결과 (`results/gate1/size_choice.json`): 조건을 만족한 크기는 1M, 5M, 19M, 48M. **48M을 골랐다** (0.167초/step → 100,000 step에 4.6시간, 최대 765 MB).
+  317M은 1.03초/step(100,000 step에 28.6시간)으로 조건을 넘었다.
 
 ## 3. 측정할 양
 

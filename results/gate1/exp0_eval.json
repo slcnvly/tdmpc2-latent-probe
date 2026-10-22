@@ -1,0 +1,191 @@
+{
+ "model_size": 48,
+ "seed": 1,
+ "episodes_per_task": 5,
+ "gpu": "Tesla T4",
+ "compile": true,
+ "eval_mode": false,
+ "tasks": {
+  "walker-stand": {
+   "task_idx": 0,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 996.8086704015732,
+     "steps": 500,
+     "seconds": 174.1
+    },
+    {
+     "episode": 1,
+     "return": 996.98941385746,
+     "steps": 500,
+     "seconds": 80.6
+    },
+    {
+     "episode": 2,
+     "return": 981.7228768952191,
+     "steps": 500,
+     "seconds": 79.1
+    },
+    {
+     "episode": 3,
+     "return": 982.7082939594984,
+     "steps": 500,
+     "seconds": 79.5
+    },
+    {
+     "episode": 4,
+     "return": 983.2498873360455,
+     "steps": 500,
+     "seconds": 79.7
+    }
+   ],
+   "mean_return": 988.2958284899593
+  },
+  "walker-walk": {
+   "task_idx": 1,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 988.7605167627335,
+     "steps": 500,
+     "seconds": 80.0
+    },
+    {
+     "episode": 1,
+     "return": 977.6519229412079,
+     "steps": 500,
+     "seconds": 79.9
+    },
+    {
+     "episode": 2,
+     "return": 974.283968789503,
+     "steps": 500,
+     "seconds": 80.0
+    },
+    {
+     "episode": 3,
+     "return": 967.1504204161465,
+     "steps": 500,
+     "seconds": 80.0
+    },
+    {
+     "episode": 4,
+     "return": 974.3909567464143,
+     "steps": 500,
+     "seconds": 80.0
+    }
+   ],
+   "mean_return": 976.447557131201
+  },
+  "walker-run": {
+   "task_idx": 2,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 654.1587280631065,
+     "steps": 500,
+     "seconds": 79.7
+    },
+    {
+     "episode": 1,
+     "return": 619.5969517230988,
+     "steps": 500,
+     "seconds": 79.8
+    },
+    {
+     "episode": 2,
+     "return": 604.4181186379865,
+     "steps": 500,
+     "seconds": 79.7
+    },
+    {
+     "episode": 3,
+     "return": 565.7259718216956,
+     "steps": 500,
+     "seconds": 79.6
+    },
+    {
+     "episode": 4,
+     "return": 638.5443470794708,
+     "steps": 500,
+     "seconds": 79.6
+    }
+   ],
+   "mean_return": 616.4888234650716
+  },
+  "walker-walk-backwards": {
+   "task_idx": 19,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 982.8478198945522,
+     "steps": 500,
+     "seconds": 79.8
+    },
+    {
+     "episode": 1,
+     "return": 977.7403797209263,
+     "steps": 500,
+     "seconds": 79.7
+    },
+    {
+     "episode": 2,
+     "return": 955.3085712562315,
+     "steps": 500,
+     "seconds": 79.7
+    },
+    {
+     "episode": 3,
+     "return": 958.2459560474381,
+     "steps": 500,
+     "seconds": 79.6
+    },
+    {
+     "episode": 4,
+     "return": 944.7696372638457,
+     "steps": 500,
+     "seconds": 79.7
+    }
+   ],
+   "mean_return": 963.7824728365988
+  },
+  "walker-run-backwards": {
+   "task_idx": 20,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 166.671006411314,
+     "steps": 500,
+     "seconds": 79.8
+    },
+    {
+     "episode": 1,
+     "return": 189.32593220472336,
+     "steps": 500,
+     "seconds": 79.8
+    },
+    {
+     "episode": 2,
+     "return": 163.8372185509652,
+     "steps": 500,
+     "seconds": 79.8
+    },
+    {
+     "episode": 3,
+     "return": 191.47273841500282,
+     "steps": 500,
+     "seconds": 79.7
+    },
+    {
+     "episode": 4,
+     "return": 163.27865975443274,
+     "steps": 500,
+     "seconds": 79.7
+    }
+   ],
+   "mean_return": 174.91711106728764
+  }
+ },
+ "peak_gpu_mem_MB": 562.31103515625
+}

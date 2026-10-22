@@ -1,0 +1,10 @@
+{
+ "rule": "largest size with mean step time x 100000 <= 5 h and peak GPU memory <= 12 GB (compile=true)",
+ "eligible": [
+  1,
+  5,
+  19,
+  48
+ ],
+ "chosen": 48
+}

@@ -20,7 +20,7 @@
 | 6 reward | 다섯 개 모두 physics state만의 함수. 단, env 한 step의 reward는 physics 두 substep reward의 합 (확인) |
 | 7 상태 저장·복원 | `physics.get_state()` / `set_state()` + `forward()`로 관측·reward 재계산 오차 0.0 (확인) |
 | 8 데이터셋 부분 다운로드 | chunk 단위로만 가능. mt30은 chunk 4개(5.8~12.8 GB), task 단위 분리 없음. 받지 않았다 (코드 확인) |
-| 9 실행 비용 | Kaggle T4에서 측정 중 → 결과는 아래 9절 |
+| 9 실행 비용 | Tesla T4, 공식 planning 설정: step당 1M 0.010초 ~ 317M 1.03초, 최대 GPU 메모리 30 MB ~ 4.6 GB (확인, 9절) |
 | 10 Newt | 설치하지 않았다. TD-MPC2가 부적합하다는 근거는 지금까지 없다 |
 
 **사전 정보와 다른 점**
@@ -148,7 +148,27 @@ reward 입력량과 관측 성분의 관계 (`results/reward_obs_mapping.json`, 
 
 ## 9. 실행 비용
 
-Kaggle Tesla T4에서 측정. (측정 후 채움)
+Kaggle Tesla T4 1장, `code/eval_single_task.py cost` (`results/gate1/cost.json`).
+walker-walk에서 200 step을 돌렸다. planning 설정은 공식 기본값이다 (iterations 6, num_samples 512, horizon 3, `config.yaml:34-42`).
+시간은 `agent.act` 한 번(encode + MPPI planning) + CUDA 동기화이며 env step 시간은 넣지 않았다. 처음 10 step은 평균에서 뺐다.
+
+| 크기 | compile | step당 평균 (초) | 첫 step (초) | 최대 GPU 메모리 (MB) | latent_dim | task_dim |
+|---|---|---|---|---|---|---|
+| 1M | true | 0.0095 | 57.4 | 30 | 128 | 96 |
+| 1M | false | 0.0490 | 0.16 | 32 | 128 | 96 |
+| 5M | true | 0.0196 | 48.2 | 90 | 512 | 64 |
+| 5M | false | 0.0500 | 0.05 | 100 | 512 | 64 |
+| 19M | true | 0.0528 | 47.9 | 272 | 512 | 64 |
+| 19M | false | 0.0646 | 0.08 | 296 | 512 | 64 |
+| 48M | true | 0.1671 | 49.7 | 765 | 768 | 64 |
+| 48M | false | 0.1633 | 0.18 | 843 | 768 | 64 |
+| 317M | true | 1.0302 | 0.98 | 4,623 | 1376 | 96 |
+| 317M | false | 1.0258 | 0.96 | 6,548 | 1376 | 96 |
+
+- `compile=true`의 첫 step은 `torch.compile`과 CUDA graph 준비 시간이다 (약 50초). 317M은 첫 step이 길지 않았는데, compile이 실제로 적용됐는지는 확인하지 않았다.
+- 체크포인트 로드와 30개 env 생성: 4.5~12.8초.
+- 30개 env를 모두 만드는 이유: 공식 `make_env`가 mt30이면 30개를 만든다 (`envs/__init__.py:37-55`).
+- 메모리는 README의 "8 GB 이상 권장"보다 작게 나왔다 (317M도 4.6~6.5 GB). T4(15 GB)에서 다섯 크기 모두 돈다.
 
 ## 10. Newt
 
