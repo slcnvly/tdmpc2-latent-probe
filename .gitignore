@@ -5,3 +5,4 @@ __pycache__/
 outputs/
 kaggle/kernel_*/
 data/
+kaggle_out/
