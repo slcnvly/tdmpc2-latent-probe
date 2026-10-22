@@ -1,0 +1,27 @@
+{
+ "n_steps": 2000,
+ "max_abs(torso_upright - orientations[0])": 0.0,
+ "max_abs(torso_height - height)": 0.0,
+ "corr(horizontal_velocity, velocity[1] (rootx))": 0.390172410202402,
+ "max_abs(horizontal_velocity - velocity[1])": 1.9628798322147136,
+ "qvel_names": [
+  "rootz",
+  "rootx",
+  "rooty",
+  "right_hip",
+  "right_knee",
+  "right_ankle",
+  "left_hip",
+  "left_knee",
+  "left_ankle"
+ ],
+ "orientation_bodies (xx, xz each)": [
+  "torso",
+  "right_thigh",
+  "right_leg",
+  "right_foot",
+  "left_thigh",
+  "left_leg",
+  "left_foot"
+ ]
+}
