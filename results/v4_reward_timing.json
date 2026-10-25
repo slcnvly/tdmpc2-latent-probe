@@ -1,0 +1,531 @@
+{
+ "tasks": {
+  "walker-stand": {
+   "task_idx": 0,
+   "n_steps": 40,
+   "max_abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+   "all_last_substep_state_equals_s_t+1": true,
+   "max_abs(r_logged - sum_substeps)": 5.436859651375414e-08,
+   "max_abs(r_tau(s_t) - r_logged_t)": 1.004784438921348,
+   "mean_abs(r_tau(s_t) - r_logged_t)": 0.33874032102835827,
+   "max_abs(r_tau(s) change when only ctrl changes)": 0.0,
+   "examples": [
+    {
+     "t": 0,
+     "r_logged_t": 1.9545679092407227,
+     "substep_rewards": [
+      0.9805117069402206,
+      0.9740561910738758
+     ],
+     "r_tau(s_t)": 0.9833924464702783,
+     "r_tau(s_t+1)": 0.9740561910738758,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.1226626295268716e-08
+    },
+    {
+     "t": 1,
+     "r_logged_t": 1.9640144109725952,
+     "substep_rewards": [
+      0.9776085053160881,
+      0.9864058753715598
+     ],
+     "r_tau(s_t)": 0.9740561910738758,
+     "r_tau(s_t+1)": 0.9864058753715598,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 3.0284947438730114e-08
+    },
+    {
+     "t": 2,
+     "r_logged_t": 1.9911903142929077,
+     "substep_rewards": [
+      0.9943024175054506,
+      0.9968879440039484
+     ],
+     "r_tau(s_t)": 0.9864058753715598,
+     "r_tau(s_t+1)": 0.9968879440039484,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 4.7216491161350405e-08
+    },
+    {
+     "t": 3,
+     "r_logged_t": 1.97365140914917,
+     "substep_rewards": [
+      0.9940214008796401,
+      0.9796300058205207
+     ],
+     "r_tau(s_t)": 0.9968879440039484,
+     "r_tau(s_t+1)": 0.9796300058205207,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 2.4490089955975236e-09
+    },
+    {
+     "t": 4,
+     "r_logged_t": 1.9094674587249756,
+     "substep_rewards": [
+      0.9635825093182223,
+      0.9458849174078534
+     ],
+     "r_tau(s_t)": 0.9796300058205207,
+     "r_tau(s_t+1)": 0.9458849174078534,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 3.1998899974183814e-08
+    },
+    {
+     "t": 38,
+     "r_logged_t": 0.250973641872406,
+     "substep_rewards": [
+      0.12597251404950188,
+      0.12500114036862894
+     ],
+     "r_tau(s_t)": 0.12709651709650635,
+     "r_tau(s_t+1)": 0.12500114036862894,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.2545724792367707e-08
+    },
+    {
+     "t": 39,
+     "r_logged_t": 0.24788855016231537,
+     "substep_rewards": [
+      0.12456227067683324,
+      0.12332627833284088
+     ],
+     "r_tau(s_t)": 0.12500114036862894,
+     "r_tau(s_t+1)": 0.12332627833284088,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.1526412602158587e-09
+    }
+   ],
+   "get_reward_signature": "get_reward(self, physics)"
+  },
+  "walker-walk": {
+   "task_idx": 1,
+   "n_steps": 40,
+   "max_abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+   "all_last_substep_state_equals_s_t+1": true,
+   "max_abs(r_logged - sum_substeps)": 2.9347681396174607e-08,
+   "max_abs(r_tau(s_t) - r_logged_t)": 0.5630804602136705,
+   "mean_abs(r_tau(s_t) - r_logged_t)": 0.11250617130457514,
+   "max_abs(r_tau(s) change when only ctrl changes)": 0.0,
+   "examples": [
+    {
+     "t": 0,
+     "r_logged_t": 0.3257613182067871,
+     "substep_rewards": [
+      0.1634186178233701,
+      0.16234269851231262
+     ],
+     "r_tau(s_t)": 0.16389874107837973,
+     "r_tau(s_t+1)": 0.16234269851231262,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.871104382544786e-09
+    },
+    {
+     "t": 1,
+     "r_logged_t": 0.3273357152938843,
+     "substep_rewards": [
+      0.1629347508860147,
+      0.16440097922859329
+     ],
+     "r_tau(s_t)": 0.16234269851231262,
+     "r_tau(s_t+1)": 0.16440097922859329,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.4820723703845573e-08
+    },
+    {
+     "t": 2,
+     "r_logged_t": 0.3321540653705597,
+     "substep_rewards": [
+      0.16571706958424176,
+      0.16643699702068007
+     ],
+     "r_tau(s_t)": 0.16440097922859329,
+     "r_tau(s_t+1)": 0.16643699702068007,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.2343621680344086e-09
+    },
+    {
+     "t": 3,
+     "r_logged_t": 0.33567288517951965,
+     "substep_rewards": [
+      0.16640680441395447,
+      0.16926606869485636
+     ],
+     "r_tau(s_t)": 0.16643699702068007,
+     "r_tau(s_t+1)": 0.16926606869485636,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.2070708821365628e-08
+    },
+    {
+     "t": 4,
+     "r_logged_t": 0.3960212171077728,
+     "substep_rewards": [
+      0.1605970848863704,
+      0.23542413532002052
+     ],
+     "r_tau(s_t)": 0.16926606869485636,
+     "r_tau(s_t+1)": 0.23542413532002052,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 3.098618084340643e-09
+    },
+    {
+     "t": 38,
+     "r_logged_t": 0.0418289415538311,
+     "substep_rewards": [
+      0.020995419008250315,
+      0.02083352339477149
+     ],
+     "r_tau(s_t)": 0.021182752849417726,
+     "r_tau(s_t+1)": 0.02083352339477149,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 8.491907038665758e-10
+    },
+    {
+     "t": 39,
+     "r_logged_t": 0.041314758360385895,
+     "substep_rewards": [
+      0.020760378446138875,
+      0.020554379722140147
+     ],
+     "r_tau(s_t)": 0.02083352339477149,
+     "r_tau(s_t+1)": 0.020554379722140147,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.9210687207671384e-10
+    }
+   ],
+   "get_reward_signature": "get_reward(self, physics)"
+  },
+  "walker-run": {
+   "task_idx": 2,
+   "n_steps": 40,
+   "max_abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+   "all_last_substep_state_equals_s_t+1": true,
+   "max_abs(r_logged - sum_substeps)": 1.4820723703845573e-08,
+   "max_abs(r_tau(s_t) - r_logged_t)": 0.17926575284023397,
+   "mean_abs(r_tau(s_t) - r_logged_t)": 0.06306836269308805,
+   "max_abs(r_tau(s) change when only ctrl changes)": 0.0,
+   "examples": [
+    {
+     "t": 0,
+     "r_logged_t": 0.3257613182067871,
+     "substep_rewards": [
+      0.1634186178233701,
+      0.16234269851231262
+     ],
+     "r_tau(s_t)": 0.16389874107837973,
+     "r_tau(s_t+1)": 0.16234269851231262,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.871104382544786e-09
+    },
+    {
+     "t": 1,
+     "r_logged_t": 0.3273357152938843,
+     "substep_rewards": [
+      0.1629347508860147,
+      0.16440097922859329
+     ],
+     "r_tau(s_t)": 0.16234269851231262,
+     "r_tau(s_t+1)": 0.16440097922859329,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.4820723703845573e-08
+    },
+    {
+     "t": 2,
+     "r_logged_t": 0.3319011926651001,
+     "substep_rewards": [
+      0.16571706958424176,
+      0.1661841164614941
+     ],
+     "r_tau(s_t)": 0.16440097922859329,
+     "r_tau(s_t+1)": 0.1661841164614941,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 6.619364223414692e-09
+    },
+    {
+     "t": 3,
+     "r_logged_t": 0.32978326082229614,
+     "substep_rewards": [
+      0.1657623048466918,
+      0.16402096776901634
+     ],
+     "r_tau(s_t)": 0.1661841164614941,
+     "r_tau(s_t+1)": 0.16402096776901634,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.1793412024729832e-08
+    },
+    {
+     "t": 4,
+     "r_logged_t": 0.3279666602611542,
+     "substep_rewards": [
+      0.1605970848863704,
+      0.1673695673703145
+     ],
+     "r_tau(s_t)": 0.16402096776901634,
+     "r_tau(s_t+1)": 0.1673695673703145,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 8.004469309597084e-09
+    },
+    {
+     "t": 38,
+     "r_logged_t": 0.0418289415538311,
+     "substep_rewards": [
+      0.020995419008250315,
+      0.02083352339477149
+     ],
+     "r_tau(s_t)": 0.021182752849417726,
+     "r_tau(s_t+1)": 0.02083352339477149,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 8.491907038665758e-10
+    },
+    {
+     "t": 39,
+     "r_logged_t": 0.041314758360385895,
+     "substep_rewards": [
+      0.020760378446138875,
+      0.020554379722140147
+     ],
+     "r_tau(s_t)": 0.02083352339477149,
+     "r_tau(s_t+1)": 0.020554379722140147,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.9210687207671384e-10
+    }
+   ],
+   "get_reward_signature": "get_reward(self, physics)"
+  },
+  "walker-walk-backwards": {
+   "task_idx": 19,
+   "n_steps": 40,
+   "max_abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+   "all_last_substep_state_equals_s_t+1": true,
+   "max_abs(r_logged - sum_substeps)": 1.4802505721167591e-08,
+   "max_abs(r_tau(s_t) - r_logged_t)": 0.2521348873006092,
+   "mean_abs(r_tau(s_t) - r_logged_t)": 0.10855307692780598,
+   "max_abs(r_tau(s) change when only ctrl changes)": 0.0,
+   "examples": [
+    {
+     "t": 0,
+     "r_logged_t": 0.33097946643829346,
+     "substep_rewards": [
+      0.16710522806717457,
+      0.16387424380433155
+     ],
+     "r_tau(s_t)": 0.16389874107837973,
+     "r_tau(s_t+1)": 0.16387424380433155,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 5.4332126575573625e-09
+    },
+    {
+     "t": 1,
+     "r_logged_t": 0.33634012937545776,
+     "substep_rewards": [
+      0.16481637661025542,
+      0.17152376034409164
+     ],
+     "r_tau(s_t)": 0.16387424380433155,
+     "r_tau(s_t+1)": 0.17152376034409164,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 7.578889293924362e-09
+    },
+    {
+     "t": 2,
+     "r_logged_t": 0.33897727727890015,
+     "substep_rewards": [
+      0.17282930084652573,
+      0.16614799066732475
+     ],
+     "r_tau(s_t)": 0.17152376034409164,
+     "r_tau(s_t+1)": 0.16614799066732475,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.4234950329594653e-08
+    },
+    {
+     "t": 3,
+     "r_logged_t": 0.3289419114589691,
+     "substep_rewards": [
+      0.16567023347994,
+      0.16327166763675346
+     ],
+     "r_tau(s_t)": 0.16614799066732475,
+     "r_tau(s_t+1)": 0.16327166763675346,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.0342275647001742e-08
+    },
+    {
+     "t": 4,
+     "r_logged_t": 0.41540655493736267,
+     "substep_rewards": [
+      0.2577590606052284,
+      0.15764748623464223
+     ],
+     "r_tau(s_t)": 0.16327166763675346,
+     "r_tau(s_t+1)": 0.15764748623464223,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 8.097492010250562e-09
+    },
+    {
+     "t": 38,
+     "r_logged_t": 0.11279261112213135,
+     "substep_rewards": [
+      0.06010691409523303,
+      0.0526856995001025
+     ],
+     "r_tau(s_t)": 0.07498927390907967,
+     "r_tau(s_t+1)": 0.0526856995001025,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 2.4732041692399065e-09
+    },
+    {
+     "t": 39,
+     "r_logged_t": 0.06916167587041855,
+     "substep_rewards": [
+      0.04326600889198654,
+      0.025895667234175704
+     ],
+     "r_tau(s_t)": 0.0526856995001025,
+     "r_tau(s_t+1)": 0.025895667234175704,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 2.5574370399183977e-10
+    }
+   ],
+   "get_reward_signature": "get_reward(self, physics)"
+  },
+  "walker-run-backwards": {
+   "task_idx": 20,
+   "n_steps": 40,
+   "max_abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+   "all_last_substep_state_equals_s_t+1": true,
+   "max_abs(r_logged - sum_substeps)": 1.4802505721167591e-08,
+   "max_abs(r_tau(s_t) - r_logged_t)": 0.16746274865916055,
+   "mean_abs(r_tau(s_t) - r_logged_t)": 0.0637974263698978,
+   "max_abs(r_tau(s) change when only ctrl changes)": 0.0,
+   "examples": [
+    {
+     "t": 0,
+     "r_logged_t": 0.3264135718345642,
+     "substep_rewards": [
+      0.16387944410384567,
+      0.16253414167381494
+     ],
+     "r_tau(s_t)": 0.16389874107837973,
+     "r_tau(s_t+1)": 0.16253414167381494,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.3943096399682275e-08
+    },
+    {
+     "t": 1,
+     "r_logged_t": 0.32846128940582275,
+     "substep_rewards": [
+      0.16316995410154483,
+      0.1652913268680306
+     ],
+     "r_tau(s_t)": 0.16253414167381494,
+     "r_tau(s_t+1)": 0.1652913268680306,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 8.43624731183823e-09
+    },
+    {
+     "t": 2,
+     "r_logged_t": 0.33275407552719116,
+     "substep_rewards": [
+      0.1666060984920272,
+      0.16614799066732475
+     ],
+     "r_tau(s_t)": 0.1652913268680306,
+     "r_tau(s_t+1)": 0.16614799066732475,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.3632160789089909e-08
+    },
+    {
+     "t": 3,
+     "r_logged_t": 0.3289419114589691,
+     "substep_rewards": [
+      0.16567023347994,
+      0.16327166763675346
+     ],
+     "r_tau(s_t)": 0.16614799066732475,
+     "r_tau(s_t+1)": 0.16327166763675346,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.0342275647001742e-08
+    },
+    {
+     "t": 4,
+     "r_logged_t": 0.3303898274898529,
+     "substep_rewards": [
+      0.1727423318512276,
+      0.15764748623464223
+     ],
+     "r_tau(s_t)": 0.16327166763675346,
+     "r_tau(s_t+1)": 0.15764748623464223,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 9.403983092237667e-09
+    },
+    {
+     "t": 38,
+     "r_logged_t": 0.05069940164685249,
+     "substep_rewards": [
+      0.025884355894123152,
+      0.02481504540793787
+     ],
+     "r_tau(s_t)": 0.027908567981875465,
+     "r_tau(s_t+1)": 0.02481504540793787,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 3.4479147315025216e-10
+    },
+    {
+     "t": 39,
+     "r_logged_t": 0.04479562118649483,
+     "substep_rewards": [
+      0.023573582251869837,
+      0.021222040661144585
+     ],
+     "r_tau(s_t)": 0.02481504540793787,
+     "r_tau(s_t+1)": 0.021222040661144585,
+     "last_substep_state_equals_s_t+1": true,
+     "abs(r_tau(s_t+1) - last_substep_reward)": 0.0,
+     "abs(r_logged - sum_substeps)": 1.726519593958642e-09
+    }
+   ],
+   "get_reward_signature": "get_reward(self, physics)"
+  }
+ },
+ "replay_from_restored_s_t_max_abs_state_gap": {
+  "walker-stand": 6.128431095930864e-14,
+  "walker-walk": 6.128431095930864e-14,
+  "walker-run": 6.128431095930864e-14,
+  "walker-walk-backwards": 6.128431095930864e-14,
+  "walker-run-backwards": 6.128431095930864e-14
+ }
+}
