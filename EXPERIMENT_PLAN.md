@@ -1,6 +1,6 @@
-# EXPERIMENT_PLAN (초안, GATE 1 제출용)
+# EXPERIMENT_PLAN (초안, GATE 2 수정본)
 
-작성: 2026-10-22. Step 4 이후는 사용자가 가설을 쓰고 승인한 뒤에만 실행한다.
+작성: 2026-10-22, 수정: 2026-10-26 (V6: VERIFICATION_RESULTS.md 반영). Step 4 이후는 사용자가 가설을 쓰고 승인한 뒤에만 실행한다.
 이 실험은 "task-conditioned encoder가 task에 따라 정보를 어떻게 다르게 보존하는가"의 진단이다.
 공유 encoder bottleneck 가설의 직접 검증이 아니다 (BASELINE_AUDIT.md 4절: mt30 encoder는 task embedding을 입력으로 받는다).
 
@@ -44,19 +44,60 @@ task별 reward가 의존하는 양:
 
 ## 3. 측정할 양
 
+용어 (VERIFICATION_PLAN.md, VERIFICATION_RESULTS.md V4):
+- **s_t**: 관측 o_t를 계산한 물리 상태 (`physics.get_state()`).
+- **r_logged_t**: `env.step(a_t)`가 돌려준 reward = 두 action-repeat substep reward의 합 (`envs/dmcontrol.py:55-60`).
+- **r_τ(s_t)**: s_t를 복원하고(`set_state` 후 `forward()`, 시간 적분 없음) task τ의 `get_reward(physics)`를 적용한 값. **probe target은 r_τ(s_t)다.**
+  V4에서 확인: r_τ(s_{t+1})은 r_logged_t의 두 번째 substep reward와 같고(차이 0.0), reward 함수는 action에 의존하지 않는다.
+
 Step 4 데이터 (task마다 세 종류):
-- (a) 공식 평가 방식: 자기 task embedding, `agent.act(obs, t0, task)`, `eval_mode=False`(공식 `evaluate.py`와 같음).
-- (b) (a)의 행동에 Gaussian noise 추가. 표준편차 **0.3** (행동 범위 [−1, 1]), 더한 뒤 [−1, 1]로 자른다. 실행 전 고정.
-- (c) 균등분포 [−1, 1]^6 무작위 행동.
-- 에피소드 수: (a)(b)는 task당 20개(2절 비용 규칙과 같은 수), (c)는 task당 20개. 비용 실측 결과에 따라 GATE 1에서 조정을 제안할 수 있다.
-- timestep마다 저장: physics state(qpos, qvel, 전체 `get_state()`), padding 전·후 관측, action, 자기 task reward(env step reward와 두 substep reward 각각),
-  다음 관측, source task, rollout 종류, episode ID, timestep, seed.
+- (a) 공식 평가 방식: 자기 task embedding, `agent.act(obs, t0=t==0, task=τ)`, `eval_mode=False`(공식 `evaluate.py:80`과 같음).
+  실행 경로는 V1 수정 후의 `code/eval_single_task.py`와 같다 (V2에서 공식 경로와 50 step 차이 0.0).
+- (b) noise rollout:
+  - a_plan_t = `agent.act(obs, t0, task)`의 출력. 이미 [−1, 1]로 잘려 있다 (`tdmpc2.py:206`).
+  - 실행 행동 a_t = clip(a_plan_t + ε_t, −1, 1), ε_t ~ N(0, 0.3² I_6). 순서는 planner 출력 → noise 더하기 → [−1, 1] clipping → `env.step`.
+  - ε_t는 planner와 다른 전용 난수 생성기(`numpy.random.Generator`, 에피소드 seed로 시작)에서 뽑는다. planner의 torch 난수 흐름을 건드리지 않기 위해서다.
+  - planner의 warm start(`_prev_mean`)는 noise 전의 계획 평균이다. 공식 코드 동작 그대로다 (`tdmpc2.py:205`).
+  - 저장: a_plan_t, ε_t, a_t를 모두 저장한다.
+- (c) 균등분포 U[−1, 1]^6 무작위 행동. planner를 부르지 않는다. 전용 numpy 생성기를 쓴다.
+- 에피소드 수: (a)(b)(c) 각각 task당 20개 (비용: (a)(b) 합계 100,000 planning step × 0.167초 ≈ 4.6 GPU 시간).
+- timestep마다 저장:
+  - physics state s_t (`get_state()` 전체), padding 전·후 관측 o_t (walker는 둘이 같다)
+  - a_plan_t, ε_t, a_t
+  - r_logged_t 전체: 실제 할인 누적 보상을 나중에 계산할 수 있게 매 step 저장한다
+  - 두 substep 각각의 reward와 종료 상태: 실제 `env.step` 안에서 dm_control `step`을 감싸 기록한다 (V4와 같은 방법)
+  - 다음 관측 o_{t+1}, source task, rollout 종류, episode ID, timestep, 에피소드 seed
+- 수집 직후 검증 (assert):
+  - s_t를 복원해 다시 계산한 관측이 저장한 o_t와 같다 (V0 기준과 같은 1e-5).
+  - 두 번째 substep 종료 상태를 복원한 r_τ(s_{t+1})이 기록한 두 번째 substep reward와 같다 (1e-6).
+
+Q 값 기록 (Step 5에서 저장 데이터로 계산, 수집 중에는 계산하지 않음):
+- 매 step, walker 5개 task embedding 각각에 대해 Q(z(s_t, τ), a_t, e_τ).
+  z(s_t, τ) = `model.encode(o_t, τ)`이고, a_t는 실제 실행 행동이다 (b에서는 noise 뒤 행동).
+- 함수: `WorldModel.Q(z, a, task, return_type=...)` (`common/world_model.py:188-218`).
+- 공식 planner의 집계: `return_type='avg'` (`tdmpc2.py:136`). ensemble 5개 중 `torch.randperm`으로 무작위 2개를 골라 two-hot 역변환 후 평균한다 (`world_model.py:214-218`).
+- 이 집계는 무작위다. 그래서 저장은 두 가지로 한다:
+  - (1) `return_type='all'`로 5개 head 각각의 값 (`math.two_hot_inv` 적용)
+  - (2) 공식 방식의 'avg' (고정 seed 생성기로 고른 2개의 평균)
+- 수집 중에 계산하지 않는 이유: `randperm`이 torch 난수를 써서 rollout의 planner 난수 흐름이 공식 경로와 달라지기 때문이다.
+
+중단 대비 저장과 seed 규칙 (Kaggle 세션이 끊겨도 이어서 수집):
+- 에피소드 하나를 파일 하나로 저장한다: `data/<task>/<rollout종류>/ep<번호 3자리>.npz`. 임시 파일에 쓴 뒤 이름을 바꾸므로, 끝난 에피소드만 파일로 남는다.
+- 시작할 때 이미 있는 파일의 에피소드는 건너뛴다.
+- 에피소드 seed = 10000 + 1000 × (mt30 task 번호) + 100 × (종류: a 0, b 1, c 2) + 에피소드 번호.
+  에피소드 시작 시 이 seed로 다음을 다시 정한다:
+  - 그 task env의 초기 상태 난수: `task._random = np.random.RandomState(seed)`
+  - torch 난수: `torch.manual_seed(seed)`
+  - (b)·(c)의 numpy 생성기
+- 그래서 에피소드 결과는 세션 경계나 앞선 에피소드 수에 의존하지 않는다.
+- **공식 평가와 다른 점**: 공식 `evaluate.py`는 `set_seed` 한 번 뒤 난수 흐름이 이어진다. 이 차이는 데이터 수집용 seed 규칙이고, 공식 점수 재현에는 쓰지 않는다.
 
 Step 5 latent와 reward target:
-- 모든 상태를 합친 pooled 집합 S. 각 s에 walker 5개 task embedding으로 z(s, τ) = `model.encode(obs(s), τ)`.
+- 모든 상태를 합친 pooled 집합 S. 각 s_t에 walker 5개 task embedding으로 z(s_t, τ) = `model.encode(o_t, τ)`.
 - 대조군 latent: 같은 구조의 random-init `WorldModel`(seed 고정)의 `encode`.
-- reward target r_τ'(s): s를 복원하고 τ'의 `task.get_reward(physics)`를 그대로 적용한 값 (physics 한 substep의 reward).
-  env step의 기록 reward는 두 substep의 합이라 이 값과 다르다 (BASELINE_AUDIT.md 6절). 일치 검증은 기록한 두 번째 substep reward와 한다.
+- reward target: r_τ'(s_t) (5개 τ'). s_t를 복원해 τ'의 `get_reward(physics)`를 적용한다.
+  - source task 일치 검증: r_source(s_{t+1})을 그 step의 두 번째 substep reward와 비교한다 (V4와 같은 방법).
+  - r_logged_t와는 직접 비교하지 않는다 (두 substep의 합이라 다른 값).
 
 Step 6 probe target: 관측 성분 묶음 `orientations`(14), `height`(1), `velocity`(9) — 코드상 이름 그대로 — 와 r_τ'(s) 5개.
 입력: z(s, τ) (τ마다 따로), padding을 뺀 raw 관측(walker는 padding이 없어 24차원 그대로), random-init encoder의 z.
@@ -82,7 +123,7 @@ Step 7: ‖z(s, τ) − z(s, τ')‖ 분포와 두 기준 거리 (같은 τ에�
 - **task embedding을 바꾼 입력**: z(s, τ')는 학습 중 나오지 않은 (상태, task) 조합일 수 있다. Step 7 결과마다 명시한다.
 - **SimNorm**: latent는 8차원 묶음마다 simplex 위에 있다. 거리와 선형 probe의 해석이 일반 실수 벡터와 다르다.
 - **horizontal_velocity는 관측에 직접 없다**: walk·run·backwards reward의 핵심 입력이 관측 성분이 아니므로, reward R²와 관측 성분 R²의 차이가 이 때문일 수 있다.
-- **reward 정의**: 기록 reward(두 substep 합)와 r_τ'(s)(한 substep)가 다르다.
+- **reward 정의**: r_logged_t(두 substep 합)와 probe target r_τ(s_t)(복원한 상태 하나의 reward)는 다른 값이다 (VERIFICATION_RESULTS.md V4).
 - **planning noise**: 공식 평가는 `eval_mode=False`라 (a)에도 이미 탐색 noise가 있다.
 - **체크포인트 하나**: 크기 하나, 학습 시드 하나다.
 

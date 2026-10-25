@@ -1,0 +1,248 @@
+{
+ "n_tasks_with_rewards": 30,
+ "per_task_return": {
+  "walker-stand": 996.8763427734375,
+  "walker-walk": 990.4832763671875,
+  "walker-run": 602.3815307617188,
+  "cheetah-run": 208.20469665527344,
+  "reacher-easy": 990.0,
+  "reacher-hard": 988.0,
+  "acrobot-swingup": 22.664058685302734,
+  "pendulum-swingup": 942.0,
+  "cartpole-balance": 996.233642578125,
+  "cartpole-balance-sparse": 1000.0,
+  "cartpole-swingup": 0.5877439379692078,
+  "cartpole-swingup-sparse": 0.0,
+  "cup-catch": 902.0,
+  "finger-spin": 969.0,
+  "finger-turn-easy": 988.0,
+  "finger-turn-hard": 987.0,
+  "fish-swim": 748.7081909179688,
+  "hopper-stand": 477.0340270996094,
+  "hopper-hop": 58.00672149658203,
+  "walker-walk-backwards": 981.769775390625,
+  "walker-run-backwards": 222.63531494140625,
+  "cheetah-run-backwards": 488.412841796875,
+  "cheetah-run-front": 102.74700927734375,
+  "cheetah-run-back": 256.3659973144531,
+  "cheetah-jump": 318.146728515625,
+  "hopper-hop-backwards": 354.78118896484375,
+  "reacher-three-easy": 980.0,
+  "reacher-three-hard": 923.0,
+  "cup-spin": 833.454833984375,
+  "pendulum-spin": 906.6512451171875
+ },
+ "per_task_return_np_sum_first_version": {
+  "walker-stand": 996.8765869140625,
+  "walker-walk": 990.4832763671875,
+  "walker-run": 602.3814086914062,
+  "cheetah-run": 208.20468139648438,
+  "reacher-easy": 990.0,
+  "reacher-hard": 988.0,
+  "acrobot-swingup": 22.664073944091797,
+  "pendulum-swingup": 942.0,
+  "cartpole-balance": 996.2332763671875,
+  "cartpole-balance-sparse": 1000.0,
+  "cartpole-swingup": 0.5877439379692078,
+  "cartpole-swingup-sparse": 0.0,
+  "cup-catch": 902.0,
+  "finger-spin": 969.0,
+  "finger-turn-easy": 988.0,
+  "finger-turn-hard": 987.0,
+  "fish-swim": 748.7083740234375,
+  "hopper-stand": 477.0340881347656,
+  "hopper-hop": 58.006717681884766,
+  "walker-walk-backwards": 981.7698974609375,
+  "walker-run-backwards": 222.6353759765625,
+  "cheetah-run-backwards": 488.41302490234375,
+  "cheetah-run-front": 102.7469253540039,
+  "cheetah-run-back": 256.36602783203125,
+  "cheetah-jump": 318.1469421386719,
+  "hopper-hop-backwards": 354.78125,
+  "reacher-three-easy": 980.0,
+  "reacher-three-hard": 923.0,
+  "cup-spin": 833.45458984375,
+  "pendulum-spin": 906.651123046875
+ },
+ "printed_R": {
+  "walker-stand": 996.9,
+  "walker-walk": 990.5,
+  "walker-run": 602.4,
+  "cheetah-run": 208.2,
+  "reacher-easy": 990.0,
+  "reacher-hard": 988.0,
+  "acrobot-swingup": 22.7,
+  "pendulum-swingup": 942.0,
+  "cartpole-balance": 996.2,
+  "cartpole-balance-sparse": 1000.0,
+  "cartpole-swingup": 0.6,
+  "cartpole-swingup-sparse": 0.0,
+  "cup-catch": 902.0,
+  "finger-spin": 969.0,
+  "finger-turn-easy": 988.0,
+  "finger-turn-hard": 987.0,
+  "fish-swim": 748.7,
+  "hopper-stand": 477.0,
+  "hopper-hop": 58.0,
+  "walker-walk-backwards": 981.8,
+  "walker-run-backwards": 222.6,
+  "cheetah-run-backwards": 488.4,
+  "cheetah-run-front": 102.7,
+  "cheetah-run-back": 256.4,
+  "cheetah-jump": 318.1,
+  "hopper-hop-backwards": 354.8,
+  "reacher-three-easy": 980.0,
+  "reacher-three-hard": 923.0,
+  "cup-spin": 833.5,
+  "pendulum-spin": 906.7
+ },
+ "normalized_score_recomputed": 64.11715055525302,
+ "normalized_score_printed": 64.12,
+ "paper_mt30_48M": 59.4,
+ "walker": {
+  "walker-stand": {
+   "official_1ep": 996.8763427734375,
+   "official_printed": 996.9,
+   "exp0_pre_v1": {
+    "returns": [
+     996.8086704015732,
+     996.98941385746,
+     981.7228768952191,
+     982.7082939594984,
+     983.2498873360455
+    ],
+    "min": 981.7228768952191,
+    "max": 996.98941385746,
+    "in_range": true
+   },
+   "exp0_post_v1": {
+    "returns": [
+     996.8763427734375,
+     996.7122192382812,
+     983.7637939453125,
+     982.0311279296875,
+     983.5478515625
+    ],
+    "min": 982.0311279296875,
+    "max": 996.8763427734375,
+    "in_range": true
+   },
+   "own_trace_first_episode": 996.8763427734375
+  },
+  "walker-walk": {
+   "official_1ep": 990.4832763671875,
+   "official_printed": 990.5,
+   "exp0_pre_v1": {
+    "returns": [
+     988.7605167627335,
+     977.6519229412079,
+     974.283968789503,
+     967.1504204161465,
+     974.3909567464143
+    ],
+    "min": 967.1504204161465,
+    "max": 988.7605167627335,
+    "in_range": false
+   },
+   "exp0_post_v1": {
+    "returns": [
+     990.2466430664062,
+     980.1138916015625,
+     974.9995727539062,
+     963.9860229492188,
+     975.5425415039062
+    ],
+    "min": 963.9860229492188,
+    "max": 990.2466430664062,
+    "in_range": false
+   },
+   "own_trace_first_episode": 990.4832763671875
+  },
+  "walker-run": {
+   "official_1ep": 602.3815307617188,
+   "official_printed": 602.4,
+   "exp0_pre_v1": {
+    "returns": [
+     654.1587280631065,
+     619.5969517230988,
+     604.4181186379865,
+     565.7259718216956,
+     638.5443470794708
+    ],
+    "min": 565.7259718216956,
+    "max": 654.1587280631065,
+    "in_range": true
+   },
+   "exp0_post_v1": {
+    "returns": [
+     623.764892578125,
+     502.81988525390625,
+     615.6206665039062,
+     564.2048950195312,
+     615.5720825195312
+    ],
+    "min": 502.81988525390625,
+    "max": 623.764892578125,
+    "in_range": true
+   },
+   "own_trace_first_episode": 602.3815307617188
+  },
+  "walker-walk-backwards": {
+   "official_1ep": 981.769775390625,
+   "official_printed": 981.8,
+   "exp0_pre_v1": {
+    "returns": [
+     982.8478198945522,
+     977.7403797209263,
+     955.3085712562315,
+     958.2459560474381,
+     944.7696372638457
+    ],
+    "min": 944.7696372638457,
+    "max": 982.8478198945522,
+    "in_range": true
+   },
+   "exp0_post_v1": {
+    "returns": [
+     984.9860229492188,
+     980.4229736328125,
+     931.6455688476562,
+     964.0669555664062,
+     942.1611938476562
+    ],
+    "min": 931.6455688476562,
+    "max": 984.9860229492188,
+    "in_range": true
+   }
+  },
+  "walker-run-backwards": {
+   "official_1ep": 222.63531494140625,
+   "official_printed": 222.6,
+   "exp0_pre_v1": {
+    "returns": [
+     166.671006411314,
+     189.32593220472336,
+     163.8372185509652,
+     191.47273841500282,
+     163.27865975443274
+    ],
+    "min": 163.27865975443274,
+    "max": 191.47273841500282,
+    "in_range": false
+   },
+   "exp0_post_v1": {
+    "returns": [
+     222.63531494140625,
+     314.1175842285156,
+     187.97450256347656,
+     181.86375427246094,
+     164.46243286132812
+    ],
+    "min": 164.46243286132812,
+    "max": 314.1175842285156,
+    "in_range": true
+   },
+   "own_trace_first_episode": 222.63531494140625
+  }
+ }
+}

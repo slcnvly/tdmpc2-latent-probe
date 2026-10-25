@@ -1,0 +1,42 @@
+Task: mt30
+Model size: 48
+Checkpoint: /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt
+Creating multi-task environment with tasks: ['walker-stand', 'walker-walk', 'walker-run', 'cheetah-run', 'reacher-easy', 'reacher-hard', 'acrobot-swingup', 'pendulum-swingup', 'cartpole-balance', 'cartpole-balance-sparse', 'cartpole-swingup', 'cartpole-swingup-sparse', 'cup-catch', 'finger-spin', 'finger-turn-easy', 'finger-turn-hard', 'fish-swim', 'hopper-stand', 'hopper-hop', 'walker-walk-backwards', 'walker-run-backwards', 'cheetah-run-backwards', 'cheetah-run-front', 'cheetah-run-back', 'cheetah-jump', 'hopper-hop-backwards', 'reacher-three-easy', 'reacher-three-hard', 'cup-spin', 'pendulum-spin']
+Episode length: 500
+Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,
+        0.9900, 0.9900, 0.9900], device='cuda:0')
+Compiling update function with torch.compile...
+Evaluating agent on 30 tasks:
+  walker-stand          	R: 996.9  	S: 0.00
+  walker-walk           	R: 990.5  	S: 0.00
+  walker-run            	R: 602.4  	S: 0.00
+  cheetah-run           	R: 208.2  	S: 0.00
+  reacher-easy          	R: 990.0  	S: 0.00
+  reacher-hard          	R: 988.0  	S: 0.00
+  acrobot-swingup       	R: 22.7  	S: 0.00
+  pendulum-swingup      	R: 942.0  	S: 0.00
+  cartpole-balance      	R: 996.2  	S: 0.00
+  cartpole-balance-sparse	R: 1000.0  	S: 0.00
+  cartpole-swingup      	R: 0.6  	S: 0.00
+  cartpole-swingup-sparse	R: 0.0  	S: 0.00
+  cup-catch             	R: 902.0  	S: 0.00
+  finger-spin           	R: 969.0  	S: 0.00
+  finger-turn-easy      	R: 988.0  	S: 0.00
+  finger-turn-hard      	R: 987.0  	S: 0.00
+  fish-swim             	R: 748.7  	S: 0.00
+  hopper-stand          	R: 477.0  	S: 0.00
+  hopper-hop            	R: 58.0  	S: 0.00
+  walker-walk-backwards 	R: 981.8  	S: 0.00
+  walker-run-backwards  	R: 222.6  	S: 0.00
+  cheetah-run-backwards 	R: 488.4  	S: 0.00
+  cheetah-run-front     	R: 102.7  	S: 0.00
+  cheetah-run-back      	R: 256.4  	S: 0.00
+  cheetah-jump          	R: 318.1  	S: 0.00
+  hopper-hop-backwards  	R: 354.8  	S: 0.00
+  reacher-three-easy    	R: 980.0  	S: 0.00
+  reacher-three-hard    	R: 923.0  	S: 0.00
+  cup-spin              	R: 833.5  	S: 0.00
+  pendulum-spin         	R: 906.7  	S: 0.00
+Normalized score: 64.12

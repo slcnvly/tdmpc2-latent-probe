@@ -1,0 +1,215 @@
+[{"stream_name":"stdout","time":0.884172868,"data":"\n"}
+,{"stream_name":"stdout","time":0.884215644,"data":"$ nvidia-smi; nproc; free -g | head -2\n"}
+,{"stream_name":"stdout","time":0.922674903,"data":"Sun Oct 25 14:01:48 2026       \n"}
+,{"stream_name":"stdout","time":0.922700073,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":0.922705683,"data":"| NVIDIA-SMI 580.178.04             Driver Version: 580.178.04     CUDA Version: 13.0     |\n"}
+,{"stream_name":"stdout","time":0.922710385,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":0.922715006,"data":"| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n"}
+,{"stream_name":"stdout","time":0.922732575,"data":"| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n"}
+,{"stream_name":"stdout","time":0.922741443,"data":"|                                         |                        |               MIG M. |\n"}
+,{"stream_name":"stdout","time":0.922744419,"data":"|=========================================+========================+======================|\n"}
+,{"stream_name":"stdout","time":0.977602336,"data":"|   0  Tesla T4                       Off |   00000000:00:04.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":0.977629094,"data":"| N/A   40C    P8              9W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":0.977647687,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":0.977652926,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":0.977658436,"data":"|   1  Tesla T4                       Off |   00000000:00:05.0 Off |                    0 |\n"}
+,{"stream_name":"stdout","time":0.977663884,"data":"| N/A   56C    P8             12W /   70W |       0MiB /  15360MiB |      0%      Default |\n"}
+,{"stream_name":"stdout","time":0.977669234,"data":"|                                         |                        |                  N/A |\n"}
+,{"stream_name":"stdout","time":0.977674619,"data":"+-----------------------------------------+------------------------+----------------------+\n"}
+,{"stream_name":"stdout","time":0.97856953,"data":"\n"}
+,{"stream_name":"stdout","time":0.978585724,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":0.978590269,"data":"| Processes:                                                                              |\n"}
+,{"stream_name":"stdout","time":0.978595557,"data":"|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n"}
+,{"stream_name":"stdout","time":0.978600785,"data":"|        ID   ID                                                               Usage      |\n"}
+,{"stream_name":"stdout","time":0.97860616,"data":"|=========================================================================================|\n"}
+,{"stream_name":"stdout","time":0.980028992,"data":"|  No running processes found                                                             |\n"}
+,{"stream_name":"stdout","time":0.98004588,"data":"+-----------------------------------------------------------------------------------------+\n"}
+,{"stream_name":"stdout","time":1.30959173,"data":"4\n"}
+,{"stream_name":"stdout","time":1.333913992,"data":"               total        used        free      shared  buff/cache   available\n"}
+,{"stream_name":"stdout","time":1.333946975,"data":"Mem:              31           1          26           0           4          30\n"}
+,{"stream_name":"stdout","time":1.336140366,"data":"[rc=0 0.5s]\n"}
+,{"stream_name":"stdout","time":1.340398598,"data":"/usr/local/bin/uv\n"}
+,{"stream_name":"stdout","time":1.340719012,"data":"\n"}
+,{"stream_name":"stdout","time":1.340728633,"data":"$ git clone -q https://github.com/slcnvly/tdmpc2-latent-probe /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 git checkout -q b8f58bb15117a9bb50543a776cb9403935c42c6f \u0026\u0026 git log -1 --oneline\n"}
+,{"stream_name":"stdout","time":2.908217948,"data":"b8f58bb V1 fixes to the own path (seed order, cudnn.benchmark, return accumulation), hooked official runner, V4 and V5-2 results, GATE 2 kernel\n"}
+,{"stream_name":"stdout","time":2.908819585,"data":"[rc=0 1.6s]\n"}
+,{"stream_name":"stdout","time":2.908836665,"data":"\n"}
+,{"stream_name":"stdout","time":2.908841851,"data":"$ git clone -q https://github.com/nicklashansen/tdmpc2 /kaggle/temp/tdmpc2-latent-probe/tdmpc2 \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe/tdmpc2 \u0026\u0026 git checkout -q 332f19e4aba4bffe2dc736f45ea7f7bdc585903a \u0026\u0026 git log -1 --oneline \u0026\u0026 git status --porcelain | wc -l\n"}
+,{"stream_name":"stdout","time":4.073796917,"data":"332f19e Preserve target Q history and evaluation mode during conversion\n"}
+,{"stream_name":"stdout","time":4.111626791,"data":"0\n"}
+,{"stream_name":"stdout","time":4.112244729,"data":"[rc=0 1.2s]\n"}
+,{"stream_name":"stdout","time":4.112261605,"data":"\n"}
+,{"stream_name":"stdout","time":4.112266159,"data":"$ uv venv -q --python 3.11 /kaggle/temp/tdmpc2-latent-probe/venv\n"}
+,{"stream_name":"stdout","time":5.825210304,"data":"[rc=0 1.7s]\n"}
+,{"stream_name":"stdout","time":5.825246875,"data":"\n"}
+,{"stream_name":"stdout","time":5.825252266,"data":"$ uv pip install -q --python /kaggle/temp/tdmpc2-latent-probe/venv/bin/python torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128\n"}
+,{"stream_name":"stdout","time":54.035141814,"data":"[rc=0 48.2s]\n"}
+,{"stream_name":"stdout","time":54.035177116,"data":"\n"}
+,{"stream_name":"stdout","time":54.035183574,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 grep -v '^torch==' requirements.txt \u003e /tmp/req.txt \u0026\u0026 uv pip install -q --python venv/bin/python -r /tmp/req.txt\n"}
+,{"stream_name":"stdout","time":62.118111257,"data":"[rc=0 8.1s]\n"}
+,{"stream_name":"stdout","time":62.118152652,"data":"\n"}
+,{"stream_name":"stdout","time":62.118161466,"data":"$ uv pip freeze --python /kaggle/temp/tdmpc2-latent-probe/venv/bin/python \u003e /kaggle/working/out/pip_freeze.txt\n"}
+,{"stream_name":"stderr","time":62.129956609,"data":"Using Python 3.11.17 environment at: /kaggle/temp/tdmpc2-latent-probe/venv\n"}
+,{"stream_name":"stdout","time":62.134260162,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":62.134289935,"data":"\n"}
+,{"stream_name":"stdout","time":62.134297711,"data":"$ /kaggle/temp/tdmpc2-latent-probe/venv/bin/hf download nicklashansen/tdmpc2 multitask/mt30-48M.pt --local-dir /kaggle/temp/tdmpc2-latent-probe/ckpts \u003e /dev/null \u0026\u0026 sha256sum /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt | tee /kaggle/working/out/ckpt_sha256.txt\n"}
+,{"stream_name":"stderr","time":63.628063402,"data":"\u001b[90mHint: The `hf-cli` skill is not installed. Run `hf skills add -g` to teach your AI agents how to use the `hf` CLI.\u001b[0m\n"}
+,{"stream_name":"stderr","time":64.080943004,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stdout","time":78.276871175,"data":"bacb9ae1891a9b03dc3942a287080beb573220ea9d0263c5efd7a94a5c2ec419  /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt\n"}
+,{"stream_name":"stdout","time":78.27760936,"data":"[rc=0 16.1s]\n"}
+,{"stream_name":"stdout","time":78.277635454,"data":"\n"}
+,{"stream_name":"stdout","time":78.277640962,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python eval_single_task.py trace --size 48 --tasks walker-walk --steps 3 --out /kaggle/working/out/smoke_trace.json 2\u003e\u00261 | grep -v -i warn | tail -n 5\n"}
+,{"stream_name":"stdout","time":212.778684929,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":212.778728403,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":212.778734348,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":212.778739348,"data":"  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":212.778744376,"data":"[own trace] walker-walk return 1.03 steps 3\n"}
+,{"stream_name":"stdout","time":212.949251941,"data":"[rc=0 134.7s]\n"}
+,{"stream_name":"stdout","time":212.949812159,"data":"\n"}
+,{"stream_name":"stdout","time":212.949836928,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python official_eval_hooked.py --out-dir /kaggle/working/out/official --trace-steps 50 -- task=mt30 model_size=48 checkpoint=/kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt eval_episodes=1 seed=1 save_video=false enable_wandb=false 2\u003e\u00261 | grep -v -i warn | tee /kaggle/working/out/official_stdout.txt\n"}
+,{"stream_name":"stdout","time":2469.518899972,"data":"Task: mt30\n"}
+,{"stream_name":"stdout","time":2469.518957043,"data":"Model size: 48\n"}
+,{"stream_name":"stdout","time":2469.518963872,"data":"Checkpoint: /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt\n"}
+,{"stream_name":"stdout","time":2469.518971975,"data":"Creating multi-task environment with tasks: ['walker-stand', 'walker-walk', 'walker-run', 'cheetah-run', 'reacher-easy', 'reacher-hard', 'acrobot-swingup', 'pendulum-swingup', 'cartpole-balance', 'cartpole-balance-sparse', 'cartpole-swingup', 'cartpole-swingup-sparse', 'cup-catch', 'finger-spin', 'finger-turn-easy', 'finger-turn-hard', 'fish-swim', 'hopper-stand', 'hopper-hop', 'walker-walk-backwards', 'walker-run-backwards', 'cheetah-run-backwards', 'cheetah-run-front', 'cheetah-run-back', 'cheetah-jump', 'hopper-hop-backwards', 'reacher-three-easy', 'reacher-three-hard', 'cup-spin', 'pendulum-spin']\n"}
+,{"stream_name":"stdout","time":2469.518982607,"data":"Episode length: 500\n"}
+,{"stream_name":"stdout","time":2469.518987866,"data":"Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":2469.5189937,"data":"        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":2469.51899926,"data":"        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":2469.519004777,"data":"        0.9900, 0.9900, 0.9900], device='cuda:0')\n"}
+,{"stream_name":"stdout","time":2469.519010401,"data":"Compiling update function with torch.compile...\n"}
+,{"stream_name":"stdout","time":2469.519015801,"data":"Evaluating agent on 30 tasks:\n"}
+,{"stream_name":"stdout","time":2469.519021036,"data":"  walker-stand          \tR: 996.9  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519027066,"data":"  walker-walk           \tR: 990.5  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519032578,"data":"  walker-run            \tR: 602.4  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519047318,"data":"  cheetah-run           \tR: 208.2  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519052021,"data":"  reacher-easy          \tR: 990.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519055987,"data":"  reacher-hard          \tR: 988.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519059811,"data":"  acrobot-swingup       \tR: 22.7  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519065583,"data":"  pendulum-swingup      \tR: 942.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519074223,"data":"  cartpole-balance      \tR: 996.2  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519095314,"data":"  cartpole-balance-sparse\tR: 1000.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519100197,"data":"  cartpole-swingup      \tR: 0.6  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519104783,"data":"  cartpole-swingup-sparse\tR: 0.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.51910876,"data":"  cup-catch             \tR: 902.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519124396,"data":"  finger-spin           \tR: 969.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519128499,"data":"  finger-turn-easy      \tR: 988.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519132532,"data":"  finger-turn-hard      \tR: 987.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519136192,"data":"  fish-swim             \tR: 748.7  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519139697,"data":"  hopper-stand          \tR: 477.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519143183,"data":"  hopper-hop            \tR: 58.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519148774,"data":"  walker-walk-backwards \tR: 981.8  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.51916685,"data":"  walker-run-backwards  \tR: 222.6  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519172536,"data":"  cheetah-run-backwards \tR: 488.4  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519175156,"data":"  cheetah-run-front     \tR: 102.7  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519177432,"data":"  cheetah-run-back      \tR: 256.4  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519179614,"data":"  cheetah-jump          \tR: 318.1  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519182368,"data":"  hopper-hop-backwards  \tR: 354.8  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519198106,"data":"  reacher-three-easy    \tR: 980.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519201912,"data":"  reacher-three-hard    \tR: 923.0  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519205912,"data":"  cup-spin              \tR: 833.5  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519209826,"data":"  pendulum-spin         \tR: 906.7  \tS: 0.00\n"}
+,{"stream_name":"stdout","time":2469.519213881,"data":"Normalized score: 64.12\n"}
+,{"stream_name":"stdout","time":2469.659792582,"data":"[rc=0 2256.7s]\n"}
+,{"stream_name":"stdout","time":2469.660488153,"data":"\n"}
+,{"stream_name":"stdout","time":2469.660508949,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python eval_single_task.py trace --size 48 --seed 1 --tasks walker-stand walker-walk walker-run walker-run-backwards --restore-rng-for walker-run-backwards --rng-file /kaggle/working/out/official/official_rng_states.pt --steps 50 --full --out /kaggle/working/out/own_trace.json 2\u003e\u00261 | grep -v -i warn | tail -n 8\n"}
+,{"stream_name":"stdout","time":2805.814647233,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":2805.814689102,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":2805.814695172,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":2805.814699935,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":2805.814704088,"data":"[own trace] walker-stand return 996.88 steps 500\n"}
+,{"stream_name":"stdout","time":2805.814708741,"data":"[own trace] walker-walk return 990.48 steps 500\n"}
+,{"stream_name":"stdout","time":2805.814713812,"data":"[own trace] walker-run return 602.38 steps 500\n"}
+,{"stream_name":"stdout","time":2805.814718144,"data":"[own trace] walker-run-backwards return 222.64 steps 500\n"}
+,{"stream_name":"stdout","time":2805.954459649,"data":"[rc=0 336.3s]\n"}
+,{"stream_name":"stdout","time":2805.954493084,"data":"\n"}
+,{"stream_name":"stdout","time":2805.954498482,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python eval_single_task.py eval --size 48 --episodes 5 --seed 1 --components --out /kaggle/working/out/exp0_rerun_components.json 2\u003e\u00261 | grep -v -i warn\n"}
+,{"stream_name":"stdout","time":4731.701811926,"data":"Creating multi-task environment with tasks: ['walker-stand', 'walker-walk', 'walker-run', 'cheetah-run', 'reacher-easy', 'reacher-hard', 'acrobot-swingup', 'pendulum-swingup', 'cartpole-balance', 'cartpole-balance-sparse', 'cartpole-swingup', 'cartpole-swingup-sparse', 'cup-catch', 'finger-spin', 'finger-turn-easy', 'finger-turn-hard', 'fish-swim', 'hopper-stand', 'hopper-hop', 'walker-walk-backwards', 'walker-run-backwards', 'cheetah-run-backwards', 'cheetah-run-front', 'cheetah-run-back', 'cheetah-jump', 'hopper-hop-backwards', 'reacher-three-easy', 'reacher-three-hard', 'cup-spin', 'pendulum-spin']\n"}
+,{"stream_name":"stdout","time":4731.701869098,"data":"Episode length: 500\n"}
+,{"stream_name":"stdout","time":4731.701876685,"data":"Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":4731.701882788,"data":"        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":4731.70188792,"data":"        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":4731.701892926,"data":"        0.9900, 0.9900, 0.9900], device='cuda:0')\n"}
+,{"stream_name":"stdout","time":4731.701897678,"data":"Compiling update function with torch.compile...\n"}
+,{"stream_name":"stdout","time":4731.701902275,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701912829,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701917231,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.70192031,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.70192345,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701926468,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.70192949,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701932533,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701935718,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701938788,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701941863,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701975132,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701980299,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701984208,"data":"  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":4731.701987933,"data":"walker-stand ep0 return 996.9 steps 500 94.1s\n"}
+,{"stream_name":"stdout","time":4731.701991652,"data":"walker-stand ep1 return 996.7 steps 500 75.7s\n"}
+,{"stream_name":"stdout","time":4731.701995354,"data":"walker-stand ep2 return 983.8 steps 500 75.9s\n"}
+,{"stream_name":"stdout","time":4731.701999012,"data":"walker-stand ep3 return 982.0 steps 500 75.9s\n"}
+,{"stream_name":"stdout","time":4731.70200274,"data":"walker-stand ep4 return 983.5 steps 500 75.9s\n"}
+,{"stream_name":"stdout","time":4731.702006468,"data":"walker-walk ep0 return 990.2 steps 500 75.9s\n"}
+,{"stream_name":"stdout","time":4731.702010153,"data":"walker-walk ep1 return 980.1 steps 500 75.9s\n"}
+,{"stream_name":"stdout","time":4731.702025866,"data":"walker-walk ep2 return 975.0 steps 500 75.9s\n"}
+,{"stream_name":"stdout","time":4731.702031159,"data":"walker-walk ep3 return 964.0 steps 500 75.8s\n"}
+,{"stream_name":"stdout","time":4731.702037839,"data":"walker-walk ep4 return 975.5 steps 500 75.8s\n"}
+,{"stream_name":"stdout","time":4731.702040224,"data":"walker-run ep0 return 623.8 steps 500 75.6s\n"}
+,{"stream_name":"stdout","time":4731.702055726,"data":"walker-run ep1 return 502.8 steps 500 75.7s\n"}
+,{"stream_name":"stdout","time":4731.702059953,"data":"walker-run ep2 return 615.6 steps 500 75.6s\n"}
+,{"stream_name":"stdout","time":4731.702064057,"data":"walker-run ep3 return 564.2 steps 500 75.6s\n"}
+,{"stream_name":"stdout","time":4731.702068004,"data":"walker-run ep4 return 615.6 steps 500 75.6s\n"}
+,{"stream_name":"stdout","time":4731.702072235,"data":"walker-walk-backwards ep0 return 985.0 steps 500 75.6s\n"}
+,{"stream_name":"stdout","time":4731.70207625,"data":"walker-walk-backwards ep1 return 980.4 steps 500 75.7s\n"}
+,{"stream_name":"stdout","time":4731.702079809,"data":"walker-walk-backwards ep2 return 931.6 steps 500 75.7s\n"}
+,{"stream_name":"stdout","time":4731.702083235,"data":"walker-walk-backwards ep3 return 964.1 steps 500 75.7s\n"}
+,{"stream_name":"stdout","time":4731.702086649,"data":"walker-walk-backwards ep4 return 942.2 steps 500 75.7s\n"}
+,{"stream_name":"stdout","time":4731.702090156,"data":"walker-run-backwards ep0 return 222.6 steps 500 75.8s\n"}
+,{"stream_name":"stdout","time":4731.70209359,"data":"walker-run-backwards ep1 return 314.1 steps 500 75.8s\n"}
+,{"stream_name":"stdout","time":4731.702097231,"data":"walker-run-backwards ep2 return 188.0 steps 500 75.8s\n"}
+,{"stream_name":"stdout","time":4731.702100665,"data":"walker-run-backwards ep3 return 181.9 steps 500 75.8s\n"}
+,{"stream_name":"stdout","time":4731.702104165,"data":"walker-run-backwards ep4 return 164.5 steps 500 75.9s\n"}
+,{"stream_name":"stdout","time":4731.842249101,"data":"[rc=0 1925.9s]\n"}
+,{"stream_name":"stdout","time":4731.842285763,"data":"\n"}
+,{"stream_name":"stdout","time":4731.842289241,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python eval_single_task.py eval --size 48 --episodes 5 --seed 1 --components --mpc false --out /kaggle/working/out/policy_prior_eval.json 2\u003e\u00261 | grep -v -i warn\n"}
+,{"stream_name":"stdout","time":4780.640900558,"data":"Creating multi-task environment with tasks: ['walker-stand', 'walker-walk', 'walker-run', 'cheetah-run', 'reacher-easy', 'reacher-hard', 'acrobot-swingup', 'pendulum-swingup', 'cartpole-balance', 'cartpole-balance-sparse', 'cartpole-swingup', 'cartpole-swingup-sparse', 'cup-catch', 'finger-spin', 'finger-turn-easy', 'finger-turn-hard', 'fish-swim', 'hopper-stand', 'hopper-hop', 'walker-walk-backwards', 'walker-run-backwards', 'cheetah-run-backwards', 'cheetah-run-front', 'cheetah-run-back', 'cheetah-jump', 'hopper-hop-backwards', 'reacher-three-easy', 'reacher-three-hard', 'cup-spin', 'pendulum-spin']\n"}
+,{"stream_name":"stdout","time":4780.640957979,"data":"Episode length: 500\n"}
+,{"stream_name":"stdout","time":4780.640963651,"data":"Discount factor: tensor([0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":4780.640967765,"data":"        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":4780.640972056,"data":"        0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900, 0.9900,\n"}
+,{"stream_name":"stdout","time":4780.640976042,"data":"        0.9900, 0.9900, 0.9900], device='cuda:0')\n"}
+,{"stream_name":"stdout","time":4780.640979857,"data":"Compiling update function with torch.compile...\n"}
+,{"stream_name":"stdout","time":4780.640983844,"data":"walker-stand ep0 return 998.0 steps 500 1.7s\n"}
+,{"stream_name":"stdout","time":4780.640987771,"data":"walker-stand ep1 return 956.1 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.640991912,"data":"walker-stand ep2 return 979.3 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.640996055,"data":"walker-stand ep3 return 982.3 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.640999883,"data":"walker-stand ep4 return 979.5 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641003446,"data":"walker-walk ep0 return 201.6 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641007103,"data":"walker-walk ep1 return 235.0 steps 500 1.5s\n"}
+,{"stream_name":"stdout","time":4780.641010683,"data":"walker-walk ep2 return 183.1 steps 500 1.5s\n"}
+,{"stream_name":"stdout","time":4780.64101448,"data":"walker-walk ep3 return 185.8 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.64101827,"data":"walker-walk ep4 return 193.8 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641022206,"data":"walker-run ep0 return 410.4 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641025589,"data":"walker-run ep1 return 168.7 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641029005,"data":"walker-run ep2 return 411.5 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641032608,"data":"walker-run ep3 return 210.5 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641037798,"data":"walker-run ep4 return 383.3 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641047929,"data":"walker-walk-backwards ep0 return 259.4 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641050729,"data":"walker-walk-backwards ep1 return 249.4 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641053033,"data":"walker-walk-backwards ep2 return 215.6 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641055326,"data":"walker-walk-backwards ep3 return 249.6 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641057635,"data":"walker-walk-backwards ep4 return 220.2 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641059984,"data":"walker-run-backwards ep0 return 173.9 steps 500 1.5s\n"}
+,{"stream_name":"stdout","time":4780.641062259,"data":"walker-run-backwards ep1 return 167.9 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641066891,"data":"walker-run-backwards ep2 return 178.8 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641069357,"data":"walker-run-backwards ep3 return 171.1 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.641071775,"data":"walker-run-backwards ep4 return 158.5 steps 500 1.4s\n"}
+,{"stream_name":"stdout","time":4780.776762096,"data":"[rc=0 48.9s]\n"}
+,{"stream_name":"stdout","time":4780.776817197,"data":"DONE in 4780s\n"}
+,{"stream_name":"stderr","time":4783.383524147,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":4783.383552936,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":4783.790188737,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":4783.79022198,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":4786.042251771,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":4787.156760811,"data":"[NbConvertApp] Writing 292147 bytes to __results__.html\n"}
+]

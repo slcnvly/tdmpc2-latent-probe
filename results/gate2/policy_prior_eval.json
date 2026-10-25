@@ -1,0 +1,493 @@
+{
+ "model_size": 48,
+ "seed": 1,
+ "episodes_per_task": 5,
+ "gpu": "Tesla T4",
+ "compile": true,
+ "eval_mode": false,
+ "mpc": false,
+ "script_version": "post-V1",
+ "tasks": {
+  "walker-stand": {
+   "task_idx": 0,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 997.9712524414062,
+     "steps": 500,
+     "seconds": 1.7,
+     "components": {
+      "standing": 0.9999986751531149,
+      "upright": 0.9919129931032313,
+      "r": 0.997977254640644,
+      "torso_height": 1.3290238017373224,
+      "torso_upright": 0.9838259862064627,
+      "move": null,
+      "horizontal_velocity_mean_mps": -0.006327517782177466,
+      "horizontal_velocity_std_mps": 0.33336616753792075,
+      "frac_steps_torso_height_below_1.2m": 0.004,
+      "sum_r_logged": 997.9711626768112
+     }
+    },
+    {
+     "episode": 1,
+     "return": 956.1275024414062,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9519268302102639,
+      "upright": 0.9687862336898078,
+      "r": 0.9561416810801499,
+      "torso_height": 1.2880219355384037,
+      "torso_upright": 0.9375724673796154,
+      "move": null,
+      "horizontal_velocity_mean_mps": -0.13518090609813552,
+      "horizontal_velocity_std_mps": 0.4310183136085319,
+      "frac_steps_torso_height_below_1.2m": 0.064,
+      "sum_r_logged": 956.1274839043617
+     }
+    },
+    {
+     "episode": 2,
+     "return": 979.3436889648438,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9818903717956358,
+      "upright": 0.972167755542103,
+      "r": 0.9794597177322527,
+      "torso_height": 1.3219159860756922,
+      "torso_upright": 0.944335511084206,
+      "move": null,
+      "horizontal_velocity_mean_mps": 0.030298587520246792,
+      "horizontal_velocity_std_mps": 0.3962252260024249,
+      "frac_steps_torso_height_below_1.2m": 0.03,
+      "sum_r_logged": 979.3437021244317
+     }
+    },
+    {
+     "episode": 3,
+     "return": 982.314697265625,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9860227994769752,
+      "upright": 0.9717479661528982,
+      "r": 0.982454091145956,
+      "torso_height": 1.3112372898294506,
+      "torso_upright": 0.9434959323057963,
+      "move": null,
+      "horizontal_velocity_mean_mps": -0.006310693591719996,
+      "horizontal_velocity_std_mps": 0.4075326821050868,
+      "frac_steps_torso_height_below_1.2m": 0.024,
+      "sum_r_logged": 982.3148161955178
+     }
+    },
+    {
+     "episode": 4,
+     "return": 979.5242919921875,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9813536326157578,
+      "upright": 0.974434996410352,
+      "r": 0.9796239735644062,
+      "torso_height": 1.3169965499797622,
+      "torso_upright": 0.948869992820704,
+      "move": null,
+      "horizontal_velocity_mean_mps": -0.08905689741250629,
+      "horizontal_velocity_std_mps": 0.2617811727226229,
+      "frac_steps_torso_height_below_1.2m": 0.032,
+      "sum_r_logged": 979.5240634568036
+     }
+    }
+   ],
+   "mean_return": 979.0562866210937
+  },
+  "walker-walk": {
+   "task_idx": 1,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 201.59226989746094,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 1.0,
+      "upright": 0.9913828636240103,
+      "r": 0.20168192168102245,
+      "torso_height": 1.3272496566312024,
+      "torso_upright": 0.9827657272480207,
+      "move": 0.042661049953725355,
+      "horizontal_velocity_mean_mps": -0.04136884913730961,
+      "horizontal_velocity_std_mps": 0.2317912697973886,
+      "frac_steps_torso_height_below_1.2m": 0.0,
+      "sum_r_logged": 201.59215420484543
+     }
+    },
+    {
+     "episode": 1,
+     "return": 234.97169494628906,
+     "steps": 500,
+     "seconds": 1.5,
+     "components": {
+      "standing": 0.9857150447439256,
+      "upright": 0.9880713313331319,
+      "r": 0.23460890604747597,
+      "torso_height": 1.3055821887103911,
+      "torso_upright": 0.9761426626662636,
+      "move": 0.089357829504531,
+      "horizontal_velocity_mean_mps": 0.02532641697233864,
+      "horizontal_velocity_std_mps": 0.362208271354876,
+      "frac_steps_torso_height_below_1.2m": 0.028,
+      "sum_r_logged": 234.97164572775364
+     }
+    },
+    {
+     "episode": 2,
+     "return": 183.10391235351562,
+     "steps": 500,
+     "seconds": 1.5,
+     "components": {
+      "standing": 0.9875258755035606,
+      "upright": 0.9761900359125675,
+      "r": 0.18299404179054768,
+      "torso_height": 1.3261057159996,
+      "torso_upright": 0.9523800718251348,
+      "move": 0.024521115171799862,
+      "horizontal_velocity_mean_mps": -0.0689111538450602,
+      "horizontal_velocity_std_mps": 0.17115461855641112,
+      "frac_steps_torso_height_below_1.2m": 0.022,
+      "sum_r_logged": 183.10390770900995
+     }
+    },
+    {
+     "episode": 3,
+     "return": 185.7841796875,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9858174565640287,
+      "upright": 0.9757613946195334,
+      "r": 0.18556271285582243,
+      "torso_height": 1.328980496477082,
+      "torso_upright": 0.9515227892390665,
+      "move": 0.031864021784513946,
+      "horizontal_velocity_mean_mps": -0.03174567624552693,
+      "horizontal_velocity_std_mps": 0.15980092196269322,
+      "frac_steps_torso_height_below_1.2m": 0.026,
+      "sum_r_logged": 185.78419810160995
+     }
+    },
+    {
+     "episode": 4,
+     "return": 193.84481811523438,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9510335838434097,
+      "upright": 0.9535800267994333,
+      "r": 0.19374933688648538,
+      "torso_height": 1.2797860865121446,
+      "torso_upright": 0.9071600535988665,
+      "move": 0.07596464483629818,
+      "horizontal_velocity_mean_mps": -0.0060657000721624785,
+      "horizontal_velocity_std_mps": 0.3574981243860757,
+      "frac_steps_torso_height_below_1.2m": 0.078,
+      "sum_r_logged": 193.8448426956311
+     }
+    }
+   ],
+   "mean_return": 199.859375
+  },
+  "walker-run": {
+   "task_idx": 2,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 410.3674011230469,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9431829343566402,
+      "upright": 0.9483232305766325,
+      "r": 0.4104660893125258,
+      "torso_height": 1.2109579063392597,
+      "torso_upright": 0.8966464611532651,
+      "move": 0.31825139816001025,
+      "horizontal_velocity_mean_mps": 2.5442117595662954,
+      "horizontal_velocity_std_mps": 1.1099672507343015,
+      "frac_steps_torso_height_below_1.2m": 0.3,
+      "sum_r_logged": 410.3674110174179
+     }
+    },
+    {
+     "episode": 1,
+     "return": 168.71524047851562,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9912079979107684,
+      "upright": 0.9892831755109311,
+      "r": 0.16877624143579345,
+      "torso_height": 1.298743952221988,
+      "torso_upright": 0.9785663510218624,
+      "move": 0.004394604694892239,
+      "horizontal_velocity_mean_mps": -0.07250768208855166,
+      "horizontal_velocity_std_mps": 0.19263003755077016,
+      "frac_steps_torso_height_below_1.2m": 0.022,
+      "sum_r_logged": 168.71522139012814
+     }
+    },
+    {
+     "episode": 2,
+     "return": 411.52801513671875,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.8854607371180483,
+      "upright": 0.8985265892342507,
+      "r": 0.4116797517463647,
+      "torso_height": 1.1499180497349721,
+      "torso_upright": 0.7970531784685014,
+      "move": 0.35289625058661855,
+      "horizontal_velocity_mean_mps": 2.803484354772375,
+      "horizontal_velocity_std_mps": 1.1665465711570115,
+      "frac_steps_torso_height_below_1.2m": 0.426,
+      "sum_r_logged": 411.52806128934026
+     }
+    },
+    {
+     "episode": 3,
+     "return": 210.50592041015625,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9727574413802919,
+      "upright": 0.9648439108881591,
+      "r": 0.21063593418713072,
+      "torso_height": 1.2643016765745947,
+      "torso_upright": 0.929687821776318,
+      "move": 0.0601311375135599,
+      "horizontal_velocity_mean_mps": 0.427585868987406,
+      "horizontal_velocity_std_mps": 0.953203386391985,
+      "frac_steps_torso_height_below_1.2m": 0.098,
+      "sum_r_logged": 210.50586011447012
+     }
+    },
+    {
+     "episode": 4,
+     "return": 383.30450439453125,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.8022973047381567,
+      "upright": 0.837541157942987,
+      "r": 0.38352398692860284,
+      "torso_height": 1.0743627313335913,
+      "torso_upright": 0.6750823158859738,
+      "move": 0.3554322640494967,
+      "horizontal_velocity_mean_mps": 2.831610840145586,
+      "horizontal_velocity_std_mps": 1.2861534251950195,
+      "frac_steps_torso_height_below_1.2m": 0.52,
+      "sum_r_logged": 383.3045483441092
+     }
+    }
+   ],
+   "mean_return": 316.88421630859375
+  },
+  "walker-walk-backwards": {
+   "task_idx": 19,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 259.4247131347656,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 1.0,
+      "upright": 0.9892886161602783,
+      "r": 0.26015503350150937,
+      "torso_height": 1.30125235590482,
+      "torso_upright": 0.9785772323205566,
+      "move": 0.11303467474340131,
+      "horizontal_velocity_mean_mps": -0.05541191372484993,
+      "horizontal_velocity_std_mps": 0.2096885253745127,
+      "frac_steps_torso_height_below_1.2m": 0.0,
+      "sum_r_logged": 259.42472502589226
+     }
+    },
+    {
+     "episode": 1,
+     "return": 249.36422729492188,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9904885469660903,
+      "upright": 0.9869873946366203,
+      "r": 0.24985627319668702,
+      "torso_height": 1.2917019218928765,
+      "torso_upright": 0.9739747892732405,
+      "move": 0.10323866560829882,
+      "horizontal_velocity_mean_mps": -0.03370860515061744,
+      "horizontal_velocity_std_mps": 0.24307110576366464,
+      "frac_steps_torso_height_below_1.2m": 0.02,
+      "sum_r_logged": 249.36418236792088
+     }
+    },
+    {
+     "episode": 2,
+     "return": 215.61953735351562,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.982661289103638,
+      "upright": 0.9655455171097088,
+      "r": 0.21651565620379198,
+      "torso_height": 1.2884512489889002,
+      "torso_upright": 0.9310910342194176,
+      "move": 0.06470051394369476,
+      "horizontal_velocity_mean_mps": 0.45632275011017404,
+      "horizontal_velocity_std_mps": 0.7792619017006613,
+      "frac_steps_torso_height_below_1.2m": 0.038,
+      "sum_r_logged": 215.61957543180324
+     }
+    },
+    {
+     "episode": 3,
+     "return": 249.59559631347656,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9865264686931716,
+      "upright": 0.9688152265675767,
+      "r": 0.2509787214681989,
+      "torso_height": 1.2825585068768846,
+      "torso_upright": 0.9376304531351534,
+      "move": 0.10510440721018043,
+      "horizontal_velocity_mean_mps": -0.0238924701538837,
+      "horizontal_velocity_std_mps": 0.27881061346308683,
+      "frac_steps_torso_height_below_1.2m": 0.022,
+      "sum_r_logged": 249.59561340231448
+     }
+    },
+    {
+     "episode": 4,
+     "return": 220.2497100830078,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9818483781402213,
+      "upright": 0.9709159171941706,
+      "r": 0.22075357569270063,
+      "torso_height": 1.294811849838914,
+      "torso_upright": 0.9418318343883412,
+      "move": 0.06972417124790123,
+      "horizontal_velocity_mean_mps": 0.7756696822171936,
+      "horizontal_velocity_std_mps": 0.9883147027953598,
+      "frac_steps_torso_height_below_1.2m": 0.044,
+      "sum_r_logged": 220.24962198361754
+     }
+    }
+   ],
+   "mean_return": 238.8507568359375
+  },
+  "walker-run-backwards": {
+   "task_idx": 20,
+   "episodes": [
+    {
+     "episode": 0,
+     "return": 173.93763732910156,
+     "steps": 500,
+     "seconds": 1.5,
+     "components": {
+      "standing": 0.9989535093949253,
+      "upright": 0.9875652341926516,
+      "r": 0.17401161637149332,
+      "torso_height": 1.2892296817491837,
+      "torso_upright": 0.9751304683853029,
+      "move": 0.009606890064076654,
+      "horizontal_velocity_mean_mps": 1.7000901796310972,
+      "horizontal_velocity_std_mps": 1.6486244976547446,
+      "frac_steps_torso_height_below_1.2m": 0.098,
+      "sum_r_logged": 173.93761682510376
+     }
+    },
+    {
+     "episode": 1,
+     "return": 167.91766357421875,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9950996499181974,
+      "upright": 0.9846248405042524,
+      "r": 0.16794551486101217,
+      "torso_height": 1.2826608033614002,
+      "torso_upright": 0.9692496810085045,
+      "move": 0.0030674348396548387,
+      "horizontal_velocity_mean_mps": 2.3184062858126677,
+      "horizontal_velocity_std_mps": 1.0170546664194373,
+      "frac_steps_torso_height_below_1.2m": 0.124,
+      "sum_r_logged": 167.9177252650261
+     }
+    },
+    {
+     "episode": 2,
+     "return": 178.77542114257812,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9820892240697896,
+      "upright": 0.9676730049599291,
+      "r": 0.1789328083001823,
+      "torso_height": 1.2990619932113163,
+      "torso_upright": 0.9353460099198583,
+      "move": 0.01915750522793867,
+      "horizontal_velocity_mean_mps": 0.1475812832543022,
+      "horizontal_velocity_std_mps": 0.8576690825708924,
+      "frac_steps_torso_height_below_1.2m": 0.036,
+      "sum_r_logged": 178.7753476081416
+     }
+    },
+    {
+     "episode": 3,
+     "return": 171.12501525878906,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9818314494021491,
+      "upright": 0.9651959274395586,
+      "r": 0.171196110141295,
+      "torso_height": 1.2869061442764933,
+      "torso_upright": 0.9303918548791174,
+      "move": 0.010557595312949372,
+      "horizontal_velocity_mean_mps": 1.178792303261715,
+      "horizontal_velocity_std_mps": 1.2825940322152614,
+      "frac_steps_torso_height_below_1.2m": 0.08,
+      "sum_r_logged": 171.12502964911982
+     }
+    },
+    {
+     "episode": 4,
+     "return": 158.51571655273438,
+     "steps": 500,
+     "seconds": 1.4,
+     "components": {
+      "standing": 0.9468566784005824,
+      "upright": 0.9377052184586516,
+      "r": 0.15856574356897105,
+      "torso_height": 1.2410190775331031,
+      "torso_upright": 0.8754104369173034,
+      "move": 0.0018354920083325217,
+      "horizontal_velocity_mean_mps": 2.0891633611296183,
+      "horizontal_velocity_std_mps": 1.3486055399958727,
+      "frac_steps_torso_height_below_1.2m": 0.152,
+      "sum_r_logged": 158.5158010162413
+     }
+    }
+   ],
+   "mean_return": 170.05429077148438
+  }
+ },
+ "peak_gpu_mem_MB": 562.31103515625
+}
