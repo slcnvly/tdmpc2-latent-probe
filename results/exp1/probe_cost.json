@@ -1,0 +1,12 @@
+{
+ "cell": "learned z (row walker-walk) -> target walker-walk",
+ "device": "cpu",
+ "threads": 12,
+ "load_standardize_s": 2.069005012512207,
+ "linear_one_target_s": 2.7147083282470703,
+ "mlp_one_seed_s": 192.2039089202881,
+ "mlp_epochs_run": 159,
+ "trial_linear_test_r2": 0.9761385552319453,
+ "trial_mlp_test_r2": 0.9998256060284789,
+ "note": "cost-measurement trial only; final results are recomputed in the full run"
+}
