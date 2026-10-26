@@ -1,0 +1,287 @@
+[{"stream_name":"stdout","time":0.877141156,"data":"\n"}
+,{"stream_name":"stdout","time":0.877180483,"data":"$ nvidia-smi -L; nproc; free -g | head -2; df -h /kaggle/working | tail -1\n"}
+,{"stream_name":"stdout","time":0.918376209,"data":"GPU 0: Tesla T4 (UUID: GPU-5ad0e3ab-aee8-f488-7dcf-c228a2a68a35)\n"}
+,{"stream_name":"stdout","time":0.918398813,"data":"GPU 1: Tesla T4 (UUID: GPU-c6a5efd4-9a65-5262-ffac-0b813237512c)\n"}
+,{"stream_name":"stdout","time":0.930205024,"data":"4\n"}
+,{"stream_name":"stdout","time":0.949990098,"data":"               total        used        free      shared  buff/cache   available\n"}
+,{"stream_name":"stdout","time":0.950024652,"data":"Mem:              31           1          26           0           4          30\n"}
+,{"stream_name":"stdout","time":0.954469483,"data":"/dev/loop2       20G  116K   20G   1% /kaggle/working\n"}
+,{"stream_name":"stdout","time":0.955011088,"data":"[rc=0 0.1s]\n"}
+,{"stream_name":"stdout","time":0.958697316,"data":"/usr/local/bin/uv\n"}
+,{"stream_name":"stdout","time":0.959075722,"data":"\n"}
+,{"stream_name":"stdout","time":0.959087223,"data":"$ git clone -q https://github.com/slcnvly/tdmpc2-latent-probe /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 git checkout -q 9d13467cba8039fa1d894a9179f34e5dc19fa6be \u0026\u0026 git log -1 --oneline\n"}
+,{"stream_name":"stdout","time":1.808711693,"data":"9d13467 Experiment 1 Step 4: rollout collection, integrity checks, Kaggle kernel\n"}
+,{"stream_name":"stdout","time":1.809292396,"data":"[rc=0 0.9s]\n"}
+,{"stream_name":"stdout","time":1.809304113,"data":"\n"}
+,{"stream_name":"stdout","time":1.809308116,"data":"$ git clone -q https://github.com/nicklashansen/tdmpc2 /kaggle/temp/tdmpc2-latent-probe/tdmpc2 \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe/tdmpc2 \u0026\u0026 git checkout -q 332f19e4aba4bffe2dc736f45ea7f7bdc585903a \u0026\u0026 git status --porcelain | wc -l\n"}
+,{"stream_name":"stdout","time":2.583733062,"data":"0\n"}
+,{"stream_name":"stdout","time":2.58426071,"data":"[rc=0 0.8s]\n"}
+,{"stream_name":"stdout","time":2.584273664,"data":"\n"}
+,{"stream_name":"stdout","time":2.58427756,"data":"$ uv venv -q --python 3.11 /kaggle/temp/tdmpc2-latent-probe/venv\n"}
+,{"stream_name":"stdout","time":4.291103401,"data":"[rc=0 1.7s]\n"}
+,{"stream_name":"stdout","time":4.291128066,"data":"\n"}
+,{"stream_name":"stdout","time":4.291132524,"data":"$ uv pip install -q --python /kaggle/temp/tdmpc2-latent-probe/venv/bin/python torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128\n"}
+,{"stream_name":"stdout","time":46.829771199,"data":"[rc=0 42.5s]\n"}
+,{"stream_name":"stdout","time":46.829799928,"data":"\n"}
+,{"stream_name":"stdout","time":46.829805915,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 grep -v '^torch==' requirements.txt \u003e /tmp/req.txt \u0026\u0026 uv pip install -q --python venv/bin/python -r /tmp/req.txt\n"}
+,{"stream_name":"stdout","time":56.254933677,"data":"[rc=0 9.4s]\n"}
+,{"stream_name":"stdout","time":56.254958182,"data":"\n"}
+,{"stream_name":"stdout","time":56.254964519,"data":"$ uv pip freeze --python /kaggle/temp/tdmpc2-latent-probe/venv/bin/python \u003e /kaggle/working/out/pip_freeze.txt\n"}
+,{"stream_name":"stderr","time":56.265343426,"data":"Using Python 3.11.17 environment at: /kaggle/temp/tdmpc2-latent-probe/venv\n"}
+,{"stream_name":"stdout","time":56.269051519,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":56.269070755,"data":"\n"}
+,{"stream_name":"stdout","time":56.269077881,"data":"$ /kaggle/temp/tdmpc2-latent-probe/venv/bin/hf download nicklashansen/tdmpc2 multitask/mt30-48M.pt --local-dir /kaggle/temp/tdmpc2-latent-probe/ckpts \u003e /dev/null \u0026\u0026 sha256sum /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt | tee /kaggle/working/out/ckpt_sha256.txt\n"}
+,{"stream_name":"stderr","time":57.12351408,"data":"\u001b[90mHint: The `hf-cli` skill is not installed. Run `hf skills add -g` to teach your AI agents how to use the `hf` CLI.\u001b[0m\n"}
+,{"stream_name":"stdout","time":59.992845722,"data":"bacb9ae1891a9b03dc3942a287080beb573220ea9d0263c5efd7a94a5c2ec419  /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt\n"}
+,{"stream_name":"stdout","time":59.993548191,"data":"[rc=0 3.7s]\n"}
+,{"stream_name":"stdout","time":119.996195087,"data":"[phase1] 60s, episode files: 5\n"}
+,{"stream_name":"stdout","time":179.997080226,"data":"[phase1] 120s, episode files: 5\n"}
+,{"stream_name":"stdout","time":239.997772525,"data":"[phase1] 180s, episode files: 5\n"}
+,{"stream_name":"stdout","time":299.998390363,"data":"[phase1] 240s, episode files: 7\n"}
+,{"stream_name":"stdout","time":359.999048365,"data":"[phase1] 300s, episode files: 9\n"}
+,{"stream_name":"stdout","time":419.999819036,"data":"[phase1] 360s, episode files: 11\n"}
+,{"stream_name":"stdout","time":480.000652571,"data":"[phase1] 420s, episode files: 11\n"}
+,{"stream_name":"stdout","time":540.001492504,"data":"[phase1] 480s, episode files: 13\n"}
+,{"stream_name":"stdout","time":600.002292178,"data":"[phase1] 540s, episode files: 15\n"}
+,{"stream_name":"stdout","time":600.002336499,"data":"[phase1] return codes [0, 0, 0]\n"}
+,{"stream_name":"stdout","time":600.002343231,"data":"\n"}
+,{"stream_name":"stdout","time":600.002348541,"data":"$ grep -v -i warn /kaggle/working/out/collect_phase1_*.log | grep -i 'error\\|traceback\\|return' | tail -n 40\n"}
+,{"stream_name":"stdout","time":600.009536218,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009560453,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009566656,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009571734,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009577403,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009582588,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009587696,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009592504,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009597185,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009601952,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009607006,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.0096125,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009617392,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.00962236,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009627356,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009643477,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009647626,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009651907,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009655608,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009659199,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009662977,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009666107,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009669777,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return node.target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009673686,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009677256,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009680716,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009685426,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009689288,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009693529,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return target(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009697396,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009700916,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009704766,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.00970846,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009712173,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009715952,"data":"/kaggle/working/out/collect_phase1_gpu1.log:  return func(*args, **kwargs)\n"}
+,{"stream_name":"stdout","time":600.009719694,"data":"/kaggle/working/out/collect_phase1_gpu1.log:[w1] walker-walk A ep00 seed 11000 return 975.3 68.6s\n"}
+,{"stream_name":"stdout","time":600.009726856,"data":"/kaggle/working/out/collect_phase1_gpu1.log:[w1] walker-walk-backwards A ep00 seed 29000 return 946.5 69.8s\n"}
+,{"stream_name":"stdout","time":600.009731098,"data":"/kaggle/working/out/collect_phase1_gpu1.log:[w1] walker-stand B ep00 seed 10100 return 995.9 70.8s\n"}
+,{"stream_name":"stdout","time":600.009735022,"data":"/kaggle/working/out/collect_phase1_gpu1.log:[w1] walker-run B ep00 seed 12100 return 544.7 70.6s\n"}
+,{"stream_name":"stdout","time":600.009738899,"data":"/kaggle/working/out/collect_phase1_gpu1.log:[w1] walker-run-backwards B ep00 seed 30100 return 178.1 70.7s\n"}
+,{"stream_name":"stdout","time":600.010208393,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":600.010296605,"data":"\n"}
+,{"stream_name":"stdout","time":600.01031542,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python check_rollouts.py --data /kaggle/working/out/rollouts --episodes 0 --out /kaggle/working/out/check_ep0.json 2\u003e\u00261 | grep -v -i warn | tail -n 20\n"}
+,{"stream_name":"stdout","time":635.893380209,"data":"Creating multi-task environment with tasks: ['walker-stand', 'walker-walk', 'walker-run', 'cheetah-run', 'reacher-easy', 'reacher-hard', 'acrobot-swingup', 'pendulum-swingup', 'cartpole-balance', 'cartpole-balance-sparse', 'cartpole-swingup', 'cartpole-swingup-sparse', 'cup-catch', 'finger-spin', 'finger-turn-easy', 'finger-turn-hard', 'fish-swim', 'hopper-stand', 'hopper-hop', 'walker-walk-backwards', 'walker-run-backwards', 'cheetah-run-backwards', 'cheetah-run-front', 'cheetah-run-back', 'cheetah-jump', 'hopper-hop-backwards', 'reacher-three-easy', 'reacher-three-hard', 'cup-spin', 'pendulum-spin']\n"}
+,{"stream_name":"stdout","time":635.893462781,"data":"walker-run-backwards/A/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 240.47222900390625, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893472539,"data":"walker-run-backwards/B/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 178.12530517578125, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893490084,"data":"walker-run-backwards/C/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 17.90819549560547, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893495834,"data":"walker-run/A/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 603.0794067382812, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893501644,"data":"walker-run/B/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 544.7347412109375, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893508904,"data":"walker-run/C/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 25.29983901977539, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893514065,"data":"walker-stand/A/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 998.1103515625, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893520007,"data":"walker-stand/B/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 995.8977661132812, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893525284,"data":"walker-stand/C/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 154.894775390625, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893530462,"data":"walker-walk-backwards/A/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 946.5247802734375, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893548514,"data":"walker-walk-backwards/B/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 936.6770629882812, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893552236,"data":"walker-walk-backwards/C/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 23.79227638244629, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893555953,"data":"walker-walk/A/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 975.2999877929688, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893560865,"data":"walker-walk/B/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 980.4686279296875, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893565424,"data":"walker-walk/C/ep00 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 32.27304458618164, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":635.893570064,"data":"ALL_PASS 15\n"}
+,{"stream_name":"stdout","time":635.89415301,"data":"[rc=0 35.9s]\n"}
+,{"stream_name":"stdout","time":695.900557619,"data":"[phase2] 60s, episode files: 98\n"}
+,{"stream_name":"stdout","time":755.901513837,"data":"[phase2] 120s, episode files: 110\n"}
+,{"stream_name":"stdout","time":815.902710149,"data":"[phase2] 180s, episode files: 112\n"}
+,{"stream_name":"stdout","time":875.903756153,"data":"[phase2] 240s, episode files: 114\n"}
+,{"stream_name":"stdout","time":935.904878622,"data":"[phase2] 300s, episode files: 116\n"}
+,{"stream_name":"stdout","time":995.906003879,"data":"[phase2] 360s, episode files: 118\n"}
+,{"stream_name":"stdout","time":1055.907155123,"data":"[phase2] 420s, episode files: 120\n"}
+,{"stream_name":"stdout","time":1115.908300535,"data":"[phase2] 480s, episode files: 122\n"}
+,{"stream_name":"stdout","time":1175.91005471,"data":"[phase2] 540s, episode files: 123\n"}
+,{"stream_name":"stdout","time":1235.911206795,"data":"[phase2] 600s, episode files: 125\n"}
+,{"stream_name":"stdout","time":1295.91230057,"data":"[phase2] 660s, episode files: 126\n"}
+,{"stream_name":"stdout","time":1355.91344025,"data":"[phase2] 720s, episode files: 128\n"}
+,{"stream_name":"stdout","time":1415.914516116,"data":"[phase2] 780s, episode files: 130\n"}
+,{"stream_name":"stdout","time":1475.915601668,"data":"[phase2] 840s, episode files: 132\n"}
+,{"stream_name":"stdout","time":1535.916790685,"data":"[phase2] 900s, episode files: 134\n"}
+,{"stream_name":"stdout","time":1595.918015048,"data":"[phase2] 960s, episode files: 135\n"}
+,{"stream_name":"stdout","time":1655.91930245,"data":"[phase2] 1020s, episode files: 137\n"}
+,{"stream_name":"stdout","time":1715.920452506,"data":"[phase2] 1080s, episode files: 139\n"}
+,{"stream_name":"stdout","time":1775.9215194,"data":"[phase2] 1140s, episode files: 140\n"}
+,{"stream_name":"stdout","time":1835.922913303,"data":"[phase2] 1200s, episode files: 142\n"}
+,{"stream_name":"stdout","time":1895.924051846,"data":"[phase2] 1260s, episode files: 144\n"}
+,{"stream_name":"stdout","time":1955.925249942,"data":"[phase2] 1320s, episode files: 145\n"}
+,{"stream_name":"stdout","time":2015.926383039,"data":"[phase2] 1380s, episode files: 147\n"}
+,{"stream_name":"stdout","time":2075.927535469,"data":"[phase2] 1440s, episode files: 149\n"}
+,{"stream_name":"stdout","time":2135.928732425,"data":"[phase2] 1500s, episode files: 151\n"}
+,{"stream_name":"stdout","time":2195.929943761,"data":"[phase2] 1560s, episode files: 153\n"}
+,{"stream_name":"stdout","time":2255.931113536,"data":"[phase2] 1620s, episode files: 154\n"}
+,{"stream_name":"stdout","time":2315.932450761,"data":"[phase2] 1680s, episode files: 156\n"}
+,{"stream_name":"stdout","time":2375.933631438,"data":"[phase2] 1740s, episode files: 157\n"}
+,{"stream_name":"stdout","time":2435.934782467,"data":"[phase2] 1800s, episode files: 159\n"}
+,{"stream_name":"stdout","time":2495.935950686,"data":"[phase2] 1860s, episode files: 161\n"}
+,{"stream_name":"stdout","time":2555.937131873,"data":"[phase2] 1920s, episode files: 163\n"}
+,{"stream_name":"stdout","time":2615.938582995,"data":"[phase2] 1980s, episode files: 165\n"}
+,{"stream_name":"stdout","time":2675.939900649,"data":"[phase2] 2040s, episode files: 167\n"}
+,{"stream_name":"stdout","time":2735.941256004,"data":"[phase2] 2100s, episode files: 168\n"}
+,{"stream_name":"stdout","time":2795.942694063,"data":"[phase2] 2160s, episode files: 169\n"}
+,{"stream_name":"stdout","time":2855.943819552,"data":"[phase2] 2220s, episode files: 171\n"}
+,{"stream_name":"stdout","time":2915.945023385,"data":"[phase2] 2280s, episode files: 173\n"}
+,{"stream_name":"stdout","time":2975.946318413,"data":"[phase2] 2340s, episode files: 175\n"}
+,{"stream_name":"stdout","time":3035.94766926,"data":"[phase2] 2400s, episode files: 177\n"}
+,{"stream_name":"stdout","time":3095.948974372,"data":"[phase2] 2460s, episode files: 179\n"}
+,{"stream_name":"stdout","time":3155.950236862,"data":"[phase2] 2520s, episode files: 180\n"}
+,{"stream_name":"stdout","time":3215.951341307,"data":"[phase2] 2580s, episode files: 181\n"}
+,{"stream_name":"stdout","time":3275.952589306,"data":"[phase2] 2640s, episode files: 183\n"}
+,{"stream_name":"stdout","time":3335.953792952,"data":"[phase2] 2700s, episode files: 185\n"}
+,{"stream_name":"stdout","time":3395.955033719,"data":"[phase2] 2760s, episode files: 187\n"}
+,{"stream_name":"stdout","time":3455.956411122,"data":"[phase2] 2820s, episode files: 189\n"}
+,{"stream_name":"stdout","time":3515.957660767,"data":"[phase2] 2880s, episode files: 191\n"}
+,{"stream_name":"stdout","time":3575.959110114,"data":"[phase2] 2940s, episode files: 192\n"}
+,{"stream_name":"stdout","time":3635.960281199,"data":"[phase2] 3000s, episode files: 194\n"}
+,{"stream_name":"stdout","time":3695.961679125,"data":"[phase2] 3060s, episode files: 195\n"}
+,{"stream_name":"stdout","time":3755.962849519,"data":"[phase2] 3120s, episode files: 197\n"}
+,{"stream_name":"stdout","time":3815.964212991,"data":"[phase2] 3180s, episode files: 199\n"}
+,{"stream_name":"stdout","time":3875.965482471,"data":"[phase2] 3240s, episode files: 201\n"}
+,{"stream_name":"stdout","time":3935.966670593,"data":"[phase2] 3300s, episode files: 202\n"}
+,{"stream_name":"stdout","time":3995.968116955,"data":"[phase2] 3360s, episode files: 204\n"}
+,{"stream_name":"stdout","time":4055.969288439,"data":"[phase2] 3420s, episode files: 206\n"}
+,{"stream_name":"stdout","time":4115.970568446,"data":"[phase2] 3480s, episode files: 208\n"}
+,{"stream_name":"stdout","time":4175.971820621,"data":"[phase2] 3540s, episode files: 209\n"}
+,{"stream_name":"stdout","time":4235.973261727,"data":"[phase2] 3600s, episode files: 211\n"}
+,{"stream_name":"stdout","time":4295.97450738,"data":"[phase2] 3660s, episode files: 213\n"}
+,{"stream_name":"stdout","time":4355.975738062,"data":"[phase2] 3720s, episode files: 214\n"}
+,{"stream_name":"stdout","time":4415.977042109,"data":"[phase2] 3780s, episode files: 216\n"}
+,{"stream_name":"stdout","time":4475.978524915,"data":"[phase2] 3840s, episode files: 218\n"}
+,{"stream_name":"stdout","time":4535.979895082,"data":"[phase2] 3900s, episode files: 220\n"}
+,{"stream_name":"stdout","time":4595.981207697,"data":"[phase2] 3960s, episode files: 222\n"}
+,{"stream_name":"stdout","time":4655.982524243,"data":"[phase2] 4020s, episode files: 223\n"}
+,{"stream_name":"stdout","time":4715.983747392,"data":"[phase2] 4080s, episode files: 225\n"}
+,{"stream_name":"stdout","time":4775.985093957,"data":"[phase2] 4140s, episode files: 226\n"}
+,{"stream_name":"stdout","time":4835.986463037,"data":"[phase2] 4200s, episode files: 228\n"}
+,{"stream_name":"stdout","time":4895.987854001,"data":"[phase2] 4260s, episode files: 230\n"}
+,{"stream_name":"stdout","time":4955.989275311,"data":"[phase2] 4320s, episode files: 232\n"}
+,{"stream_name":"stdout","time":5015.990530143,"data":"[phase2] 4380s, episode files: 234\n"}
+,{"stream_name":"stdout","time":5075.99190175,"data":"[phase2] 4440s, episode files: 236\n"}
+,{"stream_name":"stdout","time":5135.993268099,"data":"[phase2] 4500s, episode files: 237\n"}
+,{"stream_name":"stdout","time":5195.994528705,"data":"[phase2] 4560s, episode files: 238\n"}
+,{"stream_name":"stdout","time":5255.995881628,"data":"[phase2] 4620s, episode files: 240\n"}
+,{"stream_name":"stdout","time":5315.997455906,"data":"[phase2] 4680s, episode files: 242\n"}
+,{"stream_name":"stdout","time":5375.998741608,"data":"[phase2] 4740s, episode files: 244\n"}
+,{"stream_name":"stdout","time":5435.999970707,"data":"[phase2] 4800s, episode files: 246\n"}
+,{"stream_name":"stdout","time":5496.001314703,"data":"[phase2] 4860s, episode files: 248\n"}
+,{"stream_name":"stdout","time":5556.002720165,"data":"[phase2] 4920s, episode files: 249\n"}
+,{"stream_name":"stdout","time":5616.003948018,"data":"[phase2] 4980s, episode files: 250\n"}
+,{"stream_name":"stdout","time":5676.005281512,"data":"[phase2] 5040s, episode files: 252\n"}
+,{"stream_name":"stdout","time":5736.006657873,"data":"[phase2] 5100s, episode files: 254\n"}
+,{"stream_name":"stdout","time":5796.007990463,"data":"[phase2] 5160s, episode files: 256\n"}
+,{"stream_name":"stdout","time":5856.009369862,"data":"[phase2] 5220s, episode files: 258\n"}
+,{"stream_name":"stdout","time":5916.010809959,"data":"[phase2] 5280s, episode files: 260\n"}
+,{"stream_name":"stdout","time":5976.012123274,"data":"[phase2] 5340s, episode files: 261\n"}
+,{"stream_name":"stdout","time":6036.013469316,"data":"[phase2] 5400s, episode files: 263\n"}
+,{"stream_name":"stdout","time":6096.014777152,"data":"[phase2] 5460s, episode files: 264\n"}
+,{"stream_name":"stdout","time":6156.016205299,"data":"[phase2] 5520s, episode files: 266\n"}
+,{"stream_name":"stdout","time":6216.017564199,"data":"[phase2] 5580s, episode files: 268\n"}
+,{"stream_name":"stdout","time":6276.019103608,"data":"[phase2] 5640s, episode files: 270\n"}
+,{"stream_name":"stdout","time":6336.020509741,"data":"[phase2] 5700s, episode files: 272\n"}
+,{"stream_name":"stdout","time":6396.021936455,"data":"[phase2] 5760s, episode files: 273\n"}
+,{"stream_name":"stdout","time":6456.02329685,"data":"[phase2] 5820s, episode files: 275\n"}
+,{"stream_name":"stdout","time":6516.024679972,"data":"[phase2] 5880s, episode files: 277\n"}
+,{"stream_name":"stdout","time":6576.026333369,"data":"[phase2] 5940s, episode files: 278\n"}
+,{"stream_name":"stdout","time":6636.027777411,"data":"[phase2] 6000s, episode files: 280\n"}
+,{"stream_name":"stdout","time":6696.029263019,"data":"[phase2] 6060s, episode files: 282\n"}
+,{"stream_name":"stdout","time":6756.030618623,"data":"[phase2] 6120s, episode files: 283\n"}
+,{"stream_name":"stdout","time":6816.032019908,"data":"[phase2] 6180s, episode files: 285\n"}
+,{"stream_name":"stdout","time":6876.033412025,"data":"[phase2] 6240s, episode files: 287\n"}
+,{"stream_name":"stdout","time":6936.034984463,"data":"[phase2] 6300s, episode files: 289\n"}
+,{"stream_name":"stdout","time":6996.036440704,"data":"[phase2] 6360s, episode files: 291\n"}
+,{"stream_name":"stdout","time":7056.037939658,"data":"[phase2] 6420s, episode files: 292\n"}
+,{"stream_name":"stdout","time":7116.039531833,"data":"[phase2] 6480s, episode files: 294\n"}
+,{"stream_name":"stdout","time":7176.040907801,"data":"[phase2] 6540s, episode files: 295\n"}
+,{"stream_name":"stdout","time":7236.042146165,"data":"[phase2] 6600s, episode files: 297\n"}
+,{"stream_name":"stdout","time":7296.04345088,"data":"[phase2] 6660s, episode files: 298\n"}
+,{"stream_name":"stdout","time":7356.044581577,"data":"[phase2] 6720s, episode files: 299\n"}
+,{"stream_name":"stdout","time":7416.045892233,"data":"[phase2] 6780s, episode files: 300\n"}
+,{"stream_name":"stdout","time":7416.045933373,"data":"[phase2] return codes [0, 0, 0]\n"}
+,{"stream_name":"stdout","time":7416.045943058,"data":"\n"}
+,{"stream_name":"stdout","time":7416.045948422,"data":"$ grep -v -i warn /kaggle/working/out/collect_phase2_*.log | grep -i 'error\\|traceback\\|return' | tail -n 40\n"}
+,{"stream_name":"stdout","time":7416.050760324,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep12 seed 11012 return 982.0 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050777737,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep12 seed 29012 return 962.2 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050781482,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep12 seed 10112 return 996.5 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050784574,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep12 seed 12112 return 565.2 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050787501,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep12 seed 30112 return 185.4 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050790462,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep13 seed 11013 return 974.7 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050793281,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep13 seed 29013 return 954.8 70.4s\n"}
+,{"stream_name":"stdout","time":7416.050796121,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep13 seed 10113 return 983.9 70.5s\n"}
+,{"stream_name":"stdout","time":7416.050798951,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep13 seed 12113 return 512.9 70.1s\n"}
+,{"stream_name":"stdout","time":7416.050802016,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep13 seed 30113 return 163.8 70.2s\n"}
+,{"stream_name":"stdout","time":7416.050804894,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep14 seed 11014 return 991.2 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050807719,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep14 seed 29014 return 961.6 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050810568,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep14 seed 10114 return 995.5 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050813578,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep14 seed 12114 return 511.4 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050825877,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep14 seed 30114 return 181.0 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050828451,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep15 seed 11015 return 986.8 70.6s\n"}
+,{"stream_name":"stdout","time":7416.050830789,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep15 seed 29015 return 976.7 70.5s\n"}
+,{"stream_name":"stdout","time":7416.050833169,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep15 seed 10115 return 996.4 70.6s\n"}
+,{"stream_name":"stdout","time":7416.050835489,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep15 seed 12115 return 505.9 70.2s\n"}
+,{"stream_name":"stdout","time":7416.050837786,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep15 seed 30115 return 162.0 70.3s\n"}
+,{"stream_name":"stdout","time":7416.050840961,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep16 seed 11016 return 991.4 70.4s\n"}
+,{"stream_name":"stdout","time":7416.050843357,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep16 seed 29016 return 962.9 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050845666,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep16 seed 10116 return 982.8 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050847946,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep16 seed 12116 return 515.2 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050850266,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep16 seed 30116 return 184.3 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050852639,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep17 seed 11017 return 981.8 70.8s\n"}
+,{"stream_name":"stdout","time":7416.05085493,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep17 seed 29017 return 947.8 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050857242,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep17 seed 10117 return 982.5 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050859534,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep17 seed 12117 return 516.0 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050861917,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep17 seed 30117 return 169.0 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050864226,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep18 seed 11018 return 972.1 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050866514,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep18 seed 29018 return 960.2 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050868824,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep18 seed 10118 return 997.2 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050871199,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep18 seed 12118 return 563.0 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050873487,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep18 seed 30118 return 195.0 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050875795,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk A ep19 seed 11019 return 992.1 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050878101,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-walk-backwards A ep19 seed 29019 return 980.4 70.7s\n"}
+,{"stream_name":"stdout","time":7416.050880436,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-stand B ep19 seed 10119 return 983.1 70.8s\n"}
+,{"stream_name":"stdout","time":7416.050884951,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run B ep19 seed 12119 return 545.5 70.5s\n"}
+,{"stream_name":"stdout","time":7416.050887358,"data":"/kaggle/working/out/collect_phase2_gpu1.log:[w1] walker-run-backwards B ep19 seed 30119 return 202.2 70.5s\n"}
+,{"stream_name":"stdout","time":7416.051170994,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":7416.051596202,"data":"\n"}
+,{"stream_name":"stdout","time":7416.05161202,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python check_rollouts.py --data /kaggle/working/out/rollouts --episodes 0-19 --out /kaggle/working/out/check_all.json 2\u003e\u00261 | grep -v -i warn | tail -n 5\n"}
+,{"stream_name":"stdout","time":7976.589616709,"data":"walker-walk/C/ep16 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 37.450443267822266, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":7976.589667842,"data":"walker-walk/C/ep17 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 58.71501922607422, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":7976.589674772,"data":"walker-walk/C/ep18 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 32.32305908203125, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":7976.589679959,"data":"walker-walk/C/ep19 PASS {'obs_restore_max_abs': 0.0, 'obs_raw_max_abs': 0.0, 'reward_restore_max_abs': 0.0, 'r_logged_vs_substep_sum_max_abs': 0.0, 'substate_chain_equal': True, 'next_obs_chain_equal': True, 'return': 33.13798904418945, 'steps': 500}\n"}
+,{"stream_name":"stdout","time":7976.589684975,"data":"ALL_PASS 300\n"}
+,{"stream_name":"stdout","time":7976.59072182,"data":"[rc=0 560.5s]\n"}
+,{"stream_name":"stdout","time":7976.590738095,"data":"\n"}
+,{"stream_name":"stdout","time":7976.590742801,"data":"$ du -sh /kaggle/working/out/rollouts; find /kaggle/working/out/rollouts -name '*.npz' | wc -l\n"}
+,{"stream_name":"stdout","time":7976.600211231,"data":"110M\t/kaggle/working/out/rollouts\n"}
+,{"stream_name":"stdout","time":7976.612803407,"data":"300\n"}
+,{"stream_name":"stdout","time":7976.613313456,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":7976.61332952,"data":"DONE in 7976s\n"}
+,{"stream_name":"stderr","time":7979.021292232,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":7979.021318861,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":7979.375349001,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":7979.375379678,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":7981.428035025,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":7982.450675313,"data":"[NbConvertApp] Writing 300476 bytes to __results__.html\n"}
+]

@@ -1,0 +1,19 @@
+{
+ "random_init_seed": 20261028,
+ "random_task_emb_norms": [
+  0.09319335222244263,
+  0.09686660766601562,
+  0.08541985601186752,
+  0.09818949550390244,
+  0.10777700692415237
+ ],
+ "learned_task_ids": [
+  0,
+  1,
+  2,
+  19,
+  20
+ ],
+ "latent_dim": 768,
+ "encode": "WorldModel.encode (world_model.py:105-114), CPU float32"
+}

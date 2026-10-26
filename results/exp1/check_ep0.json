@@ -1,0 +1,171 @@
+{
+ "all_pass": true,
+ "n_episodes": 15,
+ "episodes": {
+  "walker-run-backwards/A/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 240.47222900390625,
+   "steps": 500
+  },
+  "walker-run-backwards/B/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 178.12530517578125,
+   "steps": 500
+  },
+  "walker-run-backwards/C/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 17.90819549560547,
+   "steps": 500
+  },
+  "walker-run/A/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 603.0794067382812,
+   "steps": 500
+  },
+  "walker-run/B/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 544.7347412109375,
+   "steps": 500
+  },
+  "walker-run/C/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 25.29983901977539,
+   "steps": 500
+  },
+  "walker-stand/A/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 998.1103515625,
+   "steps": 500
+  },
+  "walker-stand/B/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 995.8977661132812,
+   "steps": 500
+  },
+  "walker-stand/C/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 154.894775390625,
+   "steps": 500
+  },
+  "walker-walk-backwards/A/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 946.5247802734375,
+   "steps": 500
+  },
+  "walker-walk-backwards/B/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 936.6770629882812,
+   "steps": 500
+  },
+  "walker-walk-backwards/C/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 23.79227638244629,
+   "steps": 500
+  },
+  "walker-walk/A/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 975.2999877929688,
+   "steps": 500
+  },
+  "walker-walk/B/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 980.4686279296875,
+   "steps": 500
+  },
+  "walker-walk/C/ep00": {
+   "pass": true,
+   "obs_restore_max_abs": 0.0,
+   "obs_raw_max_abs": 0.0,
+   "reward_restore_max_abs": 0.0,
+   "r_logged_vs_substep_sum_max_abs": 0.0,
+   "substate_chain_equal": true,
+   "next_obs_chain_equal": true,
+   "return": 32.27304458618164,
+   "steps": 500
+  }
+ }
+}
