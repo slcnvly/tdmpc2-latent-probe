@@ -55,6 +55,11 @@ sh(C + f"{py} make_split.py --pooled {DATA}/pooled --out {DATA}/split.json --rep
 sh(f"cd {DATA} && sha256sum -c {ROOT}/results/exp1/local_data_sha256.txt 2>&1 | tee {OUT}/data_sha_vs_local.txt", env=env, check=False)
 sh(f"cp {ROOT}/results/exp1/step5_checks.json {OUT}/step5_checks_kaggle.json; cp {ROOT}/results/exp1/normmatched_meta.json {OUT}/normmatched_meta_kaggle.json", env=env, check=False)
 open(f"{OUT}/rebuild_seconds.txt", "w").write(f"{time.time() - t:.1f}\n")
+# keep the exact files the probes are trained/evaluated on (small ones) and a latent subset for the local comparison
+sh(f"mkdir -p {OUT}/data_kaggle && cp {DATA}/pooled/targets.npy {DATA}/pooled/torso_height.npy {DATA}/pooled/index.npz {DATA}/split.json {DATA}/split_labels.npy {OUT}/data_kaggle/ "
+   f"&& cd {DATA} && sha256sum pooled/*.npy pooled/index.npz split.json split_labels.npy > {OUT}/data_kaggle/sha256_kaggle.txt && lscpu | head -20 > {OUT}/cpu_info.txt", env=env, check=False)
+sh(f"{py} -c \"import numpy as np; d='{DATA}/pooled'; s=np.arange(0,150000,50); "
+   f"np.savez('{OUT}/data_kaggle/latent_subset_every50.npz', idx=s, **{{k: np.load(d+'/latent_'+k+'.npy', mmap_mode='r')[:, s] for k in ('learned','random','normmatched')}})\"", env=env, check=False)
 
 # 3. linear probes (CPU), MLP probes (4 processes on 2 GPUs)
 PROBES = f"{OUT}/probes"
