@@ -1,0 +1,124 @@
+{
+ "n_states": 150000,
+ "split_file": "split.json",
+ "train": {
+  "episodes": 180,
+  "states": 90000,
+  "fallen_ratio_h_lt_0.6m": 0.31951111111111113,
+  "fallen_states": 28756,
+  "states_by_type": {
+   "A": 30000,
+   "B": 30000,
+   "C": 30000
+  }
+ },
+ "val": {
+  "episodes": 60,
+  "states": 30000,
+  "fallen_ratio_h_lt_0.6m": 0.31953333333333334,
+  "fallen_states": 9586,
+  "states_by_type": {
+   "A": 10000,
+   "B": 10000,
+   "C": 10000
+  }
+ },
+ "test": {
+  "episodes": 60,
+  "states": 30000,
+  "fallen_ratio_h_lt_0.6m": 0.32016666666666665,
+  "fallen_states": 9605,
+  "states_by_type": {
+   "A": 10000,
+   "B": 10000,
+   "C": 10000
+  }
+ },
+ "episodes_per_stratum": {
+  "walker-stand/A": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-walk/A": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-run/A": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-walk-backwards/A": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-run-backwards/A": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-stand/B": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-walk/B": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-run/B": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-walk-backwards/B": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-run-backwards/B": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "C": {
+   "train": 60,
+   "val": 20,
+   "test": 20
+  }
+ },
+ "C_episodes_per_label": {
+  "walker-stand": {
+   "train": 15,
+   "val": 1,
+   "test": 4
+  },
+  "walker-walk": {
+   "train": 13,
+   "val": 0,
+   "test": 7
+  },
+  "walker-run": {
+   "train": 12,
+   "val": 4,
+   "test": 4
+  },
+  "walker-walk-backwards": {
+   "train": 7,
+   "val": 10,
+   "test": 3
+  },
+  "walker-run-backwards": {
+   "train": 13,
+   "val": 5,
+   "test": 2
+  }
+ },
+ "episode_in_two_splits": 0,
+ "all_300_episodes_assigned": true,
+ "same_state_five_latents_same_split": "latent arrays are (5, N, 768) indexed by the same state index n; the split label is per n, so the 5 latents of a state share it"
+}

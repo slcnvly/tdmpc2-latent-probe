@@ -116,3 +116,26 @@ MLP:
 - Kaggle 주간 GPU 할당량 30시간 중 사용 1.33시간 → **약 28.7시간 남음** (2026-10-31 00:00 UTC 초기화).
 - 로컬 디스크 여유 **912 GB**, 로컬 RAM 15 GB, CPU 12개.
 - latent(4.6 GB)는 로컬과 Kaggle 출력에만 두고 GitHub에는 올리지 않는다.
+
+---
+
+## 사후 추가 항목 (2026-10-26 08:31 UTC, Step 6 probe를 하나도 학습하기 전에 기록)
+
+이 절은 위 고정 항목을 바꾸지 않는다. 사용자 지시(Step 6 지시서 6-2의 4)에 따라 보조 대조군 하나를 추가한다.
+
+**A1. norm-matched random-init latent (보조 대조군)**
+
+- 이유: random-init 모델의 task embedding norm이 약 0.1(0.085~0.108)이라, 학습 모델(약 0.99)과 encoder에 들어가는 task 입력의 크기가 다르다 (`results/exp1/latent_meta.json`).
+- 정의:
+  - 모델은 5절의 random-init 대조군과 같다 (`torch.manual_seed(20261028)` 후 `WorldModel(cfg)`).
+  - walker 다섯 task(번호 0, 1, 2, 19, 20)의 task embedding 행 e_k만 e_k × (c / ‖e_k‖)로 바꾼다. 방향은 그대로 두고 크기만 곱한다.
+  - c는 학습된 mt30-48M의 같은 다섯 행 L2 norm의 평균 = **0.994675**다.
+  - c < 1이라 `nn.Embedding(max_norm=1)`의 조회 시 재정규화(`common/world_model.py:21`)는 일어나지 않는다.
+  - encoder와 나머지 가중치는 바꾸지 않는다.
+- latent 추출: `code/step5_latents_targets.py`의 `encode_all`(공식 `WorldModel.encode`)을 그대로 쓴다.
+  추출 경로가 5절 random-init과 같다는 확인으로, 크기를 바꾸지 않은 random-init 모델을 같은 함수로 다시 encode해 저장된 `latent_random.npy`와 일치하는지 비교한다.
+- probe 설정, split, target, 통계는 5~6절과 같다.
+- 비교 (d): 같은 열 안에서 학습된 z(τ) 대 norm-matched random-init z(τ)의 paired bootstrap difference.
+- 보고: 주 대조군이 아니라 **보조 대조군**으로 보고한다.
+
+**A2. 결과 구분 추가 (사용자 지시 6-4)**: 보조 결과로 fallen 상태(torso_height < 0.6 m)를 뺀 pooled test를 계산한다. 정의는 2절과 같다.
