@@ -2,7 +2,7 @@
 
 TD-MPC2 multi-task (mt30) checkpoint의 task-conditioned encoder가 task에 따라 정보를 어떻게 다르게 보존하는지 진단하기 위한 작업 저장소.
 
-현재 단계: **GATE 3** (Experiment 1 데이터 수집과 latent·reward target 준비 완료). Step 6(probe) 이후는 사용자 승인 전까지 실행하지 않는다.
+현재 단계: **Experiment 1 Step 6 완료** (reward probe, heatmap·표, 선택 실험 counterfactual task swap). 가설은 아직 작성되지 않았다.
 
 | 문서 | 내용 |
 |---|---|
@@ -13,9 +13,9 @@ TD-MPC2 multi-task (mt30) checkpoint의 task-conditioned encoder가 task에 따�
 | [VERIFICATION_RESULTS.md](VERIFICATION_RESULTS.md) | V1~V5 결과와 판정 |
 | [EXPERIMENT1_PREREG.md](EXPERIMENT1_PREREG.md) | Experiment 1 사전 고정 (Step P0) |
 | [DATA_SUMMARY.md](DATA_SUMMARY.md) | Experiment 1 수집 데이터 요약 |
-| [EXPERIMENT_RESULTS.md](EXPERIMENT_RESULTS.md) | Experiment 1 결과 (GATE 3 시점, 진행 중) |
+| [EXPERIMENT_RESULTS.md](EXPERIMENT_RESULTS.md) | Experiment 1 결과 (Step 6 포함) |
 
-데이터: rollout(110 MB)과 latent(4.6 GB)는 현재 작업 컴퓨터의 `data/`에만 있다 (공유 위치는 미정). rollout은 `code/collect_rollouts.py`, pooled 데이터와 latent는 `code/step5_latents_targets.py`로 다시 만든다.
+데이터: rollout(110 MB)은 비공개 Kaggle dataset `seungwonryoo/tdmpc2-probe-exp1-rollouts`와 작업 컴퓨터 `data/`에 있다. latent(4.6 GB)와 probe 예측값은 작업 컴퓨터에만 있다. rollout은 `code/collect_rollouts.py`, pooled 데이터와 latent는 `code/step5_latents_targets.py`로 다시 만든다.
 
 ## 재현
 

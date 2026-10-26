@@ -1,0 +1,212 @@
+[{"stream_name":"stdout","time":0.84802523,"data":"\n"}
+,{"stream_name":"stdout","time":0.848088106,"data":"$ nvidia-smi -L; nproc; free -g | head -2; df -h /kaggle/temp | tail -1\n"}
+,{"stream_name":"stdout","time":0.88616364,"data":"GPU 0: Tesla T4 (UUID: GPU-24f5f68d-f534-74c5-fbd5-865e819e906f)\n"}
+,{"stream_name":"stdout","time":0.886184893,"data":"GPU 1: Tesla T4 (UUID: GPU-916a14c8-2c53-5c8e-af91-754012cf0032)\n"}
+,{"stream_name":"stdout","time":0.899620045,"data":"4\n"}
+,{"stream_name":"stdout","time":0.924291174,"data":"               total        used        free      shared  buff/cache   available\n"}
+,{"stream_name":"stdout","time":0.924313599,"data":"Mem:              31           1          26           0           4          30\n"}
+,{"stream_name":"stderr","time":0.931653678,"data":"df: /kaggle/temp: No such file or directory\n"}
+,{"stream_name":"stdout","time":0.939495408,"data":"[rc=1 0.1s]\n"}
+,{"stream_name":"stdout","time":0.946346843,"data":"/usr/local/bin/uv\n"}
+,{"stream_name":"stdout","time":0.946367619,"data":"\n"}
+,{"stream_name":"stdout","time":0.946374921,"data":"$ git clone -q https://github.com/slcnvly/tdmpc2-latent-probe /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 git checkout -q 970dc2c20f32552e88feba06de5273626f2e6927 \u0026\u0026 git log -1 --oneline\n"}
+,{"stream_name":"stdout","time":1.804796295,"data":"970dc2c Probe kernel: keep the Kaggle-built targets and a latent subset for comparison with local files\n"}
+,{"stream_name":"stdout","time":1.80539819,"data":"[rc=0 0.9s]\n"}
+,{"stream_name":"stdout","time":1.80541544,"data":"\n"}
+,{"stream_name":"stdout","time":1.8054197140000001,"data":"$ git clone -q https://github.com/nicklashansen/tdmpc2 /kaggle/temp/tdmpc2-latent-probe/tdmpc2 \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe/tdmpc2 \u0026\u0026 git checkout -q 332f19e4aba4bffe2dc736f45ea7f7bdc585903a\n"}
+,{"stream_name":"stdout","time":2.422881201,"data":"[rc=0 0.6s]\n"}
+,{"stream_name":"stdout","time":2.422908149,"data":"\n"}
+,{"stream_name":"stdout","time":2.422913212,"data":"$ uv venv -q --python 3.11 /kaggle/temp/tdmpc2-latent-probe/venv\n"}
+,{"stream_name":"stdout","time":5.239082734,"data":"[rc=0 2.8s]\n"}
+,{"stream_name":"stdout","time":5.239106776,"data":"\n"}
+,{"stream_name":"stdout","time":5.239111656,"data":"$ uv pip install -q --python /kaggle/temp/tdmpc2-latent-probe/venv/bin/python torch==2.7.1 --index-url https://download.pytorch.org/whl/cu128\n"}
+,{"stream_name":"stdout","time":50.188872316,"data":"[rc=0 44.9s]\n"}
+,{"stream_name":"stdout","time":50.188911248,"data":"\n"}
+,{"stream_name":"stdout","time":50.188920229,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe \u0026\u0026 grep -v '^torch==' requirements.txt \u003e /tmp/req.txt \u0026\u0026 uv pip install -q --python venv/bin/python -r /tmp/req.txt\n"}
+,{"stream_name":"stdout","time":56.057188802,"data":"[rc=0 5.9s]\n"}
+,{"stream_name":"stdout","time":56.057231623,"data":"\n"}
+,{"stream_name":"stdout","time":56.057240518,"data":"$ uv pip freeze --python /kaggle/temp/tdmpc2-latent-probe/venv/bin/python \u003e /kaggle/working/out/pip_freeze.txt\n"}
+,{"stream_name":"stderr","time":56.068605143,"data":"Using Python 3.11.17 environment at: /kaggle/temp/tdmpc2-latent-probe/venv\n"}
+,{"stream_name":"stdout","time":56.072414765,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":56.072432058,"data":"\n"}
+,{"stream_name":"stdout","time":56.072437941,"data":"$ /kaggle/temp/tdmpc2-latent-probe/venv/bin/hf download nicklashansen/tdmpc2 multitask/mt30-48M.pt --local-dir /kaggle/temp/tdmpc2-latent-probe/ckpts \u003e /dev/null \u0026\u0026 sha256sum /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt | tee /kaggle/working/out/ckpt_sha256.txt\n"}
+,{"stream_name":"stderr","time":56.948897622,"data":"\u001b[90mHint: The `hf-cli` skill is not installed. Run `hf skills add -g` to teach your AI agents how to use the `hf` CLI.\u001b[0m\n"}
+,{"stream_name":"stdout","time":60.469375566,"data":"bacb9ae1891a9b03dc3942a287080beb573220ea9d0263c5efd7a94a5c2ec419  /kaggle/temp/tdmpc2-latent-probe/ckpts/multitask/mt30-48M.pt\n"}
+,{"stream_name":"stdout","time":60.470067512,"data":"[rc=0 4.4s]\n"}
+,{"stream_name":"stdout","time":62.889894964,"data":"\n"}
+,{"stream_name":"stdout","time":62.889942564,"data":"$ cp -r /kaggle/input/datasets/seungwonryoo/tdmpc2-probe-exp1-rollouts/exp1_rollouts/rollouts /kaggle/temp/tdmpc2-latent-probe/data/rollouts \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe/data \u0026\u0026 sha256sum -c /kaggle/temp/tdmpc2-latent-probe/results/exp1/rollouts_manifest_sha256.txt --quiet \u0026\u0026 echo ROLLOUTS_SHA_OK | tee /kaggle/working/out/rollouts_sha_check.txt\n"}
+,{"stream_name":"stdout","time":84.870116463,"data":"ROLLOUTS_SHA_OK\n"}
+,{"stream_name":"stdout","time":84.870642141,"data":"[rc=0 22.0s]\n"}
+,{"stream_name":"stdout","time":84.870664681,"data":"\n"}
+,{"stream_name":"stdout","time":84.870670952,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python step5_latents_targets.py --data /kaggle/temp/tdmpc2-latent-probe/data/rollouts --out /kaggle/temp/tdmpc2-latent-probe/data/pooled 2\u003e\u00261 | grep -v -i warn | tail -n 25\n"}
+,{"stream_name":"stdout","time":348.929260556,"data":"targets 120000\n"}
+,{"stream_name":"stdout","time":348.929323935,"data":"targets 140000\n"}
+,{"stream_name":"stdout","time":348.929330856,"data":"{\n"}
+,{"stream_name":"stdout","time":348.929358273,"data":" \"n_states\": 150000,\n"}
+,{"stream_name":"stdout","time":348.929363688,"data":" \"n_episodes\": 300,\n"}
+,{"stream_name":"stdout","time":348.929368708,"data":" \"check1_time_alignment\": {\n"}
+,{"stream_name":"stdout","time":348.929373684,"data":"  \"max_abs_obs_recompute\": 0.0,\n"}
+,{"stream_name":"stdout","time":348.929378015,"data":"  \"tol\": 1e-05,\n"}
+,{"stream_name":"stdout","time":348.929382141,"data":"  \"pass\": true,\n"}
+,{"stream_name":"stdout","time":348.929386586,"data":"  \"code\": \"encoder input = stored obs[n]; reward = get_reward after set_state(state[n]); both index n (= t of the same episode)\"\n"}
+,{"stream_name":"stdout","time":348.929394497,"data":" },\n"}
+,{"stream_name":"stdout","time":348.92939745,"data":" \"check2_logged_value\": {\n"}
+,{"stream_name":"stdout","time":348.929400498,"data":"  \"n_compared\": 149700,\n"}
+,{"stream_name":"stdout","time":348.929403324,"data":"  \"max_abs\": 0.0,\n"}
+,{"stream_name":"stdout","time":348.929406189,"data":"  \"tol\": 1e-06,\n"}
+,{"stream_name":"stdout","time":348.929408918,"data":"  \"pass\": true,\n"}
+,{"stream_name":"stdout","time":348.929411701,"data":"  \"excluded\": \"t = 0 of every episode\"\n"}
+,{"stream_name":"stdout","time":348.929414597,"data":" },\n"}
+,{"stream_name":"stdout","time":348.929417225,"data":" \"check3_no_side_effect\": {\n"}
+,{"stream_name":"stdout","time":348.929420035,"data":"  \"pass\": true,\n"}
+,{"stream_name":"stdout","time":348.929422736,"data":"  \"how\": \"np.array_equal(get_state() after reward, restored s_t) for all 5 envs and all states\"\n"}
+,{"stream_name":"stdout","time":348.929435786,"data":" },\n"}
+,{"stream_name":"stdout","time":348.929440366,"data":" \"all_pass\": true\n"}
+,{"stream_name":"stdout","time":348.929445037,"data":"}\n"}
+,{"stream_name":"stdout","time":348.929449858,"data":"latents written\n"}
+,{"stream_name":"stdout","time":349.03377897,"data":"[rc=0 264.2s]\n"}
+,{"stream_name":"stdout","time":349.033823545,"data":"\n"}
+,{"stream_name":"stdout","time":349.033828494,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python extract_normmatched.py --pooled /kaggle/temp/tdmpc2-latent-probe/data/pooled 2\u003e\u00261 | grep -v -i warn | tail -n 5\n"}
+,{"stream_name":"stdout","time":446.322807369,"data":" ],\n"}
+,{"stream_name":"stdout","time":446.322872145,"data":" \"path_check_max_abs_vs_latent_random_subset\": 0.0,\n"}
+,{"stream_name":"stdout","time":446.322879564,"data":" \"subset_size\": 3000,\n"}
+,{"stream_name":"stdout","time":446.322885459,"data":" \"random_init_seed\": 20261028\n"}
+,{"stream_name":"stdout","time":446.322890668,"data":"}\n"}
+,{"stream_name":"stdout","time":446.414459268,"data":"[rc=0 97.4s]\n"}
+,{"stream_name":"stdout","time":446.414484104,"data":"\n"}
+,{"stream_name":"stdout","time":446.414489008,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python torso_height.py --pooled /kaggle/temp/tdmpc2-latent-probe/data/pooled 2\u003e\u00261 | grep -v -i warn | tail -n 2\n"}
+,{"stream_name":"stdout","time":459.702281301,"data":"Creating multi-task environment with tasks: ['walker-stand', 'walker-walk', 'walker-run', 'cheetah-run', 'reacher-easy', 'reacher-hard', 'acrobot-swingup', 'pendulum-swingup', 'cartpole-balance', 'cartpole-balance-sparse', 'cartpole-swingup', 'cartpole-swingup-sparse', 'cup-catch', 'finger-spin', 'finger-turn-easy', 'finger-turn-hard', 'fish-swim', 'hopper-stand', 'hopper-hop', 'walker-walk-backwards', 'walker-run-backwards', 'cheetah-run-backwards', 'cheetah-run-front', 'cheetah-run-back', 'cheetah-jump', 'hopper-hop-backwards', 'reacher-three-easy', 'reacher-three-hard', 'cup-spin', 'pendulum-spin']\n"}
+,{"stream_name":"stdout","time":459.702344811,"data":"fallen (\u003c0.6 m) fraction 0.3196466666666667\n"}
+,{"stream_name":"stdout","time":459.702783851,"data":"[rc=0 13.3s]\n"}
+,{"stream_name":"stdout","time":459.702811711,"data":"\n"}
+,{"stream_name":"stdout","time":459.702818636,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python make_split.py --pooled /kaggle/temp/tdmpc2-latent-probe/data/pooled --out /kaggle/temp/tdmpc2-latent-probe/data/split.json --report /kaggle/working/out/split_check_kaggle.json \u003e /dev/null\n"}
+,{"stream_name":"stdout","time":460.265655608,"data":"[rc=0 0.6s]\n"}
+,{"stream_name":"stdout","time":460.265696691,"data":"\n"}
+,{"stream_name":"stdout","time":460.265712344,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/data \u0026\u0026 sha256sum -c /kaggle/temp/tdmpc2-latent-probe/results/exp1/local_data_sha256.txt 2\u003e\u00261 | tee /kaggle/working/out/data_sha_vs_local.txt\n"}
+,{"stream_name":"stdout","time":460.287363902,"data":"pooled/index.npz: OK\n"}
+,{"stream_name":"stdout","time":460.326964884,"data":"pooled/obs.npy: OK\n"}
+,{"stream_name":"stdout","time":460.384632163,"data":"pooled/state.npy: OK\n"}
+,{"stream_name":"stdout","time":460.400499922,"data":"pooled/targets.npy: FAILED\n"}
+,{"stream_name":"stdout","time":466.667444933,"data":"pooled/latent_learned.npy: FAILED\n"}
+,{"stream_name":"stdout","time":473.03901858,"data":"pooled/latent_random.npy: FAILED\n"}
+,{"stream_name":"stdout","time":479.292313164,"data":"pooled/latent_normmatched.npy: FAILED\n"}
+,{"stream_name":"stdout","time":479.295871545,"data":"pooled/torso_height.npy: OK\n"}
+,{"stream_name":"stdout","time":479.295912996,"data":"split.json: OK\n"}
+,{"stream_name":"stdout","time":479.304097491,"data":"split_labels.npy: OK\n"}
+,{"stream_name":"stdout","time":479.304112851,"data":"sha256sum: WARNING: 4 computed checksums did NOT match\n"}
+,{"stream_name":"stdout","time":479.304856496,"data":"[rc=1 19.0s]\n"}
+,{"stream_name":"stdout","time":479.30487708,"data":"\n"}
+,{"stream_name":"stdout","time":479.304881121,"data":"$ cp /kaggle/temp/tdmpc2-latent-probe/results/exp1/step5_checks.json /kaggle/working/out/step5_checks_kaggle.json; cp /kaggle/temp/tdmpc2-latent-probe/results/exp1/normmatched_meta.json /kaggle/working/out/normmatched_meta_kaggle.json\n"}
+,{"stream_name":"stdout","time":479.310289285,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":479.310500286,"data":"\n"}
+,{"stream_name":"stdout","time":479.310521361,"data":"$ mkdir -p /kaggle/working/out/data_kaggle \u0026\u0026 cp /kaggle/temp/tdmpc2-latent-probe/data/pooled/targets.npy /kaggle/temp/tdmpc2-latent-probe/data/pooled/torso_height.npy /kaggle/temp/tdmpc2-latent-probe/data/pooled/index.npz /kaggle/temp/tdmpc2-latent-probe/data/split.json /kaggle/temp/tdmpc2-latent-probe/data/split_labels.npy /kaggle/working/out/data_kaggle/ \u0026\u0026 cd /kaggle/temp/tdmpc2-latent-probe/data \u0026\u0026 sha256sum pooled/*.npy pooled/index.npz split.json split_labels.npy \u003e /kaggle/working/out/data_kaggle/sha256_kaggle.txt \u0026\u0026 lscpu | head -20 \u003e /kaggle/working/out/cpu_info.txt\n"}
+,{"stream_name":"stdout","time":498.205129832,"data":"[rc=0 18.9s]\n"}
+,{"stream_name":"stdout","time":498.205191276,"data":"\n"}
+,{"stream_name":"stdout","time":498.205198979,"data":"$ /kaggle/temp/tdmpc2-latent-probe/venv/bin/python -c \"import numpy as np; d='/kaggle/temp/tdmpc2-latent-probe/data/pooled'; s=np.arange(0,150000,50); np.savez('/kaggle/working/out/data_kaggle/latent_subset_every50.npz', idx=s, **{k: np.load(d+'/latent_'+k+'.npy', mmap_mode='r')[:, s] for k in ('learned','random','normmatched')})\"\n"}
+,{"stream_name":"stdout","time":498.820116434,"data":"[rc=0 0.6s]\n"}
+,{"stream_name":"stdout","time":498.820147589,"data":"\n"}
+,{"stream_name":"stdout","time":498.820153312,"data":"$ cd /kaggle/temp/tdmpc2-latent-probe/code \u0026\u0026 /kaggle/temp/tdmpc2-latent-probe/venv/bin/python probe.py linear --data /kaggle/temp/tdmpc2-latent-probe/data --out /kaggle/working/out/probes 2\u003e\u00261 | tail -n 20\n"}
+,{"stream_name":"stdout","time":721.988082571,"data":"learned:0 {0: (31.622776601683796, 0.9991), 1: (100.0, 0.9729), 2: (31.622776601683796, 0.9975), 3: (10.0, 0.9727), 4: (9.999999999999999e-05, 0.9922)} 15s\n"}
+,{"stream_name":"stdout","time":721.988175133,"data":"learned:1 {0: (100.0, 0.9991), 1: (100.0, 0.9763), 2: (31.622776601683796, 0.9977), 3: (31.622776601683796, 0.9694), 4: (9.999999999999999e-05, 0.9918)} 30s\n"}
+,{"stream_name":"stdout","time":721.988181879,"data":"learned:2 {0: (100.0, 0.9991), 1: (100.0, 0.9699), 2: (31.622776601683796, 0.998), 3: (10.0, 0.9601), 4: (9.999999999999999e-05, 0.991)} 45s\n"}
+,{"stream_name":"stdout","time":721.988185373,"data":"learned:3 {0: (31.622776601683796, 0.9991), 1: (100.0, 0.9772), 2: (3.162277660168379, 0.9969), 3: (9.999999999999999e-05, 0.9681), 4: (9.999999999999999e-05, 0.9937)} 60s\n"}
+,{"stream_name":"stdout","time":721.988188753,"data":"learned:4 {0: (31.622776601683796, 0.9991), 1: (100.0, 0.9654), 2: (9.999999999999999e-05, 0.9971), 3: (9.999999999999999e-05, 0.9503), 4: (100.0, 0.9931)} 75s\n"}
+,{"stream_name":"stdout","time":721.988192149,"data":"raw {0: (9.999999999999999e-05, 0.9853), 1: (316.2277660168379, 0.8001), 2: (1000.0, 0.9263), 3: (9.999999999999999e-05, 0.6351), 4: (9.999999999999999e-05, 0.8711)} 75s\n"}
+,{"stream_name":"stdout","time":721.988195437,"data":"random:0 {0: (100.0, 0.7458), 1: (316.2277660168379, 0.7607), 2: (100.0, 0.772), 3: (9.999999999999999e-05, 0.6502), 4: (0.00031622776601683794, 0.6631)} 90s\n"}
+,{"stream_name":"stdout","time":721.988215442,"data":"random:1 {0: (100.0, 0.746), 1: (316.2277660168379, 0.76), 2: (100.0, 0.7705), 3: (0.00031622776601683794, 0.6505), 4: (0.001, 0.6634)} 105s\n"}
+,{"stream_name":"stdout","time":721.988251877,"data":"random:2 {0: (100.0, 0.7475), 1: (316.2277660168379, 0.7617), 2: (100.0, 0.7739), 3: (9.999999999999999e-05, 0.6506), 4: (9.999999999999999e-05, 0.6644)} 119s\n"}
+,{"stream_name":"stdout","time":721.988259497,"data":"random:3 {0: (100.0, 0.7473), 1: (316.2277660168379, 0.7611), 2: (100.0, 0.7729), 3: (9.999999999999999e-05, 0.6508), 4: (0.001, 0.6646)} 134s\n"}
+,{"stream_name":"stdout","time":721.988263567,"data":"random:4 {0: (100.0, 0.7468), 1: (316.2277660168379, 0.761), 2: (100.0, 0.7728), 3: (9.999999999999999e-05, 0.6517), 4: (9.999999999999999e-05, 0.6647)} 148s\n"}
+,{"stream_name":"stdout","time":721.988267497,"data":"normmatched:0 {0: (100.0, 0.7801), 1: (316.2277660168379, 0.7755), 2: (100.0, 0.7971), 3: (0.00031622776601683794, 0.6719), 4: (0.00031622776601683794, 0.7024)} 163s\n"}
+,{"stream_name":"stdout","time":721.988271507,"data":"normmatched:1 {0: (100.0, 0.782), 1: (316.2277660168379, 0.7739), 2: (100.0, 0.791), 3: (0.00031622776601683794, 0.6737), 4: (0.00031622776601683794, 0.7044)} 177s\n"}
+,{"stream_name":"stdout","time":721.988277233,"data":"normmatched:2 {0: (100.0, 0.7865), 1: (316.2277660168379, 0.7811), 2: (100.0, 0.8066), 3: (9.999999999999999e-05, 0.6703), 4: (9.999999999999999e-05, 0.7046)} 192s\n"}
+,{"stream_name":"stdout","time":721.988280945,"data":"normmatched:3 {0: (100.0, 0.7888), 1: (316.2277660168379, 0.7775), 2: (100.0, 0.8012), 3: (0.00031622776601683794, 0.6754), 4: (0.00031622776601683794, 0.7107)} 206s\n"}
+,{"stream_name":"stdout","time":721.988284738,"data":"normmatched:4 {0: (100.0, 0.7839), 1: (316.2277660168379, 0.7774), 2: (100.0, 0.7999), 3: (9.999999999999999e-05, 0.6746), 4: (0.00031622776601683794, 0.7064)} 221s\n"}
+,{"stream_name":"stdout","time":721.988788458,"data":"[rc=0 223.2s]\n"}
+,{"stream_name":"stdout","time":841.994946452,"data":"[mlp] 120s, probes done 7/400\n"}
+,{"stream_name":"stdout","time":961.997282228,"data":"[mlp] 240s, probes done 15/400\n"}
+,{"stream_name":"stdout","time":1081.998888583,"data":"[mlp] 360s, probes done 28/400\n"}
+,{"stream_name":"stdout","time":1202.003637377,"data":"[mlp] 480s, probes done 39/400\n"}
+,{"stream_name":"stdout","time":1322.006347088,"data":"[mlp] 600s, probes done 51/400\n"}
+,{"stream_name":"stdout","time":1442.00994356,"data":"[mlp] 720s, probes done 62/400\n"}
+,{"stream_name":"stdout","time":1562.011132823,"data":"[mlp] 840s, probes done 72/400\n"}
+,{"stream_name":"stdout","time":1682.012151767,"data":"[mlp] 960s, probes done 84/400\n"}
+,{"stream_name":"stdout","time":1802.014849864,"data":"[mlp] 1080s, probes done 98/400\n"}
+,{"stream_name":"stdout","time":1922.017291869,"data":"[mlp] 1200s, probes done 107/400\n"}
+,{"stream_name":"stdout","time":2042.0199185,"data":"[mlp] 1320s, probes done 116/400\n"}
+,{"stream_name":"stdout","time":2162.022701626,"data":"[mlp] 1440s, probes done 126/400\n"}
+,{"stream_name":"stdout","time":2282.025196047,"data":"[mlp] 1560s, probes done 133/400\n"}
+,{"stream_name":"stdout","time":2402.027442718,"data":"[mlp] 1680s, probes done 142/400\n"}
+,{"stream_name":"stdout","time":2522.029347336,"data":"[mlp] 1800s, probes done 149/400\n"}
+,{"stream_name":"stdout","time":2642.032684719,"data":"[mlp] 1920s, probes done 160/400\n"}
+,{"stream_name":"stdout","time":2762.035606509,"data":"[mlp] 2040s, probes done 168/400\n"}
+,{"stream_name":"stdout","time":2882.03882495,"data":"[mlp] 2160s, probes done 179/400\n"}
+,{"stream_name":"stdout","time":3002.041389859,"data":"[mlp] 2280s, probes done 189/400\n"}
+,{"stream_name":"stdout","time":3122.044488864,"data":"[mlp] 2400s, probes done 197/400\n"}
+,{"stream_name":"stdout","time":3242.047342826,"data":"[mlp] 2520s, probes done 208/400\n"}
+,{"stream_name":"stdout","time":3362.050883086,"data":"[mlp] 2640s, probes done 217/400\n"}
+,{"stream_name":"stdout","time":3482.052422411,"data":"[mlp] 2760s, probes done 228/400\n"}
+,{"stream_name":"stdout","time":3602.057106834,"data":"[mlp] 2880s, probes done 236/400\n"}
+,{"stream_name":"stdout","time":3722.060053207,"data":"[mlp] 3000s, probes done 245/400\n"}
+,{"stream_name":"stdout","time":3842.064224167,"data":"[mlp] 3120s, probes done 253/400\n"}
+,{"stream_name":"stdout","time":3962.067064885,"data":"[mlp] 3240s, probes done 261/400\n"}
+,{"stream_name":"stdout","time":4082.070973276,"data":"[mlp] 3360s, probes done 272/400\n"}
+,{"stream_name":"stdout","time":4202.075972458,"data":"[mlp] 3480s, probes done 281/400\n"}
+,{"stream_name":"stdout","time":4322.079367566,"data":"[mlp] 3600s, probes done 289/400\n"}
+,{"stream_name":"stdout","time":4442.083458292,"data":"[mlp] 3720s, probes done 299/400\n"}
+,{"stream_name":"stdout","time":4562.085226134,"data":"[mlp] 3840s, probes done 308/400\n"}
+,{"stream_name":"stdout","time":4682.089094062,"data":"[mlp] 3960s, probes done 316/400\n"}
+,{"stream_name":"stdout","time":4802.090966531,"data":"[mlp] 4080s, probes done 327/400\n"}
+,{"stream_name":"stdout","time":4922.095790817,"data":"[mlp] 4200s, probes done 337/400\n"}
+,{"stream_name":"stdout","time":5042.099398859,"data":"[mlp] 4320s, probes done 344/400\n"}
+,{"stream_name":"stdout","time":5162.101579031,"data":"[mlp] 4440s, probes done 354/400\n"}
+,{"stream_name":"stdout","time":5282.106446441,"data":"[mlp] 4560s, probes done 364/400\n"}
+,{"stream_name":"stdout","time":5402.108656482,"data":"[mlp] 4680s, probes done 371/400\n"}
+,{"stream_name":"stdout","time":5522.110595156,"data":"[mlp] 4800s, probes done 381/400\n"}
+,{"stream_name":"stdout","time":5642.11245814,"data":"[mlp] 4920s, probes done 390/400\n"}
+,{"stream_name":"stdout","time":5762.11402633,"data":"[mlp] 5040s, probes done 399/400\n"}
+,{"stream_name":"stdout","time":5882.115476219,"data":"[mlp] 5160s, probes done 400/400\n"}
+,{"stream_name":"stdout","time":5882.11552024,"data":"mlp return codes [0, 0, 0, 0]\n"}
+,{"stream_name":"stdout","time":5882.115740609,"data":"\n"}
+,{"stream_name":"stdout","time":5882.115754342,"data":"$ tail -n 3 /kaggle/working/out/mlp_worker*.log; ls -la /kaggle/working/out/probes\n"}
+,{"stream_name":"stdout","time":5882.119116525,"data":"==\u003e /kaggle/working/out/mlp_worker0.log \u003c==\n"}
+,{"stream_name":"stdout","time":5882.119132295,"data":"normmatched:4|2|3 epochs 200 74s total 4902s\n"}
+,{"stream_name":"stdout","time":5882.119137754,"data":"normmatched:4|3|2 epochs 109 39s total 4942s\n"}
+,{"stream_name":"stdout","time":5882.119142031,"data":"normmatched:4|4|1 epochs 101 37s total 4978s\n"}
+,{"stream_name":"stdout","time":5882.119146312,"data":"\n"}
+,{"stream_name":"stdout","time":5882.119150448,"data":"==\u003e /kaggle/working/out/mlp_worker1.log \u003c==\n"}
+,{"stream_name":"stdout","time":5882.119154598,"data":"normmatched:4|2|4 epochs 126 48s total 4796s\n"}
+,{"stream_name":"stdout","time":5882.119163229,"data":"normmatched:4|3|3 epochs 116 44s total 4840s\n"}
+,{"stream_name":"stdout","time":5882.119166324,"data":"normmatched:4|4|2 epochs 83 32s total 4871s\n"}
+,{"stream_name":"stdout","time":5882.119169569,"data":"\n"}
+,{"stream_name":"stdout","time":5882.119172244,"data":"==\u003e /kaggle/working/out/mlp_worker2.log \u003c==\n"}
+,{"stream_name":"stdout","time":5882.11917529,"data":"normmatched:4|3|0 epochs 161 57s total 4983s\n"}
+,{"stream_name":"stdout","time":5882.119178159,"data":"normmatched:4|3|4 epochs 165 45s total 5028s\n"}
+,{"stream_name":"stdout","time":5882.119188677,"data":"normmatched:4|4|3 epochs 106 27s total 5055s\n"}
+,{"stream_name":"stdout","time":5882.119191128,"data":"\n"}
+,{"stream_name":"stdout","time":5882.119193226,"data":"==\u003e /kaggle/working/out/mlp_worker3.log \u003c==\n"}
+,{"stream_name":"stdout","time":5882.119195549,"data":"normmatched:4|3|1 epochs 137 44s total 4998s\n"}
+,{"stream_name":"stdout","time":5882.119197732,"data":"normmatched:4|4|0 epochs 81 23s total 5020s\n"}
+,{"stream_name":"stdout","time":5882.119199945,"data":"normmatched:4|4|4 epochs 58 16s total 5037s\n"}
+,{"stream_name":"stdout","time":5882.12565349,"data":"total 112844\n"}
+,{"stream_name":"stdout","time":5882.125667167,"data":"drwxr-xr-x 2 root root     4096 Oct 26 09:05 .\n"}
+,{"stream_name":"stdout","time":5882.125671113,"data":"drwxr-xr-x 4 root root     4096 Oct 26 10:29 ..\n"}
+,{"stream_name":"stdout","time":5882.125674571,"data":"-rw-r--r-- 1 root root     8615 Oct 26 09:03 linear_meta.json\n"}
+,{"stream_name":"stdout","time":5882.125677882,"data":"-rw-r--r-- 1 root root    12690 Oct 26 10:26 mlp_meta_w0.json\n"}
+,{"stream_name":"stdout","time":5882.125681289,"data":"-rw-r--r-- 1 root root    12690 Oct 26 10:25 mlp_meta_w1.json\n"}
+,{"stream_name":"stdout","time":5882.125684605,"data":"-rw-r--r-- 1 root root    12692 Oct 26 10:28 mlp_meta_w2.json\n"}
+,{"stream_name":"stdout","time":5882.125688165,"data":"-rw-r--r-- 1 root root    12714 Oct 26 10:27 mlp_meta_w3.json\n"}
+,{"stream_name":"stdout","time":5882.125691664,"data":"-rw-r--r-- 1 root root 19242282 Oct 26 09:03 pred_linear.npz\n"}
+,{"stream_name":"stdout","time":5882.125695651,"data":"-rw-r--r-- 1 root root 24053650 Oct 26 10:26 pred_mlp_w0.npz\n"}
+,{"stream_name":"stdout","time":5882.125699449,"data":"-rw-r--r-- 1 root root 24053626 Oct 26 10:25 pred_mlp_w1.npz\n"}
+,{"stream_name":"stdout","time":5882.125703491,"data":"-rw-r--r-- 1 root root 24053646 Oct 26 10:28 pred_mlp_w2.npz\n"}
+,{"stream_name":"stdout","time":5882.125706916,"data":"-rw-r--r-- 1 root root 24053666 Oct 26 10:27 pred_mlp_w3.npz\n"}
+,{"stream_name":"stdout","time":5882.125904123,"data":"[rc=0 0.0s]\n"}
+,{"stream_name":"stdout","time":5882.125916504,"data":"DONE in 5881s\n"}
+,{"stream_name":"stderr","time":5884.52334326,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":5884.523368848,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":5884.903205495,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":5884.903245284,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":5886.984922396,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":5888.022146318,"data":"[NbConvertApp] Writing 305592 bytes to __results__.html\n"}
+]

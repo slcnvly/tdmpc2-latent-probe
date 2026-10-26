@@ -1,0 +1,11 @@
+pooled/index.npz: OK
+pooled/obs.npy: OK
+pooled/state.npy: OK
+pooled/targets.npy: FAILED
+pooled/latent_learned.npy: FAILED
+pooled/latent_random.npy: FAILED
+pooled/latent_normmatched.npy: FAILED
+pooled/torso_height.npy: OK
+split.json: OK
+split_labels.npy: OK
+sha256sum: WARNING: 4 computed checksums did NOT match

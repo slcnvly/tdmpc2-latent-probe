@@ -1,0 +1,15 @@
+{
+ "targets_max_abs_diff": 3.3306690738754696e-16,
+ "targets_n_differing": 28666,
+ "targets_total": 750000,
+ "latent_learned_subset_max_abs_diff": 2.5033950805664062e-06,
+ "latent_learned_subset_mean_abs_diff": 3.734031395197235e-08,
+ "latent_learned_subset_frac_differing": 0.9119467881944444,
+ "latent_random_subset_max_abs_diff": 1.0132789611816406e-06,
+ "latent_random_subset_mean_abs_diff": 5.678866088487666e-08,
+ "latent_random_subset_frac_differing": 0.9408827256944444,
+ "latent_normmatched_subset_max_abs_diff": 1.043081283569336e-06,
+ "latent_normmatched_subset_mean_abs_diff": 5.6829648542588984e-08,
+ "latent_normmatched_subset_frac_differing": 0.9408754340277777,
+ "subset_size_states": 3000
+}

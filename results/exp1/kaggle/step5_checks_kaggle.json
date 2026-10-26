@@ -1,0 +1,22 @@
+{
+ "n_states": 150000,
+ "n_episodes": 300,
+ "check1_time_alignment": {
+  "max_abs_obs_recompute": 0.0,
+  "tol": 1e-05,
+  "pass": true,
+  "code": "encoder input = stored obs[n]; reward = get_reward after set_state(state[n]); both index n (= t of the same episode)"
+ },
+ "check2_logged_value": {
+  "n_compared": 149700,
+  "max_abs": 0.0,
+  "tol": 1e-06,
+  "pass": true,
+  "excluded": "t = 0 of every episode"
+ },
+ "check3_no_side_effect": {
+  "pass": true,
+  "how": "np.array_equal(get_state() after reward, restored s_t) for all 5 envs and all states"
+ },
+ "all_pass": true
+}

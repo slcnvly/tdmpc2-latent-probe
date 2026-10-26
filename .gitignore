@@ -6,3 +6,5 @@ outputs/
 kaggle/kernel_*/
 data/
 kaggle_out/
+data_eval_kaggle/
+results/exp1/probes/*.npz
