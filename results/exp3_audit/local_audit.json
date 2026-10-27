@@ -1,0 +1,1436 @@
+{
+ "timeout_setter_patch": true,
+ "item2_checkpoint": {
+  "file": "mt80-48M.pt",
+  "sha256": "9c46db03ec746c3efd7fd10cc22cbfb8d37ef8e70c68e128cff430728e343a6c",
+  "cfg_latent_dim": 768,
+  "cfg_task_dim": 96,
+  "parser_rule": "common/parser.py:75 task_dim = 96 if task == 'mt80' ...; config.yaml:60 latent_dim 512, MODEL_SIZE[48] overrides",
+  "ckpt_task_emb_shape": [
+   80,
+   96
+  ],
+  "ckpt_encoder_in_features": 135,
+  "ckpt_encoder_out_features": 768,
+  "obs_shape": [
+   39
+  ],
+  "action_dim": 6,
+  "n_tasks": 80,
+  "obs_dims_per_task": {
+   "walker-stand": 24,
+   "walker-walk": 24,
+   "walker-run": 24,
+   "cheetah-run": 17,
+   "reacher-easy": 6,
+   "reacher-hard": 6,
+   "acrobot-swingup": 6,
+   "pendulum-swingup": 3,
+   "cartpole-balance": 5,
+   "cartpole-balance-sparse": 5,
+   "cartpole-swingup": 5,
+   "cartpole-swingup-sparse": 5,
+   "cup-catch": 8,
+   "finger-spin": 9,
+   "finger-turn-easy": 12,
+   "finger-turn-hard": 12,
+   "fish-swim": 24,
+   "hopper-stand": 15,
+   "hopper-hop": 15,
+   "walker-walk-backwards": 24,
+   "walker-run-backwards": 24,
+   "cheetah-run-backwards": 17,
+   "cheetah-run-front": 17,
+   "cheetah-run-back": 17,
+   "cheetah-jump": 17,
+   "hopper-hop-backwards": 15,
+   "reacher-three-easy": 8,
+   "reacher-three-hard": 8,
+   "cup-spin": 8,
+   "pendulum-spin": 3,
+   "mw-assembly": 39,
+   "mw-basketball": 39,
+   "mw-button-press-topdown": 39,
+   "mw-button-press-topdown-wall": 39,
+   "mw-button-press": 39,
+   "mw-button-press-wall": 39,
+   "mw-coffee-button": 39,
+   "mw-coffee-pull": 39,
+   "mw-coffee-push": 39,
+   "mw-dial-turn": 39,
+   "mw-disassemble": 39,
+   "mw-door-open": 39,
+   "mw-door-close": 39,
+   "mw-drawer-close": 39,
+   "mw-drawer-open": 39,
+   "mw-faucet-open": 39,
+   "mw-faucet-close": 39,
+   "mw-hammer": 39,
+   "mw-handle-press-side": 39,
+   "mw-handle-press": 39,
+   "mw-handle-pull-side": 39,
+   "mw-handle-pull": 39,
+   "mw-lever-pull": 39,
+   "mw-peg-insert-side": 39,
+   "mw-peg-unplug-side": 39,
+   "mw-pick-out-of-hole": 39,
+   "mw-pick-place": 39,
+   "mw-pick-place-wall": 39,
+   "mw-plate-slide": 39,
+   "mw-plate-slide-side": 39,
+   "mw-plate-slide-back": 39,
+   "mw-plate-slide-back-side": 39,
+   "mw-push-back": 39,
+   "mw-push": 39,
+   "mw-push-wall": 39,
+   "mw-reach": 39,
+   "mw-reach-wall": 39,
+   "mw-shelf-place": 39,
+   "mw-soccer": 39,
+   "mw-stick-push": 39,
+   "mw-stick-pull": 39,
+   "mw-sweep-into": 39,
+   "mw-sweep": 39,
+   "mw-window-open": 39,
+   "mw-window-close": 39,
+   "mw-bin-picking": 39,
+   "mw-box-close": 39,
+   "mw-door-lock": 39,
+   "mw-door-unlock": 39,
+   "mw-hand-insert": 39
+  },
+  "action_dims_per_task": {
+   "walker-stand": 6,
+   "walker-walk": 6,
+   "walker-run": 6,
+   "cheetah-run": 6,
+   "reacher-easy": 2,
+   "reacher-hard": 2,
+   "acrobot-swingup": 1,
+   "pendulum-swingup": 1,
+   "cartpole-balance": 1,
+   "cartpole-balance-sparse": 1,
+   "cartpole-swingup": 1,
+   "cartpole-swingup-sparse": 1,
+   "cup-catch": 2,
+   "finger-spin": 2,
+   "finger-turn-easy": 2,
+   "finger-turn-hard": 2,
+   "fish-swim": 5,
+   "hopper-stand": 4,
+   "hopper-hop": 4,
+   "walker-walk-backwards": 6,
+   "walker-run-backwards": 6,
+   "cheetah-run-backwards": 6,
+   "cheetah-run-front": 6,
+   "cheetah-run-back": 6,
+   "cheetah-jump": 6,
+   "hopper-hop-backwards": 4,
+   "reacher-three-easy": 3,
+   "reacher-three-hard": 3,
+   "cup-spin": 2,
+   "pendulum-spin": 1,
+   "mw-assembly": 4,
+   "mw-basketball": 4,
+   "mw-button-press-topdown": 4,
+   "mw-button-press-topdown-wall": 4,
+   "mw-button-press": 4,
+   "mw-button-press-wall": 4,
+   "mw-coffee-button": 4,
+   "mw-coffee-pull": 4,
+   "mw-coffee-push": 4,
+   "mw-dial-turn": 4,
+   "mw-disassemble": 4,
+   "mw-door-open": 4,
+   "mw-door-close": 4,
+   "mw-drawer-close": 4,
+   "mw-drawer-open": 4,
+   "mw-faucet-open": 4,
+   "mw-faucet-close": 4,
+   "mw-hammer": 4,
+   "mw-handle-press-side": 4,
+   "mw-handle-press": 4,
+   "mw-handle-pull-side": 4,
+   "mw-handle-pull": 4,
+   "mw-lever-pull": 4,
+   "mw-peg-insert-side": 4,
+   "mw-peg-unplug-side": 4,
+   "mw-pick-out-of-hole": 4,
+   "mw-pick-place": 4,
+   "mw-pick-place-wall": 4,
+   "mw-plate-slide": 4,
+   "mw-plate-slide-side": 4,
+   "mw-plate-slide-back": 4,
+   "mw-plate-slide-back-side": 4,
+   "mw-push-back": 4,
+   "mw-push": 4,
+   "mw-push-wall": 4,
+   "mw-reach": 4,
+   "mw-reach-wall": 4,
+   "mw-shelf-place": 4,
+   "mw-soccer": 4,
+   "mw-stick-push": 4,
+   "mw-stick-pull": 4,
+   "mw-sweep-into": 4,
+   "mw-sweep": 4,
+   "mw-window-open": 4,
+   "mw-window-close": 4,
+   "mw-bin-picking": 4,
+   "mw-box-close": 4,
+   "mw-door-lock": 4,
+   "mw-door-unlock": 4,
+   "mw-hand-insert": 4
+  },
+  "episode_lengths_per_task": {
+   "walker-stand": 500,
+   "walker-walk": 500,
+   "walker-run": 500,
+   "cheetah-run": 500,
+   "reacher-easy": 500,
+   "reacher-hard": 500,
+   "acrobot-swingup": 500,
+   "pendulum-swingup": 500,
+   "cartpole-balance": 500,
+   "cartpole-balance-sparse": 500,
+   "cartpole-swingup": 500,
+   "cartpole-swingup-sparse": 500,
+   "cup-catch": 500,
+   "finger-spin": 500,
+   "finger-turn-easy": 500,
+   "finger-turn-hard": 500,
+   "fish-swim": 500,
+   "hopper-stand": 500,
+   "hopper-hop": 500,
+   "walker-walk-backwards": 500,
+   "walker-run-backwards": 500,
+   "cheetah-run-backwards": 500,
+   "cheetah-run-front": 500,
+   "cheetah-run-back": 500,
+   "cheetah-jump": 500,
+   "hopper-hop-backwards": 500,
+   "reacher-three-easy": 500,
+   "reacher-three-hard": 500,
+   "cup-spin": 500,
+   "pendulum-spin": 500,
+   "mw-assembly": 100,
+   "mw-basketball": 100,
+   "mw-button-press-topdown": 100,
+   "mw-button-press-topdown-wall": 100,
+   "mw-button-press": 100,
+   "mw-button-press-wall": 100,
+   "mw-coffee-button": 100,
+   "mw-coffee-pull": 100,
+   "mw-coffee-push": 100,
+   "mw-dial-turn": 100,
+   "mw-disassemble": 100,
+   "mw-door-open": 100,
+   "mw-door-close": 100,
+   "mw-drawer-close": 100,
+   "mw-drawer-open": 100,
+   "mw-faucet-open": 100,
+   "mw-faucet-close": 100,
+   "mw-hammer": 100,
+   "mw-handle-press-side": 100,
+   "mw-handle-press": 100,
+   "mw-handle-pull-side": 100,
+   "mw-handle-pull": 100,
+   "mw-lever-pull": 100,
+   "mw-peg-insert-side": 100,
+   "mw-peg-unplug-side": 100,
+   "mw-pick-out-of-hole": 100,
+   "mw-pick-place": 100,
+   "mw-pick-place-wall": 100,
+   "mw-plate-slide": 100,
+   "mw-plate-slide-side": 100,
+   "mw-plate-slide-back": 100,
+   "mw-plate-slide-back-side": 100,
+   "mw-push-back": 100,
+   "mw-push": 100,
+   "mw-push-wall": 100,
+   "mw-reach": 100,
+   "mw-reach-wall": 100,
+   "mw-shelf-place": 100,
+   "mw-soccer": 100,
+   "mw-stick-push": 100,
+   "mw-stick-pull": 100,
+   "mw-sweep-into": 100,
+   "mw-sweep": 100,
+   "mw-window-open": 100,
+   "mw-window-close": 100,
+   "mw-bin-picking": 100,
+   "mw-box-close": 100,
+   "mw-door-lock": 100,
+   "mw-door-unlock": 100,
+   "mw-hand-insert": 100
+  },
+  "load_world_model_ok": true,
+  "task_emb_norms": {
+   "mw-reach": 0.5486286878585815,
+   "mw-push": 0.3740288019180298,
+   "mw-pick-place": 0.3996249735355377
+  }
+ },
+ "item3_task_ids": {
+  "mw-reach": {
+   "a_TASK_SET_index": 65,
+   "b_cfg_tasks_index_and_env_class": [
+    65,
+    "ReachV2GoalObservable",
+    "sawyer_reach_v2.xml"
+   ],
+   "c_task_emb_rows": 80,
+   "same": true
+  },
+  "mw-push": {
+   "a_TASK_SET_index": 63,
+   "b_cfg_tasks_index_and_env_class": [
+    63,
+    "PushV2GoalObservable",
+    "sawyer_push_v2.xml"
+   ],
+   "c_task_emb_rows": 80,
+   "same": true
+  },
+  "mw-pick-place": {
+   "a_TASK_SET_index": 56,
+   "b_cfg_tasks_index_and_env_class": [
+    56,
+    "PickPlaceV2GoalObservable",
+    "sawyer_pick_place_v2.xml"
+   ],
+   "c_task_emb_rows": 80,
+   "same": true
+  }
+ },
+ "item4_scene": {
+  "reach_vs_push": [
+   {
+    "field": "sites",
+    "a": {
+     "name": "goal",
+     "pos": [
+      -0.1,
+      0.8,
+      0.2
+     ],
+     "rgba": [
+      0.800000011920929,
+      0.0,
+      0.0,
+      1.0
+     ]
+    },
+    "b": {
+     "name": "goal",
+     "pos": [
+      0.1,
+      0.8,
+      0.02
+     ],
+     "rgba": [
+      0.0,
+      0.800000011920929,
+      0.0,
+      1.0
+     ]
+    }
+   }
+  ],
+  "reach_vs_pick_place": [
+   {
+    "field": "sites",
+    "a": {
+     "name": "goal",
+     "pos": [
+      -0.1,
+      0.8,
+      0.2
+     ],
+     "rgba": [
+      0.800000011920929,
+      0.0,
+      0.0,
+      1.0
+     ]
+    },
+    "b": {
+     "name": "goal",
+     "pos": [
+      0.1,
+      0.8,
+      0.2
+     ],
+     "rgba": [
+      0.0,
+      0.0,
+      0.800000011920929,
+      1.0
+     ]
+    }
+   }
+  ],
+  "counts": {
+   "mw-reach": {
+    "nbody": 34,
+    "ngeom": 37,
+    "nsite": 8,
+    "njnt": 10,
+    "nq": 16
+   },
+   "mw-push": {
+    "nbody": 34,
+    "ngeom": 37,
+    "nsite": 8,
+    "njnt": 10,
+    "nq": 16
+   },
+   "mw-pick-place": {
+    "nbody": 34,
+    "ngeom": 37,
+    "nsite": 8,
+    "njnt": 10,
+    "nq": 16
+   }
+  },
+  "object_bodies": {
+   "mw-reach": [
+    "obj"
+   ],
+   "mw-push": [
+    "obj"
+   ],
+   "mw-pick-place": [
+    "obj"
+   ]
+  }
+ },
+ "item5_obs_layout_checks": {
+  "mw-reach": {
+   "hand_eq_endeff": 1.2724874154379506e-08,
+   "obj_eq_body_com": 2.8018328657175573e-08,
+   "pad_11_18_all_zero": true,
+   "goal_eq_target_pos": 2.622003614227708e-08,
+   "partially_observable": false,
+   "freeze_rand_vec": false,
+   "isV2": true,
+   "frame_skip": 5,
+   "max_path_length": 500,
+   "obs_len": 39,
+   "gripper_obs_3": 1.0
+  },
+  "mw-push": {
+   "hand_eq_endeff": 1.2724874154379506e-08,
+   "obj_eq_body_com": 2.1861982224535836e-08,
+   "pad_11_18_all_zero": true,
+   "goal_eq_target_pos": 2.1738928768222365e-08,
+   "partially_observable": false,
+   "freeze_rand_vec": false,
+   "isV2": true,
+   "frame_skip": 5,
+   "max_path_length": 500,
+   "obs_len": 39,
+   "gripper_obs_3": 1.0
+  },
+  "mw-pick-place": {
+   "hand_eq_endeff": 1.2724874154379506e-08,
+   "obj_eq_body_com": 7.782481215024006e-09,
+   "pad_11_18_all_zero": true,
+   "goal_eq_target_pos": 2.2013767364548187e-08,
+   "partially_observable": false,
+   "freeze_rand_vec": false,
+   "isV2": true,
+   "frame_skip": 5,
+   "max_path_length": 500,
+   "obs_len": 39,
+   "gripper_obs_3": 1.0
+  }
+ },
+ "item6_reset_randomization": {
+  "mw-reach": {
+   "n_resets": 10,
+   "obj_start_std_m_xyz": [
+    0.05034096951496816,
+    0.03097002887552746,
+    0.0
+   ],
+   "goal_std_m_xyz": [
+    0.05250992977799634,
+    0.02979692721773124,
+    0.05042513535522422
+   ],
+   "hand_start_std_m_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "obj_start_min": [
+    -0.08033063262701035,
+    0.6053362488746643,
+    0.019999999552965164
+   ],
+   "obj_start_max": [
+    0.07527783513069153,
+    0.6894606351852417,
+    0.019999999552965164
+   ],
+   "goal_min": [
+    -0.09218904376029968,
+    0.8049953579902649,
+    0.11638666689395905
+   ],
+   "goal_max": [
+    0.09365231543779373,
+    0.8988860845565796,
+    0.269535630941391
+   ],
+   "max_abs_obs_returned_vs_after_extra_step": 0.15559376389014518,
+   "resets": [
+    {
+     "obj_pos_obs": [
+      -0.06274795532226562,
+      0.6345560550689697,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.06274795865948325,
+      0.6345560841879481,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.007763347122818232,
+      0.8419194221496582,
+      0.22130487859249115
+     ],
+     "target_pos": [
+      0.0077633469163542745,
+      0.8419194483696943,
+      0.22130488350217262
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.00041444486155609527
+    },
+    {
+     "obj_pos_obs": [
+      -0.05910954996943474,
+      0.6878117322921753,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.05910955093449745,
+      0.6878117360770257,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.034093502908945084,
+      0.8417304754257202,
+      0.18967247009277344
+     ],
+     "target_pos": [
+      0.03409350254371321,
+      0.8417304772336589,
+      0.18967246410034136
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.053262917704511636
+    },
+    {
+     "obj_pos_obs": [
+      -0.07192261517047882,
+      0.619810163974762,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.07192261335268368,
+      0.6198101656656845,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.09365231543779373,
+      0.8313423991203308,
+      0.22308066487312317
+     ],
+     "target_pos": [
+      0.09365231653940775,
+      0.8313424185279311,
+      0.22308066239969476
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.06799944137962777
+    },
+    {
+     "obj_pos_obs": [
+      0.07527783513069153,
+      0.6894606351852417,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.07527783158093473,
+      0.6894606581986152,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.09218904376029968,
+      0.8169830441474915,
+      0.269535630941391
+     ],
+     "target_pos": [
+      -0.09218904472714733,
+      0.8169830478037767,
+      0.2695356364164186
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.14718761185339757
+    },
+    {
+     "obj_pos_obs": [
+      -0.08033063262701035,
+      0.6421107649803162,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.08033063443040969,
+      0.6421107712823809,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.0066330572590231895,
+      0.8691877126693726,
+      0.1288789063692093
+     ],
+     "target_pos": [
+      0.006633057093443667,
+      0.8691876985725225,
+      0.12887891202273577
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.15559376389014518
+    },
+    {
+     "obj_pos_obs": [
+      0.03730018436908722,
+      0.6834625601768494,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.037300186092132814,
+      0.6834625611830552,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.05002886429429054,
+      0.8988860845565796,
+      0.2370414286851883
+     ],
+     "target_pos": [
+      0.05002886373448165,
+      0.8988860854471501,
+      0.23704142270142067
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.11762065100552742
+    },
+    {
+     "obj_pos_obs": [
+      -0.04391120374202728,
+      0.6789279580116272,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.04391120224144686,
+      0.6789279284601784,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.01042129471898079,
+      0.8908595442771912,
+      0.12340354174375534
+     ],
+     "target_pos": [
+      -0.010421294920108362,
+      0.8908595297363312,
+      0.12340354111987174
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.08121277368554419
+    },
+    {
+     "obj_pos_obs": [
+      -0.04244493320584297,
+      0.6130028963088989,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.04244493291520903,
+      0.6130028764035016,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.03576710820198059,
+      0.8211628198623657,
+      0.11638666689395905
+     ],
+     "target_pos": [
+      0.035767107120949604,
+      0.8211628159525236,
+      0.1163866685558298
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.06592611808661464
+    },
+    {
+     "obj_pos_obs": [
+      -0.0016853681299835443,
+      0.6053362488746643,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.0016853681690462835,
+      0.6053362764451726,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.07065428793430328,
+      0.8589305281639099,
+      0.22493959963321686
+     ],
+     "target_pos": [
+      -0.07065428607166886,
+      0.8589305445360491,
+      0.22493959857069995
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.04073760383490028
+    },
+    {
+     "obj_pos_obs": [
+      -0.07953311502933502,
+      0.6414055824279785,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.07953311541957059,
+      0.6414056078160187,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.017164146527647972,
+      0.8049953579902649,
+      0.18397410213947296
+     ],
+     "target_pos": [
+      -0.017164146350385184,
+      0.8049953560290628,
+      0.183974108213045
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.07782186232129235
+    }
+   ]
+  },
+  "mw-push": {
+   "n_resets": 10,
+   "obj_start_std_m_xyz": [
+    0.06822472060304982,
+    0.02846517702586591,
+    0.0
+   ],
+   "goal_std_m_xyz": [
+    0.05437936516329819,
+    0.029061812047031926,
+    0.0
+   ],
+   "hand_start_std_m_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "obj_start_min": [
+    -0.09602397680282593,
+    0.6026211380958557,
+    0.019872162491083145
+   ],
+   "obj_start_max": [
+    0.08067590743303299,
+    0.69973224401474,
+    0.019872162491083145
+   ],
+   "goal_min": [
+    -0.07257284969091415,
+    0.8015821576118469,
+    0.019872162491083145
+   ],
+   "goal_max": [
+    0.09296800941228867,
+    0.8932595252990723,
+    0.019872162491083145
+   ],
+   "max_abs_obs_returned_vs_after_extra_step": 0.15771663956494403,
+   "resets": [
+    {
+     "obj_pos_obs": [
+      0.032758928835392,
+      0.6514889001846313,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      0.03275892953210385,
+      0.6514889166338191,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      0.017311008647084236,
+      0.8903401494026184,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      0.01731100835835271,
+      0.8903401711415472,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.09552089628543492
+    },
+    {
+     "obj_pos_obs": [
+      -0.07214473187923431,
+      0.6807391047477722,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      -0.07214473162488855,
+      0.6807391238382478,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      -0.0669291615486145,
+      0.8927508592605591,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      -0.06692916157393566,
+      0.8927508367902407,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.10491231456982111
+    },
+    {
+     "obj_pos_obs": [
+      0.0501624196767807,
+      0.6725997924804688,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      0.050162421374709415,
+      0.6725997964131918,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      0.024734441190958023,
+      0.8750942349433899,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      0.02473444177969368,
+      0.8750942284678684,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.1223262911856189
+    },
+    {
+     "obj_pos_obs": [
+      -0.04601442068815231,
+      0.6895886063575745,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      -0.0460144223326631,
+      0.6895886136220767,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      0.09296800941228867,
+      0.866344153881073,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      0.09296801081500841,
+      0.8663441379762569,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.09618398053572563
+    },
+    {
+     "obj_pos_obs": [
+      -0.07705080509185791,
+      0.6949489116668701,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      -0.07705080655747143,
+      0.694948915756183,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      0.0156779233366251,
+      0.8408136963844299,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      0.015677923111045614,
+      0.8408136776009476,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.031036727190533603
+    },
+    {
+     "obj_pos_obs": [
+      0.08067590743303299,
+      0.6573679447174072,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      0.08067590531461541,
+      0.6573679519927093,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      0.023428983986377716,
+      0.8326644897460938,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      0.023428983073263826,
+      0.8326644904164066,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.15771663956494403
+    },
+    {
+     "obj_pos_obs": [
+      0.0771884173154831,
+      0.6357269883155823,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      0.07718842101235199,
+      0.6357269870651456,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      0.024672023952007294,
+      0.8015821576118469,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      0.02467202352600234,
+      0.8015821356397729,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.021636660574519517
+    },
+    {
+     "obj_pos_obs": [
+      0.03817938268184662,
+      0.69973224401474,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      0.038179384072301925,
+      0.6997322732199615,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      -0.07257284969091415,
+      0.8932595252990723,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      -0.07257285115564419,
+      0.8932595248724325,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.06397984857775108
+    },
+    {
+     "obj_pos_obs": [
+      -0.08679996430873871,
+      0.6755462884902954,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      -0.08679996674900778,
+      0.6755463020846404,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      0.084604911506176,
+      0.8711524605751038,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      0.08460490837000803,
+      0.8711524623376679,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.12498553449584344
+    },
+    {
+     "obj_pos_obs": [
+      -0.09602397680282593,
+      0.6026211380958557,
+      0.019872162491083145
+     ],
+     "obj_init_pos": [
+      -0.09602397466290959,
+      0.6026211215922519,
+      0.019872163199400588
+     ],
+     "goal_obs": [
+      -0.05075778812170029,
+      0.886002779006958,
+      0.019872162491083145
+     ],
+     "target_pos": [
+      -0.05075778723574078,
+      0.8860027760322216,
+      0.019872163199400588
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.0729088774757436
+    }
+   ]
+  },
+  "mw-pick-place": {
+   "n_resets": 10,
+   "obj_start_std_m_xyz": [
+    0.04848341181481939,
+    0.031050755421111416,
+    0.0
+   ],
+   "goal_std_m_xyz": [
+    0.07083420301182158,
+    0.028295706803977687,
+    0.07456173369552219
+   ],
+   "hand_start_std_m_xyz": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "obj_start_min": [
+    -0.091089628636837,
+    0.601864755153656,
+    0.019999999552965164
+   ],
+   "obj_start_max": [
+    0.0727083683013916,
+    0.6949016451835632,
+    0.019999999552965164
+   ],
+   "goal_min": [
+    -0.09628476202487946,
+    0.8059917688369751,
+    0.05313899740576744
+   ],
+   "goal_max": [
+    0.09772323071956635,
+    0.8915606141090393,
+    0.29239895939826965
+   ],
+   "max_abs_obs_returned_vs_after_extra_step": 0.1637896435395942,
+   "resets": [
+    {
+     "obj_pos_obs": [
+      0.010564396157860756,
+      0.6842030882835388,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.010564395894574946,
+      0.6842030829644471,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.04416326433420181,
+      0.8585759401321411,
+      0.29239895939826965
+     ],
+     "target_pos": [
+      -0.04416326485585602,
+      0.8585759181183737,
+      0.2923989486610536
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.07332011928960126
+    },
+    {
+     "obj_pos_obs": [
+      0.012206044048070908,
+      0.601864755153656,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.01220604403302622,
+      0.6018647521122732,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.053405147045850754,
+      0.8807104825973511,
+      0.1469651609659195
+     ],
+     "target_pos": [
+      -0.053405146027594594,
+      0.8807105026184758,
+      0.14696516609578147
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.08233046000289346
+    },
+    {
+     "obj_pos_obs": [
+      0.0727083683013916,
+      0.6747121810913086,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.0727083719953249,
+      0.6747121613964243,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.07270895689725876,
+      0.8059917688369751,
+      0.08033586293458939
+     ],
+     "target_pos": [
+      -0.07270895595131086,
+      0.8059917787293266,
+      0.0803358660363612
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.07284610807132419
+    },
+    {
+     "obj_pos_obs": [
+      -0.091089628636837,
+      0.6107494235038757,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.09108962564838882,
+      0.6107494329081776,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.04259779676795006,
+      0.8559716939926147,
+      0.05313899740576744
+     ],
+     "target_pos": [
+      0.04259779671129196,
+      0.8559716901093041,
+      0.05313899592516104
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.1637896435395942
+    },
+    {
+     "obj_pos_obs": [
+      -0.06091410294175148,
+      0.6581358909606934,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.06091410468582712,
+      0.6581358957781682,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.06936576217412949,
+      0.8239848017692566,
+      0.17344243824481964
+     ],
+     "target_pos": [
+      0.06936576133163744,
+      0.8239847792580632,
+      0.1734424348305471
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.04737627745230255
+    },
+    {
+     "obj_pos_obs": [
+      0.023991143330931664,
+      0.6828981041908264,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.023991144033771852,
+      0.6828980841502086,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.09628476202487946,
+      0.8070022463798523,
+      0.1715862900018692
+     ],
+     "target_pos": [
+      -0.09628476099927281,
+      0.8070022237886642,
+      0.1715862839146462
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.08491545851736282
+    },
+    {
+     "obj_pos_obs": [
+      0.021265892311930656,
+      0.6568851470947266,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.02126589264755256,
+      0.6568851472067934,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.09772323071956635,
+      0.8579745292663574,
+      0.1450352966785431
+     ],
+     "target_pos": [
+      0.09772323233867938,
+      0.857974513112204,
+      0.14503529814935434
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.02601432372601442
+    },
+    {
+     "obj_pos_obs": [
+      0.02594350092113018,
+      0.6210173964500427,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.025943501790901186,
+      0.6210174173169335,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      -0.0866927057504654,
+      0.826031506061554,
+      0.25118863582611084
+     ],
+     "target_pos": [
+      -0.08669270502099896,
+      0.8260315124691897,
+      0.2511886506747275
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.035841256076987626
+    },
+    {
+     "obj_pos_obs": [
+      -0.061313144862651825,
+      0.6639460921287537,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      -0.06131314438897149,
+      0.6639460890609488,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.08496159315109253,
+      0.8263297080993652,
+      0.0664902776479721
+     ],
+     "target_pos": [
+      0.08496159534589653,
+      0.8263296795534137,
+      0.06649027415323663
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.08727318117548113
+    },
+    {
+     "obj_pos_obs": [
+      0.023355672135949135,
+      0.6949016451835632,
+      0.019999999552965164
+     ],
+     "obj_init_pos": [
+      0.023355671748358148,
+      0.6949016219711511,
+      0.019999999552965164
+     ],
+     "goal_obs": [
+      0.011330638080835342,
+      0.8915606141090393,
+      0.210391566157341
+     ],
+     "target_pos": [
+      0.011330637807870941,
+      0.8915606141529216,
+      0.21039156015170357
+     ],
+     "hand_obs": [
+      0.006152351852506399,
+      0.6001898050308228,
+      0.19430117309093475
+     ],
+     "max_abs_obs_returned_vs_after_extra_step": 0.08468056671048499
+    }
+   ]
+  }
+ },
+ "item7_reward_obj_dependence": {
+  "mw-reach": {
+   "reward_obs": 1.227857100140727,
+   "reward_obj_moved_5cm_xy": 1.227857100140727,
+   "changed": false
+  },
+  "mw-push": {
+   "reward_obs": 0.052701931252027205,
+   "reward_obj_moved_5cm_xy": 0.013909732935436353,
+   "changed": true
+  },
+  "mw-pick-place": {
+   "reward_obs": 0.0006685656230837704,
+   "reward_obj_moved_5cm_xy": 0.0061623912898180365,
+   "changed": true
+  }
+ },
+ "item7_lengths": {
+  "timeout_agent_steps": 100,
+  "action_repeat": 2,
+  "frame_skip": 5,
+  "source": "envs/metaworld.py:22-28 (2 env.step per agent step), :50 Timeout(max_episode_steps=100)"
+ }
+}

@@ -54,3 +54,17 @@ def load_world_model(cfg, device="cpu", checkpoint=None):
     model.load_state_dict(sd)
     model.eval()
     return model
+
+
+def patch_timeout_setter():
+    """Meta-World / ManiSkill / MyoSuite make_env (envs/metaworld.py:51) assign env.max_episode_steps, but Timeout
+    (envs/wrappers/timeout.py:13-15, since commit 6117bc4) defines it as a read-only property -> AttributeError at 332f19e.
+    This adds a setter that only accepts the value already stored (the assignment there re-assigns _max_episode_steps),
+    so behaviour is unchanged. Used for Experiment 3 audit only (EXPERIMENT3_AUDIT.md); the repo itself is not edited."""
+    from envs.wrappers.timeout import Timeout
+
+    def _set(self, v):
+        if v != self._max_episode_steps:
+            raise ValueError(f"max_episode_steps {v} != {self._max_episode_steps}")
+
+    Timeout.max_episode_steps = property(lambda self: self._max_episode_steps, _set)

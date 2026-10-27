@@ -26,18 +26,38 @@ sep = args.index("--")
 own, hydra_args = args[:sep], args[sep + 1:]
 out_dir = own[own.index("--out-dir") + 1]
 trace_steps = int(own[own.index("--trace-steps") + 1]) if "--trace-steps" in own else 50
+if "--trace-ids" in own:  # Experiment 3 audit: other task indices (default: the mt30 walker ids, as in GATE 2)
+    WALKER_IDS = {int(x) for x in own[own.index("--trace-ids") + 1].split(",")}
+PATCH_TIMEOUT = "--patch-timeout" in own  # Experiment 3 audit: see common_setup.patch_timeout_setter
 os.makedirs(out_dir, exist_ok=True)
 sys.path.insert(0, TDMPC2_DIR)
 os.chdir(TDMPC2_DIR)
 
+import numpy as np  # noqa: E402
 import torch  # noqa: E402
+
+if PATCH_TIMEOUT:
+    sys.path.insert(0, HERE)
+    from common_setup import patch_timeout_setter  # noqa: E402
+
+    patch_timeout_setter()
 
 import tdmpc2 as tdmpc2_module  # noqa: E402  (evaluate.py does `from tdmpc2 import TDMPC2`: same module object)
 from envs.wrappers import multitask as mt_module  # noqa: E402
 
-state = {"rng": {}, "trace": {}, "step_count": {}, "first_episode_done": set(), "rewards": {}, "errors": [], "t_start": time.time()}
+state = {"np_rng": {}, "rng": {}, "trace": {}, "step_count": {}, "first_episode_done": set(), "rewards": {}, "errors": [], "t_start": time.time()}
 orig_act = tdmpc2_module.TDMPC2.act
 orig_step = mt_module.MultitaskWrapper.step
+orig_reset = mt_module.MultitaskWrapper.reset
+
+
+def hooked_reset(self, task_idx=-1):
+    try:  # global numpy RNG state before the first reset of a traced task (Meta-World resets draw from np.random)
+        if int(task_idx) in WALKER_IDS and int(task_idx) not in state["np_rng"]:
+            state["np_rng"][int(task_idx)] = np.random.get_state()
+    except Exception as e:
+        state["errors"].append(repr(e))
+    return orig_reset(self, task_idx=task_idx)
 
 
 def hooked_act(self, obs, t0=False, eval_mode=False, task=None):
@@ -73,6 +93,8 @@ def hooked_step(self, action):
     out = orig_step(self, action)
     try:
         state["rewards"].setdefault(int(self.task_idx), []).append(float(out[1]))
+        if isinstance(out[3], dict) and "success" in out[3]:
+            state.setdefault("success", {}).setdefault(int(self.task_idx), []).append(float(out[3]["success"]))
     except Exception as e:
         state["errors"].append(repr(e))
     return out
@@ -80,12 +102,16 @@ def hooked_step(self, action):
 
 tdmpc2_module.TDMPC2.act = hooked_act
 mt_module.MultitaskWrapper.step = hooked_step
+mt_module.MultitaskWrapper.reset = hooked_reset
 
 
 def dump():
     torch.save(state["rng"], os.path.join(out_dir, "official_rng_states.pt"))
+    if state["np_rng"]:
+        torch.save(state["np_rng"], os.path.join(out_dir, "official_np_rng_states.pt"))
     peak = torch.cuda.max_memory_allocated() / 2**20 if torch.cuda.is_available() else None
     json.dump({"trace": {str(k): v for k, v in state["trace"].items()}, "rewards": {str(k): v for k, v in state["rewards"].items()},
+               "success": {str(k): v for k, v in state.get("success", {}).items()},
                "errors": state["errors"], "peak_gpu_mem_MB_torch": peak, "wall_s": time.time() - state["t_start"],
                "hydra_args": hydra_args}, open(os.path.join(out_dir, "official_hooked.json"), "w"))
 

@@ -8,3 +8,4 @@ data/
 kaggle_out/
 data_eval_kaggle/
 results/exp1/probes/*.npz
+venv_mw/
