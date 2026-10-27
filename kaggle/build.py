@@ -7,5 +7,5 @@ d = os.path.join(HERE, f"kernel_{which}"); os.makedirs(d, exist_ok=True)
 open(os.path.join(d, "run.py"), "w").write("".join(f"{k} = {v!r}\n" for k, v in consts.items()) + open(os.path.join(HERE, f"{which}_body.py")).read())
 json.dump({"id": f"seungwonryoo/tdmpc2-probe-{which}", "title": f"TDMPC2 Probe {which.title()}", "code_file": "run.py", "language": "python",
            "kernel_type": "script", "is_private": True, "enable_gpu": True, "enable_internet": True, "dataset_sources": [],
-           "competition_sources": [], "kernel_sources": [], "model_sources": [], **({"dataset_sources": ["seungwonryoo/tdmpc2-probe-exp1-rollouts"]} if which == "exp1_probe" else {})}, open(os.path.join(d, "kernel-metadata.json"), "w"), indent=2)
+           "competition_sources": [], "kernel_sources": [], "model_sources": [], **({"dataset_sources": ["seungwonryoo/tdmpc2-probe-exp1-rollouts"]} if which in ("exp1_probe", "exp2") else {})}, open(os.path.join(d, "kernel-metadata.json"), "w"), indent=2)
 print(d)
