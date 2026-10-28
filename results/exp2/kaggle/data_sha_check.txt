@@ -1,0 +1,4 @@
+pooled/obs.npy: OK
+pooled/targets.npy: OK
+pooled/torso_height.npy: OK
+split_labels.npy: OK

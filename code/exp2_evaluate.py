@@ -210,11 +210,13 @@ def main():
     summary["tv_x"] = tvx
     summary["tv_vs_r2"] = rel
     # run facts
-    summary["lambda_main_at_min_1e-4"] = sum(l == 1e-4 for r in rows_all for l in M[r]["lambda_main"])
-    summary["lambda_main_at_max_1e4"] = sum(l == 1e4 for r in rows_all for l in M[r]["lambda_main"])
-    summary["lambda_ext_at_min_1e-8"] = sum(abs(l - 1e-8) < 1e-20 for r in rows_all for l in M[r]["lambda_ext"])
+    # grid values are 10 ** x (e.g. 9.999999999999999e-05), so compare with a relative tolerance, not ==
+    at = lambda l, v: abs(l - v) <= 1e-9 * v
+    summary["lambda_main_at_min_1e-4"] = sum(at(l, 1e-4) for r in rows_all for l in M[r]["lambda_main"])
+    summary["lambda_main_at_max_1e4"] = sum(at(l, 1e4) for r in rows_all for l in M[r]["lambda_main"])
+    summary["lambda_ext_at_min_1e-8"] = sum(at(l, 1e-8) for r in rows_all for l in M[r]["lambda_ext"])
     summary["lambda_main_cells"] = 5 * len(rows_all)
-    summary["standing_lambda_at_min"] = sum(l == 1e-4 for v in sj["rows"].values() for l in v["lambda"])
+    summary["standing_lambda_at_min"] = sum(at(l, 1e-4) for v in sj["rows"].values() for l in v["lambda"])
     ep = [e for r in rows_all for e in M[r]["mlp_epochs"]]
     summary["mlp_epochs"] = {"n": len(ep), "min": min(ep), "median": float(np.median(ep)), "max": max(ep), "n_200": sum(e == 200 for e in ep),
                              "rows_with_200": sorted({r for r in rows_all if 200 in M[r]["mlp_epochs"]})}
