@@ -48,7 +48,8 @@ def step(name, cmd, env_=None):
     return rc
 MJ = "/root/.mujoco"
 step("gcc_version", "gcc --version | head -1; cat /etc/os-release | head -2")
-step("apt", "apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq libosmesa6-dev libgl1-mesa-glx libglfw3 libglew-dev patchelf")
+# libgl1-mesa-glx does not exist on Ubuntu 24.04 (Kaggle image, 2026-10-27 run); libgl1 + libglx-mesa0 are its replacements there
+step("apt", "apt-get update -qq && DEBIAN_FRONTEND=noninteractive apt-get install -y -qq libosmesa6-dev libgl1 libglx-mesa0 libglfw3 libglew-dev patchelf")
 step("mujoco210", f"mkdir -p {MJ} && curl -sSL https://github.com/google-deepmind/mujoco/releases/download/2.1.0/mujoco210-linux-x86_64.tar.gz | tar -xz -C {MJ} && ls {MJ}/mujoco210/bin | head -3")
 step("pip23_cython_setuptools", f"uv pip install --python {ROOT}/venv/bin/python 'pip==23.3.2' 'cython<3' 'wheel==0.38.0' 'setuptools==65.5.0'")
 step("gym_0_21_0", f"{ROOT}/venv/bin/python -m pip install --no-build-isolation gym==0.21.0")
